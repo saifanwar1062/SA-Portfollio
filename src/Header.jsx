@@ -75,7 +75,7 @@ const Header = () => {
       const y = window.scrollY;
       setScrolled(y > 10);
 
-      const sections = ["home", "about", "projects", "skills", "contact"];
+      const sections = ["home", "about", "projects", "skills", "experience", "contact"];
       let current = "home";
 
       sections.forEach((id) => {
@@ -124,10 +124,10 @@ const Header = () => {
         initial={{ y: -10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-violet-950/80 backdrop-blur-xl border-b border-purple-500/30 shadow-lg"
-            : "bg-gradient-to-b from-violet-950/80 via-violet-950/40 to-transparent"
+            ? "bg-blue-950/30 backdrop-blur-xl border-b border-blue-500/20 shadow-2xl shadow-blue-950/50"
+            : "bg-transparent"
         }`}
       >
         {/* 3D Scene wrapper: keep 3D only on md+ to stay smooth on mobile */}
@@ -161,12 +161,12 @@ const Header = () => {
                 className="inline-flex items-center gap-3 group"
               >
                 <div className="relative">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-purple-500/45 to-purple-300/35 blur-lg opacity-70 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/45 to-blue-300/35 blur-lg opacity-70 group-hover:opacity-90 transition-opacity" />
                   <motion.div
                     whileHover={tilt.reduce ? undefined : { rotateX: 10, rotateY: -10 }}
-                    className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-purple-500/40 bg-violet-950/90 md:transform-3d"
+                    className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-blue-500/30 bg-blue-950/40 md:transform-3d shadow-inner shadow-blue-400/10"
                   >
-                    <Code2 className="w-5 h-5 text-purple-100" />
+                    <Code2 className="w-5 h-5 text-blue-100" />
                     {/* Fake depth highlight */}
                     <span className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent" />
                   </motion.div>
@@ -176,14 +176,14 @@ const Header = () => {
                   <span className="text-sm sm:text-base font-semibold tracking-tight text-slate-50">
                     Md. Saif Anwar
                   </span>
-                  <span className="text-[11px] sm:text-xs text-purple-200/80">
-                    Full Stack Developer
+                  <span className="text-[11px] sm:text-xs text-blue-200/80">
+                    Frontend React Developer
                   </span>
                 </div>
               </motion.button>
 
               {/* Desktop navigation */}
-              <nav className="hidden md:flex items-center gap-1 rounded-full bg-violet-950/80 backdrop-blur-lg border border-purple-700/40 px-2 py-1">
+              <nav className="hidden md:flex items-center gap-1 rounded-full bg-blue-950/40 backdrop-blur-md border border-blue-500/30 px-2 py-1 shadow-lg shadow-blue-950/20">
                 {menuItems.map((item) => {
                   const Icon = item.icon;
                   const isActive = activeSection === item.id;
@@ -203,17 +203,17 @@ const Header = () => {
                       whileTap={{ scale: 0.98 }}
                       className={`relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                         isActive
-                          ? "bg-purple-500/20 text-slate-50 border border-purple-400/60 shadow-sm shadow-purple-500/40"
-                          : "text-purple-100/80 hover:text-slate-50 hover:bg-violet-900/60"
+                          ? "bg-blue-500/20 text-slate-50 border border-blue-400/60 shadow-sm shadow-blue-500/40"
+                          : "text-blue-100/80 hover:text-slate-50 hover:bg-blue-900/60"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${isActive ? "text-purple-200" : "text-purple-300/80"}`} />
+                      <Icon className={`w-4 h-4 ${isActive ? "text-blue-200" : "text-blue-300/80"}`} />
                       <span>{item.label}</span>
 
                       {isActive && (
                         <motion.span
                           layoutId="active-underline"
-                          className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-6 rounded-full bg-purple-400"
+                          className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-6 rounded-full bg-blue-400"
                         />
                       )}
                     </motion.button>
@@ -236,7 +236,7 @@ const Header = () => {
                         aria-label={social.label}
                         whileHover={tilt.reduce ? undefined : { y: -2, rotateX: 12, rotateY: 10 }}
                         whileTap={{ scale: 0.98 }}
-                        className="flex items-center justify-center w-8 h-8 rounded-full border border-purple-700/60 bg-violet-950/90 text-purple-100/80 hover:text-slate-50 hover:border-purple-400/80 hover:bg-violet-900/80 transition"
+                        className="flex items-center justify-center w-8 h-8 rounded-full border border-blue-500/30 bg-blue-950/40 text-blue-100/80 hover:text-slate-50 hover:border-blue-400/80 hover:bg-blue-900/60 transition shadow-sm shadow-blue-950/20"
                       >
                         <Icon className="w-4 h-4" />
                       </motion.a>
@@ -248,7 +248,7 @@ const Header = () => {
                 <motion.button
                   onClick={() => setIsMenuOpen((prev) => !prev)}
                   whileTap={{ scale: 0.96 }}
-                  className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl bg-violet-950/90 border border-purple-700/60 text-purple-100 hover:bg-violet-900/90 transition"
+                  className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl bg-blue-950/90 border border-blue-700/60 text-blue-100 hover:bg-blue-900/90 transition"
                   aria-label="Toggle menu"
                 >
                   {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -265,7 +265,7 @@ const Header = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden border-t border-purple-800/40 bg-violet-950/95 backdrop-blur-2xl overflow-hidden"
+            className="md:hidden border-t border-blue-500/20 bg-blue-950/60 backdrop-blur-2xl overflow-hidden"
           >
             <div className="px-4 py-4 space-y-3">
               {menuItems.map((item) => {
@@ -283,36 +283,36 @@ const Header = () => {
                     }}
                     className={`w-full flex items-center gap-3 rounded-2xl border px-4 py-3 text-left transition ${
                       isActive
-                        ? "bg-violet-900/70 border-purple-400/70 text-slate-50"
-                        : "bg-violet-900/50 border-violet-800/80 text-purple-100"
+                        ? "bg-blue-900/70 border-blue-400/70 text-slate-50"
+                        : "bg-blue-900/50 border-blue-800/80 text-blue-100"
                     }`}
                   >
-                    <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-violet-900/70">
-                      <Icon className={`w-5 h-5 ${isActive ? "text-purple-200" : "text-purple-300/80"}`} />
+                    <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-blue-900/70">
+                      <Icon className={`w-5 h-5 ${isActive ? "text-blue-200" : "text-blue-300/80"}`} />
                     </div>
 
                     <div className="flex-1">
                       <p className="text-sm font-medium">{item.label}</p>
-                      <p className="text-[11px] text-purple-200/70">
+                      <p className="text-[11px] text-blue-200/70">
                         {item.id === "home"
                           ? "Welcome"
                           : item.id === "about"
                           ? "About me"
                           : item.id === "projects"
-                          ? "My work"
+                          ? "Live work"
                           : item.id === "skills"
                           ? "Tech stack"
                           : "Say hello"}
                       </p>
                     </div>
 
-                    <ChevronRight className="w-4 h-4 text-purple-400/80" />
+                    <ChevronRight className="w-4 h-4 text-blue-400/80" />
                   </motion.button>
                 );
               })}
 
               {/* Mobile social icons */}
-              <div className="pt-3 border-t border-violet-900/80">
+              <div className="pt-3 border-t border-blue-800/60">
                 <div className="flex items-center justify-between gap-2">
                   {socialLinks.map((social, i) => {
                     const Icon = social.icon;
@@ -324,7 +324,7 @@ const Header = () => {
                         rel="noopener noreferrer"
                         aria-label={social.label}
                         whileTap={{ scale: 0.98 }}
-                        className="flex-1 flex items-center justify-center rounded-xl border border-purple-700/60 bg-violet-950/90 py-2 text-purple-100 hover:text-slate-50 hover:border-purple-400/80 hover:bg-violet-900/90 transition"
+                        className="flex-1 flex items-center justify-center rounded-xl border border-blue-700/60 bg-blue-950/90 py-2 text-blue-100 hover:text-slate-50 hover:border-blue-400/80 hover:bg-blue-900/90 transition"
                       >
                         <Icon className="w-4 h-4" />
                       </motion.a>
