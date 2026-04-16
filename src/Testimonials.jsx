@@ -41,7 +41,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section id="testimonials" className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (
           <div key={i} className="absolute w-2 h-2 bg-gold/30 rounded-full animate-float opacity-30"
@@ -50,52 +50,52 @@ const Testimonials = () => {
       </div>
 
       <div ref={containerRef} className="relative z-20">
-        <div className="text-center mb-24 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-12 px-10 py-5 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5 mx-auto max-w-max">
-             <Users className="w-7 h-7 text-gold" />
-             <span className="text-xl font-bold text-slate-200">Social Proof</span>
+        <div className="text-center mb-12 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2.5 mb-4 px-5 py-2.5 bg-slate-900 rounded-lg border border-slate-800 shadow-md shadow-gold/5 mx-auto max-w-max">
+             <Users className="w-5 h-5 text-gold" />
+             <span className="text-sm font-bold text-slate-200">Social Proof</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black mb-8 text-white leading-tight">
+          <h2 className="text-2.5xl lg:text-3.5xl xl:text-4.5xl font-black mb-3 text-white leading-tight">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm lg:text-base text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Don't just take my word for it. Here's what clients from HCL, startups, and agencies are saying.
           </p>
         </div>
 
         {/* Main Featured Testimonial */}
-        <div className="max-w-4xl mx-auto mb-24">
+        <div className="max-w-4xl mx-auto mb-12">
           <div
-            className={`group relative w-full h-80 lg:h-96 bg-slate-900/90 backdrop-blur-2xl rounded-3xl p-10 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/20 transition-all duration-1000 cursor-pointer overflow-hidden ${hoveredCard === currentTestimonial ? 'ring-4 ring-gold/10 z-20' : ''}`}
+            className={`group relative w-full h-64 lg:h-72 bg-slate-900/90 backdrop-blur-2xl rounded-lg p-6 kg:p-8 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/20 transition-all duration-1000 cursor-pointer overflow-hidden ${hoveredCard === currentTestimonial ? 'ring-4 ring-gold/10 z-20' : ''}`}
             onMouseEnter={() => setHoveredCard(currentTestimonial)}
             style={{ transform: `perspective(1000px) rotateX(${-mousePos.y * 0.5}deg) rotateY(${mousePos.x * 0.5}deg)` }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-silver/5 to-gold/5 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all" />
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-slate-800 rounded-3xl flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">
-              <Quote className="w-10 h-10 text-gold" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-silver/5 to-gold/5 rounded-lg opacity-0 group-hover:opacity-100 blur-xl transition-all" />
+            <div className="absolute -top-6 -right-6 w-20 h-20 bg-slate-800 rounded-2xl flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">
+              <Quote className="w-8 h-8 text-gold" />
             </div>
             <div className="relative z-20 h-full flex flex-col justify-center">
-              <div className="text-slate-300 text-lg lg:text-xl leading-relaxed mb-8 h-32 lg:h-40 flex items-center">
+              <div className="text-slate-300 text-sm lg:text-base leading-relaxed mb-4 lg:mb-6 h-24 lg:h-28 flex items-center">
                 {typedText}
-                {isTyping && <span className="inline-block w-2 h-6 bg-gold ml-1 animate-blink" />}
+                {isTyping && <span className="inline-block w-2 h-5 bg-gold ml-1 animate-blink" />}
               </div>
-              <div className="flex items-center gap-4 pt-8 border-t border-slate-800">
-                <div className="w-16 h-16 bg-slate-800 rounded-3xl flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-all">
+              <div className="flex items-center gap-3 pt-4 lg:pt-6 border-t border-slate-800">
+                <div className="w-14 h-14 bg-slate-800 rounded-2xl flex items-center justify-center text-xl shadow-sm group-hover:scale-110 transition-all">
                   {testimonials[currentTestimonial].avatar}
                 </div>
                 <div>
-                  <h4 className="text-xl lg:text-2xl font-black text-white">{testimonials[currentTestimonial].author}</h4>
-                  <p className="text-slate-400">{testimonials[currentTestimonial].role}</p>
+                  <h4 className="text-base lg:text-lg font-black text-white">{testimonials[currentTestimonial].author}</h4>
+                  <p className="text-xs lg:text-sm text-slate-400">{testimonials[currentTestimonial].role}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-1 mt-4">
+              <div className="flex items-center gap-1 mt-2">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-gold fill-gold' : 'text-slate-200'}`} />
+                  <Star key={i} className={`w-4 h-4 ${i < testimonials[currentTestimonial].rating ? 'text-gold fill-gold' : 'text-slate-200'}`} />
                 ))}
               </div>
             </div>
           </div>
-          <div className="flex justify-center gap-3 mt-12">
+          <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, i) => (
               <button key={i} onClick={() => setCurrentTestimonial(i)}
                 className={`h-3 rounded-full transition-all duration-300 ${currentTestimonial === i ? 'w-8 bg-gradient-to-r from-gold-dark to-gold' : 'w-3 bg-slate-800 hover:bg-slate-700'}`} />

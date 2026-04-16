@@ -316,52 +316,52 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 lg:mb-24"
+          className="text-center mb-10 lg:mb-14"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-slate-900 backdrop-blur-xl rounded-2xl border border-gold/10 shadow-lg shadow-black/50"
+            className="inline-flex items-center gap-2.5 mb-5 px-5 py-2.5 bg-slate-900 backdrop-blur-xl rounded-lg border border-gold/10 shadow-lg shadow-black/50"
           >
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
-              <Sparkles className="w-5 h-5 text-gold" />
+              <Sparkles className="w-4 h-4 text-gold" />
             </motion.div>
-            <span className="text-lg font-semibold text-slate-200">
+            <span className="text-sm font-semibold text-slate-200">
               About Md. Saif Anwar
             </span>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
+          <h1 className="text-2.5xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight">
             <span className="block text-white">Frontend</span>
             <span className="block bg-gradient-to-r from-gold via-silver to-gold bg-clip-text text-transparent">
               React Developer
             </span>
           </h1>
 
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className="text-sm md:text-base text-slate-400 max-w-3xl mx-auto leading-relaxed mb-6">
             Building pixel-perfect React experiences from{' '}
             <span className="text-gold font-semibold">New Delhi, India</span>.
             Turning complex designs into lightning-fast, responsive, and beautiful web applications.
           </p>
 
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2.5">
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-xl shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-3"
+              className="px-6 py-2 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-lg shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-2 text-sm"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-4 h-4" />
               Download Resume
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-slate-900 border border-slate-800 text-slate-100 font-semibold rounded-xl shadow-lg hover:bg-slate-800 hover:border-gold/30 transition-all flex items-center gap-3"
+              className="px-6 py-2 bg-slate-900 border border-slate-800 text-slate-100 font-semibold rounded-lg shadow-lg hover:bg-slate-800 hover:border-gold/30 transition-all flex items-center gap-2 text-sm"
             >
-              <ExternalLink className="w-5 h-5" />
+              <ExternalLink className="w-4 h-4" />
               View GitHub
             </motion.button>
           </div>
@@ -372,7 +372,7 @@ const About = () => {
           ref={statsRef}
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16 lg:mb-24"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-10 lg:mb-14"
         >
           {stats.map((stat, i) => {
             const Icon = stat.icon;
@@ -383,18 +383,18 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -8, scale: 1.05 }}
-                className="group relative bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl shadow-black/50 hover:border-gold/30 transition-all duration-300"
+                className="group relative bg-slate-900 rounded-lg p-4 border border-slate-800 shadow-xl shadow-black/50 hover:border-gold/30 transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
                   <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="p-3 rounded-xl bg-gold/5"
+                    className="p-2 rounded-lg bg-gold/5"
                   >
-                    <Icon className="w-6 h-6 text-gold" />
+                    <Icon className="w-5 h-5 text-gold" />
                   </motion.div>
                   <div>
-                    <div className="text-3xl font-black text-white mb-1">
+                    <div className="text-2xl font-black text-white mb-0.5">
                       {stat.value}
                       <span className="text-gold">{stat.suffix}</span>
                     </div>

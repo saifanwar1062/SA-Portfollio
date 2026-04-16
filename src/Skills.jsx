@@ -138,7 +138,7 @@ const Skills = () => {
   );
 
   return (
-    <section id="skills" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section id="skills" className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl animate-pulse-slow" />
@@ -148,12 +148,12 @@ const Skills = () => {
 
       <div ref={containerRef} className="relative z-10">
         {/* Header */}
-        <div className="text-center mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5">
-            <Code2 className="w-7 h-7 text-gold" />
-            <span className="text-xl font-bold text-slate-200">Technical Mastery</span>
+        <div className="text-center mb-12 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 bg-slate-900 rounded-lg border border-slate-800 shadow-md shadow-gold/5">
+            <Code2 className="w-5 h-5 text-gold" />
+            <span className="text-sm font-bold text-slate-200">Technical Mastery</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight">
+          <h2 className="text-2.5xl sm:text-3.5xl lg:text-4.5xl font-black mb-3 text-white leading-tight">
             React Frontend
             <br />
             <span className="bg-gradient-to-r from-gold to-silver bg-clip-text text-transparent">
@@ -187,7 +187,7 @@ const Skills = () => {
               </div>
 
               {/* Skill Orbs */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2.5">
                 {category.skills.map((skill, i) => (
                   <SkillOrb
                     key={skill.name}
@@ -202,12 +202,12 @@ const Skills = () => {
         </div>
 
         {/* Live Proficiency Overview */}
-        <div className="bg-slate-900 rounded-3xl p-12 border border-slate-800 shadow-xl shadow-gold/5 
+        <div className="bg-slate-900 rounded-lg p-8 border border-slate-800 shadow-xl shadow-gold/5 
                        text-center animate-fade-in-up">
-          <h3 className="text-3xl font-black text-white mb-6">
+          <h3 className="text-xl font-black text-white mb-4">
             Overall Proficiency Matrix
           </h3>
-          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-5 max-w-4xl mx-auto">
             {[
               { label: 'React / Next.js', value: 94 },
               { label: 'Styling & UI', value: 96 },

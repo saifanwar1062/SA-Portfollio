@@ -155,23 +155,23 @@ const ProjectCard = ({ project, index }) => {
       />
 
       {/* Card Content */}
-      <div className="flex flex-col flex-1 p-6 sm:p-8 gap-4">
+      <div className="flex flex-col flex-1 p-4 sm:p-5 gap-3">
         {/* Header Row */}
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex flex-col gap-1">
+        <div className="flex items-start justify-between gap-2.5">
+          <div className="flex flex-col gap-0.5">
             {project.featured && (
               <span
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold w-fit"
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold w-fit"
                 style={{ background: `${project.color}15`, color: project.accentColor }}
               >
-                <Star className="w-3 h-3" />
+                <Star className="w-2.5 h-2.5" />
                 Featured
               </span>
             )}
-            <h3 className="text-xl sm:text-2xl font-black text-white leading-tight group-hover:text-gold transition-colors">
+            <h3 className="text-sm sm:text-base font-black text-white leading-tight group-hover:text-gold transition-colors">
               {project.title}
             </h3>
-            <span className="text-xs font-medium text-slate-500 uppercase tracking-widest">
+            <span className="text-[10px] font-medium text-slate-500 uppercase tracking-widest">
               {project.category}
             </span>
           </div>
@@ -183,26 +183,26 @@ const ProjectCard = ({ project, index }) => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.96 }}
-            className="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-black shadow-lg transition-all duration-300"
+            className="flex-shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[10px] font-semibold text-black shadow-lg transition-all duration-300"
             style={{ background: `linear-gradient(135deg, ${project.color}, ${project.accentColor})` }}
           >
-            <Globe className="w-3.5 h-3.5" />
+            <Globe className="w-3 h-3" />
             Live
-            <ArrowUpRight className="w-3 h-3" />
+            <ArrowUpRight className="w-2.5 h-2.5" />
           </motion.a>
         </div>
 
         {/* Description */}
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed flex-1">
+        <p className="text-xs sm:text-sm text-slate-400 leading-relaxed flex-1">
           {project.description}
         </p>
 
         {/* Tech Tags */}
-        <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+        <div className="flex flex-wrap gap-1.5 pt-1.5 border-t border-slate-800">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 rounded-lg text-xs font-medium bg-gold/10 text-gold border border-gold/20"
+              className="px-2 py-0.5 rounded-lg text-[10px] font-medium bg-gold/10 text-gold border border-gold/20"
             >
               {tag}
             </span>
@@ -210,20 +210,20 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-2">
-          <div className="flex items-center gap-2 text-xs text-slate-500">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] animate-pulse" />
+        <div className="flex items-center justify-between pt-1.5">
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-500">
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] animate-pulse" />
             Live & Active
           </div>
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold-light transition-colors group/link"
+            className="flex items-center gap-1 text-[10px] font-semibold text-gold hover:text-gold-light transition-colors group/link"
           >
-            <Eye className="w-3.5 h-3.5" />
+            <Eye className="w-3 h-3" />
             View Site
-            <ExternalLink className="w-3 h-3 group-hover/link:translate-x-0.5 transition-transform" />
+            <ExternalLink className="w-2.5 h-2.5 group-hover/link:translate-x-0.5 transition-transform" />
           </a>
         </div>
       </div>
@@ -235,7 +235,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
+      className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
@@ -250,19 +250,19 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5">
+          <div className="inline-flex items-center gap-2.5 mb-4 px-5 py-2.5 bg-slate-900 rounded-lg border border-slate-800 shadow-md shadow-gold/5">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
             >
-              <Rocket className="w-7 h-7 text-gold" />
+              <Rocket className="w-5 h-5 text-gold" />
             </motion.div>
-            <span className="text-xl font-bold text-slate-200">Live Projects</span>
+            <span className="text-sm font-bold text-slate-200">Live Projects</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+          <h2 className="text-2.5xl sm:text-3.5xl lg:text-4.5xl font-black mb-3 leading-tight">
             <span className="block text-white">
               Real Websites,
             </span>
@@ -271,13 +271,13 @@ const Projects = () => {
             </span>
           </h2>
 
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-base text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Every project below is live, production-ready, and crafted with React. From pilgrimage
             platforms to cruise services — pixel-perfect UI delivered for real clients.
           </p>
 
           {/* Quick stats */}
-          <div className="flex flex-wrap justify-center gap-6 mt-10">
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
             {[
               { label: 'Live Projects', value: '8+', icon: Globe },
               { label: 'React Powered', value: '100%', icon: Code2 },
@@ -286,11 +286,11 @@ const Projects = () => {
               <motion.div
                 key={stat.label}
                 whileHover={{ y: -4, scale: 1.04 }}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-slate-900 border border-slate-800 shadow-sm"
+                className="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-900 border border-slate-800 shadow-sm"
               >
-                <stat.icon className="w-5 h-5 text-gold" />
-                <span className="text-2xl font-black text-white">{stat.value}</span>
-                <span className="text-sm text-slate-400">{stat.label}</span>
+                <stat.icon className="w-4 h-4 text-gold" />
+                <span className="text-lg font-black text-white">{stat.value}</span>
+                <span className="text-xs text-slate-400">{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -302,7 +302,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-60px' }}
-          className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8"
+          className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-5"
         >
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />

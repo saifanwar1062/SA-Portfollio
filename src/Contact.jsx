@@ -45,10 +45,10 @@ const Contact = () => {
     { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
   ];
 
-  const inputCls = "w-full px-4 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-slate-200 placeholder-slate-500 focus:border-gold focus:outline-none transition-all focus:bg-slate-900 shadow-sm hover:border-slate-700";
+  const inputCls = "w-full px-3 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-slate-200 placeholder-slate-500 focus:border-gold focus:outline-none transition-all focus:bg-slate-900 shadow-sm hover:border-slate-700 text-sm";
 
   return (
-    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
+    <section id="contact" className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl animate-pulse-slow" />
@@ -61,25 +61,25 @@ const Contact = () => {
 
       <div className="relative z-10">
         {/* Header */}
-        <div className="text-center mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5 mx-auto max-w-max">
-            <MapPin className="w-7 h-7 text-gold" />
-            <span className="text-xl font-bold text-slate-200">Let's Connect</span>
+        <div className="text-center mb-12 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 mb-4 px-5 py-2.5 bg-slate-900 rounded-lg border border-slate-800 shadow-md shadow-gold/5 mx-auto max-w-max">
+            <MapPin className="w-5 h-5 text-gold" />
+            <span className="text-sm font-bold text-slate-200">Let's Connect</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight">
+          <h2 className="text-2.5xl sm:text-3.5xl lg:text-4.5xl font-black mb-3 text-white leading-tight">
             Ready to Start Your<br />
               <span className="bg-gradient-to-r from-gold to-silver bg-clip-text text-transparent">Next Project?</span>
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-base text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Whether it's a landing page, travel platform, or full React web app — I'm here to bring your vision to life with pixel-perfect precision.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-center">
           {/* Contact Form */}
           <div>
-            <div className="bg-slate-900 rounded-3xl p-8 lg:p-10 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/10 transition-all duration-500">
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <div className="bg-slate-900 rounded-lg p-5 lg:p-6 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/10 transition-all duration-500">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-slate-300 font-semibold mb-2 flex items-center gap-2"><span>👤</span> Full Name</label>

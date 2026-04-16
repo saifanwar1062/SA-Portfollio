@@ -138,7 +138,7 @@ const Header = () => {
               will-change-transform
             "
           >
-            <div className="flex h-16 sm:h-20 items-center justify-between gap-4">
+            <div className="flex h-14 sm:h-16 md:h-16 items-center justify-between gap-4">
               {/* Brand / Logo */}
               <motion.button
                 whileHover={tilt.reduce ? undefined : { y: -2, rotateZ: -0.6 }}
@@ -147,11 +147,11 @@ const Header = () => {
                   const el = document.getElementById("home");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="inline-flex items-center gap-2 sm:gap-3 group cursor-pointer"
+                className="inline-flex items-center gap-1.5 sm:gap-2 group cursor-pointer"
               >
                 <motion.div
                   whileHover={tilt.reduce ? undefined : { rotateX: 8, rotateY: -8, scale: 1.02 }}
-                  className="relative flex items-center justify-start h-8 sm:h-10 md:h-12 w-auto md:transform-3d drop-shadow-lg transition-transform duration-300"
+                  className="relative flex items-center justify-start h-7 sm:h-9 md:h-10 w-auto md:transform-3d drop-shadow-lg transition-transform duration-300"
                 >
                   <img
                     src="/SA_Logo.png"
@@ -162,17 +162,17 @@ const Header = () => {
 
                 {/* Name text beside logo */}
                 <div className="flex flex-col items-start">
-                  <span className="text-sm sm:text-base md:text-lg font-bold bg-gradient-to-r from-gold via-silver to-gold-dark bg-clip-text text-transparent">
+                  <span className="text-xs sm:text-sm md:text-base font-bold bg-gradient-to-r from-gold via-silver to-gold-dark bg-clip-text text-transparent">
                     MD. Saif Anwar
                   </span>
-                  <span className="text-[10px] sm:text-xs text-slate-400 hidden sm:block">
+                  <span className="text-[9px] sm:text-xs text-slate-400 hidden sm:block">
                     Frontend React.js Developer
                   </span>
                 </div>
               </motion.button>
 
               {/* Desktop navigation */}
-              <nav className="hidden md:flex items-center gap-1 rounded-full bg-slate-900/80 backdrop-blur-xl border border-gold/10 px-2 py-1 shadow-2xl shadow-black/50">
+              <nav className="hidden md:flex items-center gap-0.5 rounded-full bg-slate-900/80 backdrop-blur-xl border border-gold/10 px-1.5 py-1 shadow-2xl shadow-black/50">
                 {menuItems.map((item) => {
                   const Icon = item.icon;
                   const isActive = activeSection === item.id;
@@ -190,18 +190,18 @@ const Header = () => {
                           : { y: -2, rotateX: 10, rotateY: -6, scale: 1.02 }
                       }
                       whileTap={{ scale: 0.98 }}
-                      className={`relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${isActive
+                      className={`relative inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium transition-all ${isActive
                         ? "bg-gradient-to-r from-gold-dark to-gold text-black shadow-lg shadow-gold/20"
                         : "text-slate-400 hover:text-gold hover:bg-slate-800/80"
                         }`}
                     >
-                      <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-400"}`} />
+                      <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-slate-400"}`} />
                       <span>{item.label}</span>
 
                       {isActive && (
                         <motion.span
                           layoutId="active-underline"
-                          className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-6 rounded-full bg-gold"
+                          className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-5 rounded-full bg-gold"
                         />
                       )}
                     </motion.button>
@@ -210,9 +210,9 @@ const Header = () => {
               </nav>
 
               {/* Right side */}
-              <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 {/* Social icons (desktop) */}
-                <div className="hidden md:flex items-center gap-1">
+                <div className="hidden md:flex items-center gap-0.5">
                   {socialLinks.map((social, i) => {
                     const Icon = social.icon;
                     return (
@@ -224,9 +224,9 @@ const Header = () => {
                         aria-label={social.label}
                         whileHover={tilt.reduce ? undefined : { y: -2, rotateX: 12, rotateY: 10 }}
                         whileTap={{ scale: 0.98 }}
-                        className="flex items-center justify-center w-8 h-8 rounded-full border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-gold hover:border-gold/50 hover:bg-slate-800/80 transition shadow-lg"
+                        className="flex items-center justify-center w-7 h-7 rounded-full border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-gold hover:border-gold/50 hover:bg-slate-800/80 transition shadow-lg"
                       >
-                        <Icon className="w-4 h-4" />
+                        <Icon className="w-3.5 h-3.5" />
                       </motion.a>
                     );
                   })}
@@ -236,10 +236,10 @@ const Header = () => {
                 <motion.button
                   onClick={() => setIsMenuOpen((prev) => !prev)}
                   whileTap={{ scale: 0.96 }}
-                  className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-300 hover:bg-slate-800 transition shadow-lg"
+                  className="md:hidden flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-300 hover:bg-slate-800 transition shadow-lg"
                   aria-label="Toggle menu"
                 >
-                  {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                  {isMenuOpen ? <X className="w-4.5 h-4.5" /> : <Menu className="w-4.5 h-4.5" />}
                 </motion.button>
               </div>
             </div>
@@ -255,15 +255,15 @@ const Header = () => {
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-2xl overflow-hidden shadow-2xl"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-3 space-y-2">
               {/* Mobile header with name */}
-              <div className="flex items-center gap-3 pb-3 mb-2 border-b border-slate-800">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-dark to-gold flex items-center justify-center shadow-lg shadow-gold/20">
-                  <span className="text-black font-bold text-lg">SA</span>
+              <div className="flex items-center gap-2.5 pb-2.5 mb-2 border-b border-slate-800">
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-dark to-gold flex items-center justify-center shadow-lg shadow-gold/20">
+                  <span className="text-black font-bold text-sm">SA</span>
                 </div>
                 <div>
-                  <p className="font-bold text-white">MD. Saif Anwar</p>
-                  <p className="text-xs text-slate-500">Frontend React.js Developer</p>
+                  <p className="font-bold text-white text-sm">MD. Saif Anwar</p>
+                  <p className="text-[11px] text-slate-500">Frontend React.js Developer</p>
                 </div>
               </div>
 
@@ -280,18 +280,18 @@ const Header = () => {
                       const el = document.querySelector(item.href);
                       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                     }}
-                    className={`w-full flex items-center gap-3 rounded-2xl border px-4 py-3 text-left transition ${isActive
+                    className={`w-full flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-left transition ${isActive
                       ? "bg-gold/10 border-gold/30 text-gold shadow-lg shadow-gold/5"
                       : "bg-slate-900 border-slate-800 text-slate-400 hover:bg-slate-800"
                       }`}
                   >
-                    <div className={`flex items-center justify-center w-9 h-9 rounded-xl ${isActive ? 'bg-gold/20' : 'bg-slate-800'}`}>
-                      <Icon className={`w-5 h-5 ${isActive ? "text-gold" : "text-slate-500"}`} />
+                    <div className={`flex items-center justify-center w-8 h-8 rounded-lg ${isActive ? 'bg-gold/20' : 'bg-slate-800'}`}>
+                      <Icon className={`w-4 h-4 ${isActive ? "text-gold" : "text-slate-500"}`} />
                     </div>
 
                     <div className="flex-1">
-                      <p className="text-sm font-medium">{item.label}</p>
-                      <p className="text-[11px] text-slate-500">
+                      <p className="text-xs font-medium">{item.label}</p>
+                      <p className="text-[10px] text-slate-500">
                         {item.id === "home"
                           ? "Welcome"
                           : item.id === "about"

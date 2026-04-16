@@ -283,7 +283,7 @@ const Hero = () => {
     <section
       id="home"
       ref={containerRef}
-      className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-16 overflow-hidden"
+      className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-8 overflow-hidden"
     >
       {/* Background with imported assets */}
       <div className="fixed inset-0 z-0 overflow-hidden">
@@ -354,7 +354,7 @@ const Hero = () => {
             }
             : undefined
         }
-        className="relative z-10 w-full max-w-7xl mx-auto py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24"
+        className="relative z-10 w-full max-w-7xl mx-auto py-4 sm:py-8 md:py-10 lg:py-12 xl:py-14"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
@@ -363,7 +363,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Left column - Content (Shows first on all screens) */}
           <div className="order-1">
-            <motion.div variants={fadeInUp} className="mb-6 md:mb-8">
+            <motion.div variants={fadeInUp} className="mb-4 md:mb-5">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20">
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -371,35 +371,35 @@ const Hero = () => {
                 >
                   <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
                 </motion.div>
-                <span className="text-sm md:text-base font-medium text-gold-light">
+                <span className="text-xs md:text-sm font-medium text-gold-light">
                   Available for Opportunities
                 </span>
               </div>
             </motion.div>
 
             <motion.div variants={slideInLeft}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
                 <span className="block text-white">Hi, I'm</span>
                 <span className="block bg-gradient-to-r from-gold via-silver to-gold-dark bg-clip-text text-transparent">
                   {typedName}
                   <motion.span
-                    className="inline-block w-0.5 h-8 md:h-12 ml-1 bg-gold"
+                    className="inline-block w-0.5 h-6 md:h-10 ml-1 bg-gold"
                     animate={{ opacity: [1, 0.3, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                   />
                 </span>
               </h1>
 
-              <div className="mb-6 md:mb-8">
+              <div className="mb-4 md:mb-5">
                 <motion.h2
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-slate-200 mb-3 md:mb-4 leading-relaxed"
+                  className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-slate-200 mb-2 md:mb-3 leading-snug"
                   variants={fadeInUp}
                 >
                   Frontend React.js Developer &<br className="hidden sm:block" /> UI Craftsman
                 </motion.h2>
 
                 <motion.p
-                  className="text-base sm:text-lg text-slate-400 leading-relaxed"
+                  className="text-xs sm:text-sm md:text-base text-slate-400 leading-relaxed"
                   variants={fadeInUp}
                 >
                   I craft pixel-perfect, high-performance React applications with stunning UI/UX.
@@ -410,7 +410,7 @@ const Hero = () => {
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 md:mb-8"
+              className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 md:mb-5"
               variants={containerVariants}
             >
               {[
@@ -424,41 +424,41 @@ const Hero = () => {
                   whileHover={{ y: -4, scale: 1.03 }}
                   onHoverStart={() => setHoveredCard(`stat-${i}`)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className="p-3 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-gold/50 shadow-md shadow-gold/5 transition-all duration-300"
+                  className="p-2 sm:p-3 rounded-lg bg-slate-900/50 border border-slate-800 hover:border-gold/50 shadow-md shadow-gold/5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <stat.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
+                    <stat.icon className="w-3 h-3 md:w-3.5 md:h-3.5 text-gold" />
                     <motion.div
                       animate={{
                         scale: hoveredCard === `stat-${i}` ? [1, 1.1, 1] : 1,
                       }}
                       transition={{ duration: 0.4 }}
-                      className="text-xl sm:text-2xl md:text-3xl font-bold text-white"
+                      className="text-lg sm:text-xl md:text-2xl font-bold text-white"
                     >
                       {stat.value}
                       <span className="text-gold">{stat.suffix}</span>
                     </motion.div>
                   </div>
-                  <div className="text-xs sm:text-sm text-slate-400 font-medium">{stat.label}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3"
               variants={containerVariants}
             >
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("projects")}
-                className="group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-xl overflow-hidden transition-all duration-300 shadow-md shadow-gold/20"
+                className="group relative px-5 sm:px-6 py-2 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 shadow-md shadow-gold/20"
               >
-                <span className="relative z-10 flex items-center justify-center gap-2 text-sm sm:text-base">
+                <span className="relative z-10 flex items-center justify-center gap-2 text-xs sm:text-sm">
                   View My Work
                   <motion.div animate={waveAnimation}>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </motion.div>
                 </span>
                 <motion.div
@@ -473,7 +473,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("contact")}
-                className="px-6 sm:px-8 py-3 bg-slate-900 border border-slate-700 text-white font-semibold rounded-xl hover:bg-slate-800 hover:border-gold/30 shadow-sm transition-all duration-300 text-sm sm:text-base"
+                className="px-5 sm:px-6 py-2 bg-slate-900 border border-slate-700 text-white font-semibold rounded-lg hover:bg-slate-800 hover:border-gold/30 shadow-sm transition-all duration-300 text-xs sm:text-sm"
               >
                 Get In Touch
               </motion.button>
