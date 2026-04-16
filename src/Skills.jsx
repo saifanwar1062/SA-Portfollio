@@ -22,18 +22,15 @@ const Skills = () => {
     {
       category: 'Core React',
       icon: Code2,
-      color: 'blue',
       skills: [
         { name: 'React.js', level: 96, icon: '⚛️' },
         { name: 'Next.js', level: 92, icon: '▲' },
-        { name: 'JavaScript', level: 88, icon: '🔷' },
         { name: 'JavaScript', level: 96, icon: '⭐' },
       ]
     },
     {
       category: 'Styling & UI',
       icon: Palette,
-      color: 'sky',
       skills: [
         { name: 'Tailwind CSS', level: 98, icon: '🎨' },
         { name: 'CSS3 / SCSS', level: 95, icon: '💎' },
@@ -44,7 +41,6 @@ const Skills = () => {
     {
       category: 'Animation',
       icon: Zap,
-      color: 'blue',
       skills: [
         { name: 'Framer Motion', level: 90, icon: '🎬' },
         { name: 'GSAP', level: 78, icon: '🌀' },
@@ -55,7 +51,6 @@ const Skills = () => {
     {
       category: 'Tools & Deploy',
       icon: Cloud,
-      color: 'sky',
       skills: [
         { name: 'Git / GitHub', level: 95, icon: '🌿' },
         { name: 'Vite / Webpack', level: 88, icon: '⚡' },
@@ -78,9 +73,9 @@ const Skills = () => {
   const SkillOrb = ({ skill, index, categoryColor }) => (
     <div
       className="group relative aspect-square rounded-3xl p-6 flex flex-col items-center justify-center 
-                 bg-white border border-slate-200 shadow-md shadow-slate-200/50 hover:shadow-lg hover:shadow-indigo-100 
-                 hover:scale-110 hover:-rotate-3 hover:border-indigo-300 transition-all duration-500 
-                 cursor-pointer hover:bg-slate-50"
+                 bg-slate-900 border border-slate-800 shadow-md shadow-gold/5 hover:shadow-lg hover:shadow-gold/20 
+                 hover:scale-110 hover:-rotate-3 hover:border-gold/50 transition-all duration-500 
+                 cursor-pointer hover:bg-slate-800"
       onMouseEnter={() => setHoveredSkill(skill.name)}
       style={{
         '--rotate': `${index * 90}deg`,
@@ -88,7 +83,7 @@ const Skills = () => {
       }}
     >
       {/* Orb glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 
+      <div className="absolute inset-0 bg-gradient-to-r from-gold/5 to-silver/5 
                       rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all" />
 
       {/* Icon */}
@@ -97,7 +92,7 @@ const Skills = () => {
       </div>
 
       {/* Skill name */}
-      <div className="text-sm font-bold text-slate-800 text-center leading-tight z-10">
+      <div className="text-sm font-bold text-slate-200 text-center leading-tight z-10">
         {skill.name}
       </div>
 
@@ -116,8 +111,8 @@ const Skills = () => {
         />
         <defs>
           <linearGradient id={`grad-${skill.name}`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8b5cf6" />
-            <stop offset="100%" stopColor="#4f46e5" />
+            <stop offset="0%" stopColor="#FFD700" />
+            <stop offset="100%" stopColor="#D4AF37" />
           </linearGradient>
         </defs>
       </svg>
@@ -128,7 +123,7 @@ const Skills = () => {
           {[0, 90, 180, 270].map((deg, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-gradient-to-r from-indigo-400 to-violet-400 rounded-full animate-ping"
+              className="absolute w-2 h-2 bg-gradient-to-r from-gold to-silver rounded-full animate-ping"
               style={{
                 left: '50%',
                 top: '50%',
@@ -146,26 +141,26 @@ const Skills = () => {
     <section id="skills" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-20 left-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-silver/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-gold/5 to-silver/5 rounded-full blur-3xl animate-pulse" />
       </div>
 
       <div ref={containerRef} className="relative z-10">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-white rounded-3xl border border-slate-200 shadow-md shadow-slate-200/50">
-            <Code2 className="w-7 h-7 text-indigo-500" />
-            <span className="text-xl font-bold text-slate-800">Technical Mastery</span>
+          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5">
+            <Code2 className="w-7 h-7 text-gold" />
+            <span className="text-xl font-bold text-slate-200">Technical Mastery</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-slate-800 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight">
             React Frontend
             <br />
-            <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gold to-silver bg-clip-text text-transparent">
               Skills Showcase
             </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Specialised in React ecosystem — from pixel-perfect Tailwind styling to
             silky-smooth Framer Motion animations. Pure frontend excellence.
           </p>
@@ -176,15 +171,15 @@ const Skills = () => {
           {skillsData.map((category, idx) => (
             <div key={category.category} className="space-y-8">
               {/* Category Header */}
-              <div className="flex items-center gap-4 mb-8 p-6 bg-white shadow-sm rounded-2xl border border-slate-200 group hover:border-indigo-300 transition-all">
-                <div className="p-3 bg-indigo-50 rounded-xl">
-                  <category.icon className="w-7 h-7 text-indigo-500" />
+              <div className="flex items-center gap-4 mb-8 p-6 bg-slate-900 shadow-sm rounded-2xl border border-slate-800 group hover:border-gold/50 transition-all">
+                <div className="p-3 bg-gold/10 rounded-xl">
+                  <category.icon className="w-7 h-7 text-gold" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-black text-slate-800">{category.category}</h3>
-                  <div className="w-full bg-slate-100 rounded-full h-2 mt-2">
+                  <h3 className="text-2xl font-black text-slate-200">{category.category}</h3>
+                  <div className="w-full bg-slate-800 rounded-full h-2 mt-2">
                     <div
-                      className="bg-gradient-to-r from-indigo-500 to-violet-500 h-2 rounded-full transition-all duration-1000"
+                      className="bg-gradient-to-r from-gold to-silver h-2 rounded-full transition-all duration-1000"
                       style={{ width: `${80 + Math.sin(scrollProgress * Math.PI) * 10}%` }}
                     />
                   </div>
@@ -207,9 +202,9 @@ const Skills = () => {
         </div>
 
         {/* Live Proficiency Overview */}
-        <div className="bg-white rounded-3xl p-12 border border-slate-200 shadow-xl shadow-slate-200/50 
+        <div className="bg-slate-900 rounded-3xl p-12 border border-slate-800 shadow-xl shadow-gold/5 
                        text-center animate-fade-in-up">
-          <h3 className="text-3xl font-black text-slate-800 mb-6">
+          <h3 className="text-3xl font-black text-white mb-6">
             Overall Proficiency Matrix
           </h3>
           <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -219,14 +214,14 @@ const Skills = () => {
               { label: 'Animations', value: 88 },
             ].map((item, i) => (
               <div key={i} className="space-y-3">
-                <div className="text-4xl font-black bg-gradient-to-r from-indigo-600 to-violet-500 
+                <div className="text-4xl font-black bg-gradient-to-r from-gold to-silver 
                                bg-clip-text text-transparent">{item.value}%</div>
                 <div className="text-sm font-semibold text-slate-500 uppercase tracking-wide">
                   {item.label}
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-3">
+                <div className="w-full bg-slate-800 rounded-full h-3">
                   <div
-                    className="bg-gradient-to-r from-indigo-500 to-violet-500 h-3 rounded-full shadow-sm"
+                    className="bg-gradient-to-r from-gold to-silver h-3 rounded-full shadow-sm"
                     style={{ width: `${item.value}%` }}
                   />
                 </div>

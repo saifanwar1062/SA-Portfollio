@@ -125,26 +125,26 @@ const Experience = () => {
     <section id="experience" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-violet-500/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-1/2 w-96 h-96 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-full blur-3xl animate-pulse mx-auto left-1/2 -translate-x-1/2" />
+        <div className="absolute top-1/4 left-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-silver/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 w-96 h-96 bg-gradient-to-r from-gold/5 to-silver/5 rounded-full blur-3xl mx-auto left-1/2 -translate-x-1/2" />
       </div>
 
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center mb-24 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-white rounded-3xl border border-slate-200 shadow-sm mx-auto max-w-max">
-            <Briefcase className="w-7 h-7 text-indigo-500" />
-            <span className="text-xl font-bold text-slate-800">Professional Journey</span>
+          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-slate-900 rounded-3xl border border-slate-800 shadow-lg shadow-black/50 mx-auto max-w-max">
+            <Briefcase className="w-7 h-7 text-gold" />
+            <span className="text-xl font-bold text-slate-200">Professional Journey</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-slate-800 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight">
             Experience &
             <br />
-            <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gold via-silver to-gold bg-clip-text text-transparent">
               Live React Projects
             </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             From internships to enterprise solutions - delivering results that matter.
           </p>
         </div>
@@ -152,8 +152,8 @@ const Experience = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-20">
           {/* Experience Timeline */}
           <div ref={timelineRef}>
-            <h3 className="text-3xl font-black text-slate-800 mb-12 flex items-center gap-4 justify-center">
-              <Calendar className="w-10 h-10 text-indigo-500" />
+            <h3 className="text-3xl font-black text-white mb-12 flex items-center gap-4 justify-center">
+              <Calendar className="w-10 h-10 text-gold" />
               Work Experience
             </h3>
 
@@ -164,38 +164,38 @@ const Experience = () => {
                 return (
                   <div
                     key={index}
-                    className={`group relative p-8 lg:p-10 bg-white rounded-3xl border border-slate-200 shadow-md shadow-slate-200/50 hover:shadow-indigo-100 hover:border-indigo-300 hover:scale-105 hover:-translate-y-2 transition-all duration-700 cursor-pointer ${isActive ? 
-                               'border-indigo-400 shadow-indigo-100 ring-4 ring-indigo-50' : ''}`}
+                    className={`group relative p-8 lg:p-10 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl shadow-black/50 hover:shadow-gold/10 hover:border-gold/30 hover:scale-105 hover:-translate-y-2 transition-all duration-700 cursor-pointer ${isActive ? 
+                               'border-gold-dark/50 shadow-gold/5 ring-4 ring-gold/5' : ''}`}
                     onClick={() => setActiveTimeline(index)}
                   >
                     {/* Magnetic glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity ${isActive ? 'opacity-100' : ''} -z-10`} />
+                    <div className={`absolute inset-0 bg-gradient-to-r from-gold/5 to-silver/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity ${isActive ? 'opacity-100' : ''} -z-10`} />
                     
                     {/* Icon */}
-                    <div className="flex items-center justify-center w-20 h-20 bg-indigo-50 rounded-2xl mb-6 mx-auto shadow-sm group-hover:scale-110 group-hover:bg-indigo-100 transition-all">
+                    <div className="flex items-center justify-center w-20 h-20 bg-slate-800 rounded-2xl mb-6 mx-auto shadow-sm group-hover:scale-110 group-hover:bg-slate-700 transition-all border border-slate-700/50">
                       <span className="text-3xl">{exp.icon}</span>
                     </div>
 
                     {/* Content */}
                     <div className="text-center">
-                      <h4 className="text-2xl lg:text-3xl font-black text-slate-800 mb-3">
+                      <h4 className="text-2xl lg:text-3xl font-black text-white mb-3">
                         {exp.title}
                       </h4>
-                      <div className="flex items-center justify-center gap-2 mb-4 text-indigo-600">
-                        <div className="w-3 h-3 bg-indigo-500 rounded-full animate-pulse" />
+                      <div className="flex items-center justify-center gap-2 mb-4 text-gold">
+                        <div className="w-3 h-3 bg-gold-dark rounded-full animate-pulse" />
                         <span className="font-bold">{exp.company}</span>
                         <span className="text-slate-500">• {exp.duration}</span>
                       </div>
                       
-                      <p className="text-slate-600 leading-relaxed mb-6">{exp.description}</p>
+                      <p className="text-slate-400 leading-relaxed mb-6">{exp.description}</p>
 
                       {/* Achievements */}
                       {isActive && (
-                        <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-100">
+                        <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-800">
                           {exp.achievements.map((ach, i) => (
-                            <div key={i} className="group flex items-center gap-2 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all border border-slate-100">
-                              <Star className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                              <span className="text-sm text-slate-700 font-medium">{ach}</span>
+                            <div key={i} className="group flex items-center gap-2 p-3 bg-slate-800 rounded-xl hover:bg-slate-700 transition-all border border-slate-700/50">
+                              <Star className="w-4 h-4 text-gold flex-shrink-0" />
+                              <span className="text-sm text-slate-300 font-medium">{ach}</span>
                             </div>
                           ))}
                         </div>
@@ -204,9 +204,9 @@ const Experience = () => {
 
                     {/* Active indicator */}
                     {isActive && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-500 px-6 py-2 rounded-2xl shadow-md">
-                        <Zap className="w-4 h-4 text-white" />
-                        <span className="text-white font-bold text-sm uppercase tracking-wide">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-gradient-to-r from-gold-dark to-gold px-6 py-2 rounded-2xl shadow-lg">
+                        <Zap className="w-4 h-4 text-black" />
+                        <span className="text-black font-bold text-sm uppercase tracking-wide">
                           Featured Experience
                         </span>
                       </div>
@@ -221,31 +221,31 @@ const Experience = () => {
 
           {/* Projects Showcase */}
           <div>
-            <h3 className="text-3xl font-black text-slate-800 mb-12 flex items-center gap-4 justify-center">
-              <Rocket className="w-10 h-10 text-indigo-500" />
+            <h3 className="text-3xl font-black text-white mb-12 flex items-center gap-4 justify-center">
+              <Rocket className="w-10 h-10 text-gold" />
               Featured Projects
             </h3>
 
             {/* Project Cards */}
-            <div className="space-y-6 max-h-[800px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-indigo-200 scrollbar-track-transparent">
+            <div className="space-y-6 max-h-[800px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gold/20 scrollbar-track-transparent">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-3xl p-6 border border-slate-200 shadow-md shadow-slate-200/50 hover:shadow-indigo-100 hover:border-indigo-300 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer"
+                  className="group relative bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-2xl shadow-black/50 hover:shadow-gold/10 hover:border-gold/30 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Glow overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold/5 to-silver/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
                   
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h4 className="text-xl font-black text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
+                      <h4 className="text-xl font-black text-white mb-1 group-hover:text-gold transition-colors">
                         {project.title}
                       </h4>
                       <div className="flex flex-wrap gap-2 mb-3">
                         {project.tech.map((tech, i) => (
-                          <span key={i} className="px-2.5 py-0.5 bg-indigo-50 rounded-lg text-indigo-600 border border-indigo-100 text-xs font-medium">
+                          <span key={i} className="px-2.5 py-0.5 bg-gold/10 rounded-lg text-gold border border-gold/20 text-xs font-medium">
                             {tech}
                           </span>
                         ))}
@@ -253,20 +253,20 @@ const Experience = () => {
                     </div>
                     <div className="flex gap-2 ml-auto">
                       <a href={project.link} target="_blank" rel="noopener noreferrer"
-                         className="p-2 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100 transition-all">
-                        <ExternalLink className="w-4 h-4 text-slate-500" />
+                         className="p-2 bg-slate-800 border border-slate-700 rounded-xl hover:bg-slate-700 transition-all">
+                        <ExternalLink className="w-4 h-4 text-slate-400" />
                       </a>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-600 leading-relaxed mb-4 text-sm">
+                  <p className="text-slate-400 leading-relaxed mb-4 text-sm">
                     {project.description}
                   </p>
 
                   {/* Stats + live badge */}
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <span className="text-indigo-600 font-semibold text-xs uppercase tracking-wide">
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-800">
+                    <span className="text-gold font-semibold text-xs uppercase tracking-wide">
                       {project.stats}
                     </span>
                     <div className="flex items-center gap-1.5">

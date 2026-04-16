@@ -204,61 +204,54 @@ const Hero = () => {
   const heroTilt = useTilt3D({ max: 4, scale: 1.02 });
 
   const colorClasses = {
-    purple: {
-      border: "border-indigo-200 hover:border-indigo-300",
-      bg: "bg-indigo-50",
-      text: "text-indigo-600",
-      gradient: "from-indigo-400",
-      glow: "shadow-indigo-100",
+    gold: {
+      border: "border-gold/30 hover:border-gold/50",
+      bg: "bg-gold/10",
+      text: "text-gold",
+      gradient: "from-gold-dark",
+      glow: "shadow-gold/20",
     },
-    violet: {
-      border: "border-violet-200 hover:border-violet-300",
-      bg: "bg-violet-50",
-      text: "text-violet-600",
-      gradient: "from-violet-400",
-      glow: "shadow-violet-100",
+    silver: {
+      border: "border-silver/30 hover:border-silver/50",
+      bg: "bg-silver/10",
+      text: "text-silver",
+      gradient: "from-silver-dark",
+      glow: "shadow-silver/20",
     },
-    fuchsia: {
-      border: "border-fuchsia-200 hover:border-fuchsia-300",
-      bg: "bg-fuchsia-50",
-      text: "text-fuchsia-600",
-      gradient: "from-fuchsia-400",
-      glow: "shadow-fuchsia-100",
-    },
-    purple2: {
-      border: "border-indigo-200 hover:border-indigo-300",
-      bg: "bg-indigo-50",
-      text: "text-indigo-600",
-      gradient: "from-indigo-400",
-      glow: "shadow-indigo-100",
+    accent: {
+      border: "border-gold-light/30 hover:border-gold-light/50",
+      bg: "bg-gold-light/10",
+      text: "text-gold-light",
+      gradient: "from-gold",
+      glow: "shadow-gold-light/20",
     },
     sky: {
-      border: "border-sky-200 hover:border-sky-300",
-      bg: "bg-sky-50",
-      text: "text-sky-600",
-      gradient: "from-sky-400",
-      glow: "shadow-sky-100",
+      border: "border-silver/30 hover:border-silver/50",
+      bg: "bg-silver/10",
+      text: "text-silver",
+      gradient: "from-silver-dark",
+      glow: "shadow-silver/20",
     },
     blue: {
-      border: "border-blue-200 hover:border-blue-300",
-      bg: "bg-blue-50",
-      text: "text-blue-600",
-      gradient: "from-blue-400",
-      glow: "shadow-blue-100",
+      border: "border-gold-dark/30 hover:border-gold-dark/50",
+      bg: "bg-gold-dark/10",
+      text: "text-gold-dark",
+      gradient: "from-gold",
+      glow: "shadow-gold/20",
     },
     cyan: {
-      border: "border-cyan-200 hover:border-cyan-300",
-      bg: "bg-cyan-50",
-      text: "text-cyan-600",
-      gradient: "from-cyan-400",
-      glow: "shadow-cyan-100",
+      border: "border-gold-light/30 hover:border-gold-light/50",
+      bg: "bg-gold-light/10",
+      text: "text-gold-light",
+      gradient: "from-gold",
+      glow: "shadow-gold-light/20",
     },
     indigo: {
-      border: "border-indigo-200 hover:border-indigo-300",
-      bg: "bg-indigo-50",
-      text: "text-indigo-600",
-      gradient: "from-indigo-400",
-      glow: "shadow-indigo-100",
+      border: "border-gold/30 hover:border-gold/50",
+      bg: "bg-gold/10",
+      text: "text-gold",
+      gradient: "from-gold-dark",
+      glow: "shadow-gold/20",
     },
   };
 
@@ -279,7 +272,7 @@ const Hero = () => {
           delay: index * 0.2,
           ease: "easeInOut",
         }}
-        className={`absolute rounded-full bg-gradient-to-r from-indigo-400/40 to-violet-400/40 ${type === "large" ? "w-2 h-2" : "w-1 h-1"}`}
+        className={`absolute rounded-full bg-gradient-to-r from-gold/40 to-silver/40 ${type === "large" ? "w-2 h-2" : "w-1 h-1"}`}
       />
     );
   };
@@ -295,12 +288,12 @@ const Hero = () => {
       {/* Background with imported assets */}
       <div className="fixed inset-0 z-0 overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0">
-          <div className="absolute inset-0 bg-slate-50" />
+          <div className="absolute inset-0 bg-slate-950" />
         </motion.div>
 
 
 
-        <div className="absolute inset-0 bg-white/70" />
+        <div className="absolute inset-0 bg-black/40" />
 
 
 
@@ -325,11 +318,11 @@ const Hero = () => {
                 className={`opacity-10 ${size === "sm" ? "w-16 h-16 md:w-20 md:h-20" : size === "md" ? "w-12 h-12 md:w-16 md:h-16" : "w-20 h-20 md:w-24 md:h-24"}`}
               >
                 {size === "sm" ? (
-                  <Code2 className="w-full h-full text-indigo-300" />
+                  <Code2 className="w-full h-full text-gold/30" />
                 ) : size === "md" ? (
-                  <Server className="w-full h-full text-violet-300" />
+                  <Server className="w-full h-full text-silver/30" />
                 ) : (
-                  <Database className="w-full h-full text-fuchsia-300" />
+                  <Database className="w-full h-full text-gold-dark/30" />
                 )}
               </motion.div>
             </div>
@@ -371,14 +364,14 @@ const Hero = () => {
           {/* Left column - Content (Shows first on all screens) */}
           <div className="order-1">
             <motion.div variants={fadeInUp} className="mb-6 md:mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                 >
-                  <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-indigo-500" />
+                  <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
                 </motion.div>
-                <span className="text-sm md:text-base font-medium text-indigo-700">
+                <span className="text-sm md:text-base font-medium text-gold-light">
                   Available for Opportunities
                 </span>
               </div>
@@ -386,11 +379,11 @@ const Hero = () => {
 
             <motion.div variants={slideInLeft}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-                <span className="block text-slate-800">Hi, I'm</span>
-                <span className="block bg-gradient-to-r from-indigo-600 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+                <span className="block text-white">Hi, I'm</span>
+                <span className="block bg-gradient-to-r from-gold via-silver to-gold-dark bg-clip-text text-transparent">
                   {typedName}
                   <motion.span
-                    className="inline-block w-0.5 h-8 md:h-12 ml-1 bg-indigo-500"
+                    className="inline-block w-0.5 h-8 md:h-12 ml-1 bg-gold"
                     animate={{ opacity: [1, 0.3, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                   />
@@ -399,14 +392,14 @@ const Hero = () => {
 
               <div className="mb-6 md:mb-8">
                 <motion.h2
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-slate-800 mb-3 md:mb-4 leading-relaxed"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-slate-200 mb-3 md:mb-4 leading-relaxed"
                   variants={fadeInUp}
                 >
                   Frontend React.js Developer &<br className="hidden sm:block" /> UI Craftsman
                 </motion.h2>
 
                 <motion.p
-                  className="text-base sm:text-lg text-slate-500 leading-relaxed"
+                  className="text-base sm:text-lg text-slate-400 leading-relaxed"
                   variants={fadeInUp}
                 >
                   I craft pixel-perfect, high-performance React applications with stunning UI/UX.
@@ -431,22 +424,22 @@ const Hero = () => {
                   whileHover={{ y: -4, scale: 1.03 }}
                   onHoverStart={() => setHoveredCard(`stat-${i}`)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className="p-3 sm:p-4 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 shadow-md shadow-indigo-100/50 transition-all duration-300"
+                  className="p-3 sm:p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-gold/50 shadow-md shadow-gold/5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <stat.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-indigo-500" />
+                    <stat.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
                     <motion.div
                       animate={{
                         scale: hoveredCard === `stat-${i}` ? [1, 1.1, 1] : 1,
                       }}
                       transition={{ duration: 0.4 }}
-                      className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800"
+                      className="text-xl sm:text-2xl md:text-3xl font-bold text-white"
                     >
                       {stat.value}
-                      <span className="text-indigo-500">{stat.suffix}</span>
+                      <span className="text-gold">{stat.suffix}</span>
                     </motion.div>
                   </div>
-                  <div className="text-xs sm:text-sm text-slate-500 font-medium">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-slate-400 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -460,7 +453,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("projects")}
-                className="group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 shadow-md shadow-indigo-200"
+                className="group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-xl overflow-hidden transition-all duration-300 shadow-md shadow-gold/20"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 text-sm sm:text-base">
                   View My Work
@@ -469,7 +462,7 @@ const Hero = () => {
                   </motion.div>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-violet-500 to-indigo-600"
+                  className="absolute inset-0 bg-gradient-to-r from-silver to-gold"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.4 }}
@@ -480,7 +473,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("contact")}
-                className="px-6 sm:px-8 py-3 bg-white border border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-300 shadow-sm transition-all duration-300 text-sm sm:text-base"
+                className="px-6 sm:px-8 py-3 bg-slate-900 border border-slate-700 text-white font-semibold rounded-xl hover:bg-slate-800 hover:border-gold/30 shadow-sm transition-all duration-300 text-sm sm:text-base"
               >
                 Get In Touch
               </motion.button>
@@ -491,10 +484,10 @@ const Hero = () => {
           <div className="order-2 lg:order-2 relative mt-8 lg:mt-0">
             <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px]">
               {[
-                { icon: Cpu, label: "React / Next.js", color: "sky", position: "top-0 left-4 sm:left-8 md:left-1/4", rotation: -6, content: "React 18, Next.js 14, Vite" },
-                { icon: Layers, label: "Styling", color: "blue", position: "top-1/3 right-4 sm:right-8 md:right-0", rotation: 4, content: "Tailwind CSS, CSS Modules" },
-                { icon: Zap, label: "Animations", color: "cyan", position: "bottom-1/3 left-4 sm:left-8 md:left-0", rotation: -3, content: "Framer Motion, GSAP" },
-                { icon: GitBranch, label: "Tooling", color: "indigo", position: "bottom-0 right-4 sm:right-8 md:right-1/4", rotation: 5, content: "Git, Vercel, Figma" },
+                { icon: Cpu, label: "React / Next.js", color: "gold", position: "top-0 left-4 sm:left-8 md:left-1/4", rotation: -6, content: "React 18, Next.js 14, Vite" },
+                { icon: Layers, label: "Styling", color: "silver", position: "top-1/3 right-4 sm:right-8 md:right-0", rotation: 4, content: "Tailwind CSS, CSS Modules" },
+                { icon: Zap, label: "Animations", color: "accent", position: "bottom-1/3 left-4 sm:left-8 md:left-0", rotation: -3, content: "Framer Motion, GSAP" },
+                { icon: GitBranch, label: "Tooling", color: "gold", position: "bottom-0 right-4 sm:right-8 md:right-1/4", rotation: 5, content: "Git, Vercel, Figma" },
               ].map((tech, i) => {
                 const colorClass = colorClasses[tech.color];
                 return (
@@ -508,7 +501,7 @@ const Hero = () => {
                     transition={{ duration: 3.5, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
                     onHoverStart={() => setHoveredCard(`tech-${i}`)}
                     onHoverEnd={() => setHoveredCard(null)}
-                    className={`absolute ${tech.position} w-40 sm:w-44 md:w-48 lg:w-52 xl:w-56 p-4 sm:p-5 md:p-6 rounded-2xl bg-white backdrop-blur-xl ${colorClass.border} transition-all duration-300 cursor-pointer shadow-xl border ${colorClass.glow}`}
+                    className={`absolute ${tech.position} w-40 sm:w-44 md:w-48 lg:w-52 xl:w-56 p-4 sm:p-5 md:p-6 rounded-2xl bg-slate-900/80 backdrop-blur-xl ${colorClass.border} transition-all duration-300 cursor-pointer shadow-xl border ${colorClass.glow}`}
                   >
                     <div className="flex items-start gap-3 sm:gap-4">
                       <motion.div
@@ -552,17 +545,17 @@ const Hero = () => {
                 { icon: Brain, label: "Framer Motion", color: "sky" },
 
               ].map((tech, i) => {
-                const colorClass = colorClasses[tech.color] || colorClasses.sky;
+                const colorClass = colorClasses[tech.color] || colorClasses.gold;
                 return (
                   <motion.div
                     key={tech.label}
                     variants={fadeInUp}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-white border ${colorClass.border} shadow-sm transition-all duration-200`}
+                    className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-slate-900 border ${colorClass.border} shadow-sm transition-all duration-200`}
                   >
                     <tech.icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${colorClass.text}`} />
-                    <span className="text-xs sm:text-sm font-medium text-slate-700 whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-medium text-slate-300 whitespace-nowrap">
                       {tech.label}
                     </span>
                   </motion.div>
@@ -583,7 +576,7 @@ const Hero = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => scrollToSection("about")}
-            className="flex flex-col items-center gap-2 text-blue-300 hover:text-blue-100 transition-colors group"
+            className="flex flex-col items-center gap-2 text-gold/60 hover:text-gold transition-colors group"
             aria-label="Scroll to next section"
           >
             <motion.span
@@ -611,14 +604,14 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, ease: "easeOut" }}
         onClick={() => scrollToSection("about")}
-        className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 lg:hidden p-2.5 sm:p-3 rounded-full bg-blue-950/80 backdrop-blur-xl border border-blue-400/30 shadow-lg"
+        className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 lg:hidden p-2.5 sm:p-3 rounded-full bg-slate-900/80 backdrop-blur-xl border border-gold/30 shadow-lg"
         aria-label="Scroll down"
       >
         <motion.div
           animate={{ y: [0, 4, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300" />
+          <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
         </motion.div>
       </motion.button>
     </section>

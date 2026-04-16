@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   Calendar,
   Target,
-  Award,
+  Zap,
   Brain,
   Rocket,
   Sparkles,
@@ -17,7 +17,6 @@ import {
   Cpu,
   Database,
   Shield,
-  Zap,
   Code2,
   TrendingUp,
   ChevronRight,
@@ -190,7 +189,6 @@ const About = () => {
       { name: "Framer Motion", level: 90, icon: Sparkles, description: "Gestures & transitions" },
       { name: "CSS Animations", level: 95, icon: Palette, description: "Keyframes & transitions" },
       { name: "GSAP", level: 80, icon: Zap, description: "Advanced timelines" },
-      { name: "Three.js", level: 72, icon: Brain, description: "3D web graphics" },
     ],
     tooling: [
       { name: "Git / GitHub", level: 95, icon: GitBranch, description: "Version control" },
@@ -254,7 +252,7 @@ const About = () => {
       <div className="fixed inset-0 z-0 overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0">
           {/* Gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
+          <div className="absolute inset-0 bg-slate-950" />
 
           {/* Animated gradient circles */}
           <motion.div
@@ -263,7 +261,7 @@ const About = () => {
               opacity: [0.1, 0.3, 0.1],
             }}
             transition={{ duration: 8, repeat: Infinity }}
-            className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-indigo-500/10 to-violet-500/10 blur-3xl"
+            className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-gold/5 to-silver/5 blur-3xl"
           />
           <motion.div
             animate={{
@@ -271,15 +269,15 @@ const About = () => {
               opacity: [0.1, 0.4, 0.1],
             }}
             transition={{ duration: 10, repeat: Infinity, delay: 1 }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-violet-500/10 to-indigo-500/10 blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-silver/5 to-gold/5 blur-3xl"
           />
         </motion.div>
 
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px),
-                             linear-gradient(0deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+                             linear-gradient(0deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px)`,
             backgroundSize: '50px 50px',
           }} />
         </div>
@@ -302,7 +300,7 @@ const About = () => {
                 delay: i * 0.3,
                 ease: "easeInOut"
               }}
-              className="absolute w-1 h-1 rounded-full bg-gradient-to-r from-indigo-400/40 to-violet-400/40"
+              className="absolute w-1 h-1 rounded-full bg-gradient-to-r from-gold/20 to-silver/20"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -322,29 +320,29 @@ const About = () => {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-indigo-50 backdrop-blur-xl rounded-2xl border border-indigo-100 shadow-sm"
+            className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-slate-900 backdrop-blur-xl rounded-2xl border border-gold/10 shadow-lg shadow-black/50"
           >
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
-              <Sparkles className="w-5 h-5 text-indigo-500" />
+              <Sparkles className="w-5 h-5 text-gold" />
             </motion.div>
-            <span className="text-lg font-semibold text-indigo-700">
+            <span className="text-lg font-semibold text-slate-200">
               About Md. Saif Anwar
             </span>
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
-            <span className="block text-slate-800">Frontend</span>
-            <span className="block bg-gradient-to-r from-indigo-600 via-violet-500 to-indigo-600 bg-clip-text text-transparent">
+            <span className="block text-white">Frontend</span>
+            <span className="block bg-gradient-to-r from-gold via-silver to-gold bg-clip-text text-transparent">
               React Developer
             </span>
           </h1>
 
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
             Building pixel-perfect React experiences from{' '}
-            <span className="text-indigo-600 font-semibold">New Delhi, India</span>.
+            <span className="text-gold font-semibold">New Delhi, India</span>.
             Turning complex designs into lightning-fast, responsive, and beautiful web applications.
           </p>
 
@@ -353,7 +351,7 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-semibold rounded-xl shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all flex items-center gap-3"
+              className="px-8 py-3 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-xl shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-3"
             >
               <Download className="w-5 h-5" />
               Download Resume
@@ -361,7 +359,7 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-white border border-slate-200 text-slate-700 font-semibold rounded-xl shadow-sm hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center gap-3"
+              className="px-8 py-3 bg-slate-900 border border-slate-800 text-slate-100 font-semibold rounded-xl shadow-lg hover:bg-slate-800 hover:border-gold/30 transition-all flex items-center gap-3"
             >
               <ExternalLink className="w-5 h-5" />
               View GitHub
@@ -385,20 +383,20 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -8, scale: 1.05 }}
-                className="group relative bg-white rounded-2xl p-6 border border-slate-200 shadow-md shadow-indigo-100/50 hover:border-indigo-300 transition-all duration-300"
+                className="group relative bg-slate-900 rounded-2xl p-6 border border-slate-800 shadow-xl shadow-black/50 hover:border-gold/30 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="p-3 rounded-xl bg-indigo-50"
+                    className="p-3 rounded-xl bg-gold/5"
                   >
-                    <Icon className="w-6 h-6 text-indigo-500" />
+                    <Icon className="w-6 h-6 text-gold" />
                   </motion.div>
                   <div>
-                    <div className="text-3xl font-black text-slate-800 mb-1">
+                    <div className="text-3xl font-black text-white mb-1">
                       {stat.value}
-                      <span className="text-indigo-500">{stat.suffix}</span>
+                      <span className="text-gold">{stat.suffix}</span>
                     </div>
                     <div className="text-sm font-medium text-slate-500">{stat.label}</div>
                     <div className="text-xs text-slate-400 mt-1">{stat.description}</div>
@@ -418,11 +416,11 @@ const About = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden"
+              className="group relative bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-2xl shadow-black/50 overflow-hidden"
             >
               {/* Animated gradient border */}
-              <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-indigo-500 via-violet-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="h-full w-full bg-white rounded-3xl" />
+              <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-gold-dark via-gold to-gold-dark opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="h-full w-full bg-slate-900 rounded-3xl" />
               </div>
 
               <div className="relative">
@@ -431,33 +429,33 @@ const About = () => {
                     <motion.div
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                      className="w-40 h-40 rounded-2xl bg-gradient-to-br from-indigo-500/30 to-violet-500/30 p-1"
+                      className="w-40 h-40 rounded-2xl bg-gradient-to-br from-gold/30 to-silver/30 p-1"
                     >
-                      <div className="w-full h-full rounded-2xl bg-indigo-50 flex items-center justify-center">
-                        <Brain className="w-20 h-20 text-indigo-500" />
+                      <div className="w-full h-full rounded-2xl bg-slate-800 flex items-center justify-center">
+                        <Brain className="w-20 h-20 text-gold" />
                       </div>
                     </motion.div>
                     <motion.div
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50"
+                      className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-gold-dark to-gold rounded-xl flex items-center justify-center shadow-lg shadow-gold/50"
                     >
-                      <Code2 className="w-6 h-6 text-white" />
+                      <Code2 className="w-6 h-6 text-black" />
                     </motion.div>
                   </div>
 
 
                   <div className="flex-1">
-                    <h2 className="text-3xl font-black text-slate-800 mb-3">
+                    <h2 className="text-3xl font-black text-white mb-3">
                       Md. Saif Anwar
                     </h2>
-                    <div className="flex items-center gap-2 text-indigo-500 mb-2">
+                    <div className="flex items-center gap-2 text-gold mb-2">
                       <MapPin className="w-5 h-5" />
-                      <span className="font-medium">New Delhi, India</span>
+                      <span className="font-medium text-slate-300">New Delhi, India</span>
                     </div>
-                    <div className="text-sm font-semibold text-violet-500 mb-6">Frontend React.js Developer</div>
+                    <div className="text-sm font-semibold text-silver mb-6">Frontend React.js Developer</div>
 
-                    <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                    <p className="text-lg text-slate-400 leading-relaxed mb-8">
                       Dedicated Frontend React.js Developer with 3+ years of hands-on experience building
                       pixel-perfect, high-performance web applications. Passionate about React, Next.js,
                       Tailwind CSS and bringing stunning UI/UX designs to life.
@@ -467,8 +465,8 @@ const About = () => {
                       {["React Expert", "Next.js", "Tailwind CSS", "Framer Motion", "Figma"].map((tag, i) => (
                         <motion.span
                           key={i}
-                          whileHover={{ scale: 1.1 }}
-                          className="px-4 py-2 bg-indigo-50 rounded-full text-sm font-medium text-indigo-600 border border-indigo-200 hover:bg-indigo-100 transition-all shadow-sm"
+                          whileHover={{ scale: 1.1, backgroundColor: 'rgba(212, 175, 55, 0.2)' }}
+                          className="px-4 py-2 bg-gold/5 rounded-full text-sm font-medium text-gold border border-gold/20 hover:border-gold/50 transition-all shadow-sm"
                         >
                           #{tag}
                         </motion.span>
@@ -479,23 +477,23 @@ const About = () => {
                 </div>
 
                 {/* Current Focus */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-slate-200">
-                  <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl shadow-sm">
-                    <div className="p-3 bg-indigo-100 rounded-lg">
-                      <Code2 className="w-6 h-6 text-indigo-600" />
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <div className="flex-1 flex items-center gap-4 p-4 bg-slate-800/50 border border-slate-700/50 rounded-xl shadow-lg">
+                    <div className="p-3 bg-gold/10 rounded-lg">
+                      <Code2 className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800">React & Next.js</h4>
-                      <p className="text-sm text-slate-500">Production-ready frontends</p>
+                      <h4 className="font-bold text-white">React & Next.js</h4>
+                      <p className="text-sm text-slate-400">Production-ready frontends</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl shadow-sm">
-                    <div className="p-3 bg-violet-100 rounded-lg">
-                      <Sparkles className="w-6 h-6 text-violet-600" />
+                  <div className="flex-1 flex items-center gap-4 p-4 bg-slate-800/50 border border-slate-700/50 rounded-xl shadow-lg">
+                    <div className="p-3 bg-silver/10 rounded-lg">
+                      <Sparkles className="w-6 h-6 text-silver" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800">UI / Animations</h4>
-                      <p className="text-sm text-slate-500">Framer Motion & Tailwind</p>
+                      <h4 className="font-bold text-white">UI / Animations</h4>
+                      <p className="text-sm text-slate-400">Framer Motion & Tailwind</p>
                     </div>
                   </div>
                 </div>
@@ -523,9 +521,9 @@ const About = () => {
                     onClick={() => setActiveTab(tab.id)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-sm ${isActive
-                        ? 'bg-gradient-to-r from-indigo-600 to-violet-500 text-white shadow-indigo-200'
-                        : 'bg-white border text-slate-600 border-slate-200 hover:bg-slate-50'
+                    className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-xl ${isActive
+                      ? 'bg-gradient-to-r from-gold-dark to-gold text-black shadow-gold/20'
+                      : 'bg-slate-900 border text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-gold hover:border-gold/30'
                       }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -546,7 +544,7 @@ const About = () => {
                   className="relative"
                 >
                   {/* Timeline Line */}
-                  <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-200 via-violet-200 to-transparent" />
+                  <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gold/20 via-silver/20 to-transparent" />
 
                   {journey.map((item, i) => {
                     const Icon = item.icon;
@@ -564,7 +562,7 @@ const About = () => {
                         <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 z-10">
                           <motion.div
                             whileHover={{ scale: 1.1 }}
-                            className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg bg-white border-4 border-slate-50"
+                            className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl bg-slate-900 border-4 border-slate-800"
                             style={{
                               borderColor: item.color
                             }}
@@ -577,16 +575,16 @@ const About = () => {
                         <div className={`ml-24 md:ml-0 md:w-5/12 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                           <motion.div
                             whileHover={{ y: -5 }}
-                            className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 shadow-md shadow-slate-200/50 transition-all"
+                            className="bg-slate-900 rounded-2xl p-6 border border-slate-800 hover:border-gold/30 shadow-2xl shadow-black/50 transition-all"
                           >
-                            <div className="text-2xl font-black text-slate-800 mb-2">{item.year}</div>
-                            <h4 className="text-xl font-bold text-indigo-600 mb-3">{item.title}</h4>
-                            <p className="text-slate-600 mb-4">{item.description}</p>
+                            <div className="text-2xl font-black text-white mb-2">{item.year}</div>
+                            <h4 className="text-xl font-bold text-gold mb-3">{item.title}</h4>
+                            <p className="text-slate-400 mb-4">{item.description}</p>
                             <div className="flex flex-wrap gap-2">
                               {item.tags.map((tag, tagIndex) => (
                                 <span
                                   key={tagIndex}
-                                  className="px-3 py-1 text-xs font-medium rounded-full bg-slate-50 text-slate-600 border border-slate-200"
+                                  className="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-slate-300 border border-slate-700"
                                 >
                                   {tag}
                                 </span>
@@ -612,9 +610,9 @@ const About = () => {
                     <motion.div
                       key={category}
                       whileHover={{ y: -5 }}
-                      className="bg-white rounded-3xl p-8 border border-slate-200 hover:border-indigo-300 shadow-md transition-all"
+                      className="bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-gold/30 shadow-2xl transition-all"
                     >
-                      <h3 className="text-2xl font-black text-slate-800 mb-8 capitalize">
+                      <h3 className="text-2xl font-black text-white mb-8 capitalize">
                         {category}
                       </h3>
 
@@ -631,24 +629,24 @@ const About = () => {
                             >
                               <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-3">
-                                  <div className="p-2 bg-indigo-50 rounded-lg group-hover:scale-110 transition-transform">
-                                    <Icon className="w-5 h-5 text-indigo-500" />
+                                  <div className="p-2 bg-gold/5 rounded-lg group-hover:scale-110 transition-transform">
+                                    <Icon className="w-5 h-5 text-gold" />
                                   </div>
-                                  <span className="font-semibold text-slate-700">
+                                  <span className="font-semibold text-slate-200">
                                     {skill.name}
                                   </span>
                                 </div>
-                                <span className="text-indigo-600 font-mono font-medium">
+                                <span className="text-gold font-mono font-medium">
                                   {skill.level}%
                                 </span>
                               </div>
 
-                              <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                              <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${skill.level}%` }}
                                   transition={{ duration: 1, delay: i * 0.1 }}
-                                  className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full"
+                                  className="h-full bg-gradient-to-r from-gold-dark to-gold rounded-full"
                                 />
                               </div>
                               <p className="text-xs text-slate-500 mt-1">{skill.description}</p>
@@ -675,15 +673,15 @@ const About = () => {
                       <motion.div
                         key={i}
                         whileHover={{ y: -5 }}
-                        className="bg-white rounded-3xl p-8 border border-slate-200 hover:border-indigo-300 shadow-md transition-all group"
+                        className="bg-slate-900 rounded-3xl p-8 border border-slate-800 hover:border-gold/30 shadow-2xl transition-all group"
                       >
                         <div className="flex items-start gap-4 mb-6">
-                          <div className="p-4 bg-indigo-50 rounded-2xl group-hover:scale-110 transition-transform">
-                            <Icon className="w-8 h-8 text-indigo-500" />
+                          <div className="p-4 bg-gold/5 rounded-2xl group-hover:scale-110 transition-transform">
+                            <Icon className="w-8 h-8 text-gold" />
                           </div>
                           <div>
-                            <h4 className="text-2xl font-black text-slate-800 mb-2">{item.title}</h4>
-                            <p className="text-slate-600">{item.description}</p>
+                            <h4 className="text-2xl font-black text-white mb-2">{item.title}</h4>
+                            <p className="text-slate-400">{item.description}</p>
                           </div>
                         </div>
 
@@ -692,7 +690,7 @@ const About = () => {
                             <motion.span
                               key={j}
                               whileHover={{ scale: 1.05 }}
-                              className="px-4 py-2 bg-slate-50 text-slate-600 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors"
+                              className="px-4 py-2 bg-slate-800 text-slate-300 rounded-full text-sm font-medium border border-slate-700 hover:bg-slate-700 transition-colors"
                             >
                               {principle}
                             </motion.span>
@@ -712,10 +710,10 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50"
+              className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-2xl shadow-black/50"
             >
-              <h3 className="text-2xl font-black text-slate-800 mb-8 flex items-center gap-3">
-                <Coffee className="w-6 h-6 text-indigo-500" />
+              <h3 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+                <Coffee className="w-6 h-6 text-gold" />
                 Beyond Code
               </h3>
 
@@ -727,7 +725,7 @@ const About = () => {
                       key={i}
                       whileHover={{ scale: 1.05, y: -3 }}
                       whileTap={{ scale: 0.95 }}
-                      className="group relative p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-indigo-300 transition-all duration-300 cursor-pointer"
+                      className="group relative p-4 bg-slate-800 rounded-2xl border border-slate-700 hover:border-gold/30 transition-all duration-300 cursor-pointer shadow-lg"
                     >
                       <div className="flex flex-col items-center text-center gap-3">
                         <motion.div
@@ -738,10 +736,10 @@ const About = () => {
                         >
                           <Icon className="w-6 h-6" style={{ color: hobby.color }} />
                         </motion.div>
-                        <span className="text-sm font-medium text-slate-700">
+                        <span className="text-sm font-medium text-slate-200">
                           {hobby.label}
                         </span>
-                        <p className="text-xs text-slate-500">{hobby.description}</p>
+                        <p className="text-xs text-slate-400">{hobby.description}</p>
                       </div>
                     </motion.div>
                   );
@@ -754,33 +752,33 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50"
+              className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-2xl shadow-black/50"
             >
-              <h3 className="text-2xl font-black text-slate-800 mb-6 flex items-center gap-3">
-                <Star className="w-6 h-6 text-indigo-500" />
+              <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                <Star className="w-6 h-6 text-gold" />
                 Quick Stats
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-600">Code Quality</span>
+                  <span className="text-slate-400">Code Quality</span>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                      <Star key={star} className="w-4 h-4 text-gold fill-gold" />
                     ))}
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-600">Project Delivery</span>
-                  <span className="text-indigo-600 font-semibold">98%</span>
+                  <span className="text-slate-400">Project Delivery</span>
+                  <span className="text-gold font-semibold">98%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-600">Client Satisfaction</span>
-                  <span className="text-indigo-600 font-semibold">100%</span>
+                  <span className="text-slate-400">Client Satisfaction</span>
+                  <span className="text-gold font-semibold">100%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-600">Bug Free Code</span>
-                  <span className="text-indigo-600 font-semibold">99.5%</span>
+                  <span className="text-slate-400">Bug Free Code</span>
+                  <span className="text-gold font-semibold">99.5%</span>
                 </div>
               </div>
             </motion.div>
@@ -790,10 +788,10 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
-              className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50"
+              className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-2xl shadow-black/50"
             >
-              <h3 className="text-2xl font-black text-slate-800 mb-6 flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-indigo-500" />
+              <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                <ShieldCheck className="w-6 h-6 text-gold" />
                 Tech Stack
               </h3>
 
@@ -802,7 +800,7 @@ const About = () => {
                   <motion.span
                     key={i}
                     whileHover={{ scale: 1.1 }}
-                    className="px-3 py-1.5 bg-slate-50 text-indigo-600 rounded-lg text-sm font-medium border border-slate-200 shadow-sm"
+                    className="px-3 py-1.5 bg-slate-800 text-gold rounded-lg text-sm font-medium border border-slate-700 shadow-sm"
                   >
                     {tech}
                   </motion.span>
@@ -819,12 +817,12 @@ const About = () => {
           transition={{ delay: 0.7 }}
           className="text-center"
         >
-          <div className="inline-flex flex-col md:flex-row items-center gap-8 bg-white backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-slate-200 shadow-xl shadow-slate-200/50 max-w-4xl mx-auto">
+          <div className="inline-flex flex-col md:flex-row items-center gap-8 bg-slate-900 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-slate-800 shadow-2xl shadow-black/50 max-w-4xl mx-auto">
             <div className="text-left">
-              <h3 className="text-3xl font-black text-slate-800 mb-4">
+              <h3 className="text-3xl font-black text-white mb-4">
                 Ready to Build Something Amazing?
               </h3>
-              <p className="text-slate-600 text-lg">
+              <p className="text-slate-400 text-lg">
                 Let's collaborate on your next project and create something extraordinary together.
               </p>
             </div>
@@ -834,7 +832,7 @@ const About = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-bold rounded-xl shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all flex items-center gap-3"
+                className="group relative px-8 py-4 bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-black font-bold rounded-xl shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-3"
               >
                 <span>Start a Project</span>
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -844,7 +842,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition-all shadow-sm"
+                className="px-8 py-4 bg-slate-800 border border-slate-700 text-slate-100 font-bold rounded-xl hover:bg-slate-700 hover:border-gold/30 transition-all shadow-lg"
               >
                 View Projects
               </motion.button>

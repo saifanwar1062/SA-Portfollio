@@ -2,107 +2,92 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FFD700;
-  /* Gold */
-  --color-secondary: #C0C0C0;
-  /* Silver */
-  --color-accent: #FFD700;
-  --color-primary-light: #FFDF5C;
-  --color-primary-dark: #D4AF37;
+  --color-gold: #FFD700;
+  --color-gold-light: #FFDF5C;
+  --color-gold-dark: #D4AF37;
+  --color-silver: #C0C0C0;
+  --color-silver-light: #A9A9A9;
+  --color-silver-dark: #808080;
 
-  /* Overriding default Slate (Neutral) for dark black theme */
-  --color-slate-50: #0a0a0a;
-  /* Dark black background */
-  --color-slate-100: #121212;
-  /* Slightly lighter black */
-  --color-slate-200: #262626;
-  /* Borders */
-  --color-slate-300: #404040;
-  --color-slate-400: #a3a3a3;
-  --color-slate-500: #d4d4d4;
-  --color-slate-600: #e5e5e5;
-  --color-slate-700: #f5f5f5;
-  --color-slate-800: #ffffff;
-  /* Text */
-  --color-slate-900: #ffffff;
-  /* Headings / Dark Text -> White text */
+  --color-primary: var(--color-gold);
+  --color-secondary: var(--color-silver);
+  --color-accent: var(--color-gold);
+
+  /* Standard Slate for consistency */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
 
   /* Overriding Indigo -> Gold */
-  --color-indigo-50: #141208;
-  --color-indigo-100: #1f1c0d;
-  --color-indigo-200: #4d4013;
-  --color-indigo-300: #b08d27;
-  --color-indigo-400: #D4AF37;
-  --color-indigo-500: #FFD700;
-  --color-indigo-600: #D4AF37;
+  --color-indigo-50: #fffbeb;
+  --color-indigo-100: #fef3c7;
+  --color-indigo-200: #fde68a;
+  --color-indigo-300: #fcd34d;
+  --color-indigo-400: var(--color-gold-dark);
+  --color-indigo-500: var(--color-gold);
+  --color-indigo-600: var(--color-gold-dark);
   --color-indigo-700: #b08d27;
   --color-indigo-800: #856a1b;
   --color-indigo-900: #5c4912;
 
   /* Overriding Violet -> Silver */
-  --color-violet-50: #141414;
-  --color-violet-100: #1f1f1f;
-  --color-violet-200: #333333;
-  --color-violet-300: #808080;
-  --color-violet-400: #A9A9A9;
-  --color-violet-500: #C0C0C0;
-  --color-violet-600: #A9A9A9;
-  --color-violet-700: #808080;
+  --color-violet-50: #f8fafc;
+  --color-violet-100: #f1f5f9;
+  --color-violet-200: #e2e8f0;
+  --color-violet-300: var(--color-silver-dark);
+  --color-violet-400: var(--color-silver-light);
+  --color-violet-500: var(--color-silver);
+  --color-violet-600: var(--color-silver-light);
+  --color-violet-700: var(--color-silver-dark);
   --color-violet-800: #595959;
   --color-violet-900: #404040;
 
   /* Overriding Fuchsia -> Gold */
-  --color-fuchsia-50: #141208;
-  --color-fuchsia-100: #1f1c0d;
-  --color-fuchsia-200: #4d4013;
-  --color-fuchsia-300: #b08d27;
-  --color-fuchsia-400: #D4AF37;
-  --color-fuchsia-500: #FFD700;
-  --color-fuchsia-600: #D4AF37;
+  --color-fuchsia-50: #fffbeb;
+  --color-fuchsia-100: #fef3c7;
+  --color-fuchsia-200: #fde68a;
+  --color-fuchsia-300: #fcd34d;
+  --color-fuchsia-400: var(--color-gold-dark);
+  --color-fuchsia-500: var(--color-gold);
+  --color-fuchsia-600: var(--color-gold-dark);
   --color-fuchsia-700: #b08d27;
   --color-fuchsia-800: #856a1b;
   --color-fuchsia-900: #5c4912;
 
-  /* Overriding Blue -> Gold */
-  --color-blue-50: #141208;
-  --color-blue-100: #1f1c0d;
-  --color-blue-200: #4d4013;
-  --color-blue-300: #b08d27;
-  --color-blue-400: #D4AF37;
-  --color-blue-500: #FFD700;
-  --color-blue-600: #D4AF37;
+  /* Overriding Blue -> Gold/Silver Blend */
+  --color-blue-50: #f8fafc;
+  --color-blue-100: #1e293b;
+  --color-blue-200: var(--color-silver-dark);
+  --color-blue-300: var(--color-silver);
+  --color-blue-400: var(--color-gold-dark);
+  --color-blue-500: var(--color-gold);
+  --color-blue-600: var(--color-gold-dark);
   --color-blue-700: #b08d27;
   --color-blue-800: #856a1b;
   --color-blue-900: #5c4912;
 
   /* Overriding Sky -> Silver */
-  --color-sky-50: #141414;
-  --color-sky-100: #1f1f1f;
-  --color-sky-200: #333333;
-  --color-sky-300: #808080;
-  --color-sky-400: #A9A9A9;
-  --color-sky-500: #C0C0C0;
-  --color-sky-600: #A9A9A9;
-  --color-sky-700: #808080;
+  --color-sky-50: #f8fafc;
+  --color-sky-100: #f1f5f9;
+  --color-sky-200: #e2e8f0;
+  --color-sky-300: var(--color-silver-dark);
+  --color-sky-400: var(--color-silver-light);
+  --color-sky-500: var(--color-silver);
+  --color-sky-600: var(--color-silver-light);
+  --color-sky-700: var(--color-silver-dark);
   --color-sky-800: #595959;
   --color-sky-900: #404040;
 
-  /* Overriding Cyan -> Silver */
-  --color-cyan-50: #141414;
-  --color-cyan-100: #1f1f1f;
-  --color-cyan-200: #333333;
-  --color-cyan-300: #808080;
-  --color-cyan-400: #A9A9A9;
-  --color-cyan-500: #C0C0C0;
-  --color-cyan-600: #A9A9A9;
-  --color-cyan-700: #808080;
-  --color-cyan-800: #595959;
-  --color-cyan-900: #404040;
-
-  --color-white: #0a0a0a;
-  /* bg-white becomes black */
-  --color-black: #ffffff;
-  /* text-black becomes white */
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
 :root {

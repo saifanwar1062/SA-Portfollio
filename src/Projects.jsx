@@ -136,7 +136,7 @@ const ProjectCard = ({ project, index }) => {
       variants={cardVariants}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="group relative flex flex-col bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden transition-all duration-500 hover:shadow-indigo-200 hover:border-indigo-300 hover:-translate-y-2"
+      className="group relative flex flex-col bg-slate-900 rounded-3xl border border-slate-800 shadow-xl shadow-gold/5 overflow-hidden transition-all duration-500 hover:shadow-gold/20 hover:border-gold/50 hover:-translate-y-2"
     >
       {/* Animated gradient overlay on hover */}
       <motion.div
@@ -168,7 +168,7 @@ const ProjectCard = ({ project, index }) => {
                 Featured
               </span>
             )}
-            <h3 className="text-xl sm:text-2xl font-black text-slate-800 leading-tight group-hover:text-indigo-600 transition-colors">
+            <h3 className="text-xl sm:text-2xl font-black text-white leading-tight group-hover:text-gold transition-colors">
               {project.title}
             </h3>
             <span className="text-xs font-medium text-slate-500 uppercase tracking-widest">
@@ -183,7 +183,7 @@ const ProjectCard = ({ project, index }) => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.96 }}
-            className="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-white shadow-lg transition-all duration-300"
+            className="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-black shadow-lg transition-all duration-300"
             style={{ background: `linear-gradient(135deg, ${project.color}, ${project.accentColor})` }}
           >
             <Globe className="w-3.5 h-3.5" />
@@ -193,16 +193,16 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Description */}
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed flex-1">
+        <p className="text-sm sm:text-base text-slate-400 leading-relaxed flex-1">
           {project.description}
         </p>
 
         {/* Tech Tags */}
-        <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+        <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 text-indigo-600 border border-indigo-100"
+              className="px-2.5 py-1 rounded-lg text-xs font-medium bg-gold/10 text-gold border border-gold/20"
             >
               {tag}
             </span>
@@ -219,7 +219,7 @@ const ProjectCard = ({ project, index }) => {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-semibold text-indigo-500 hover:text-indigo-700 transition-colors group/link"
+            className="flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold-light transition-colors group/link"
           >
             <Eye className="w-3.5 h-3.5" />
             View Site
@@ -239,8 +239,8 @@ const Projects = () => {
     >
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-violet-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-silver/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10">
@@ -252,26 +252,26 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-white rounded-3xl border border-slate-200 shadow-md shadow-slate-200/50">
+          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
             >
-              <Rocket className="w-7 h-7 text-indigo-500" />
+              <Rocket className="w-7 h-7 text-gold" />
             </motion.div>
-            <span className="text-xl font-bold text-slate-700">Live Projects</span>
+            <span className="text-xl font-bold text-slate-200">Live Projects</span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            <span className="block text-slate-800">
+            <span className="block text-white">
               Real Websites,
             </span>
-            <span className="block bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-gold to-silver bg-clip-text text-transparent">
               Real Impact
             </span>
           </h2>
 
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Every project below is live, production-ready, and crafted with React. From pilgrimage
             platforms to cruise services — pixel-perfect UI delivered for real clients.
           </p>
@@ -286,11 +286,11 @@ const Projects = () => {
               <motion.div
                 key={stat.label}
                 whileHover={{ y: -4, scale: 1.04 }}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-slate-200 shadow-sm"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-slate-900 border border-slate-800 shadow-sm"
               >
-                <stat.icon className="w-5 h-5 text-indigo-500" />
-                <span className="text-2xl font-black text-slate-800">{stat.value}</span>
-                <span className="text-sm text-slate-500">{stat.label}</span>
+                <stat.icon className="w-5 h-5 text-gold" />
+                <span className="text-2xl font-black text-white">{stat.value}</span>
+                <span className="text-sm text-slate-400">{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -326,7 +326,7 @@ const Projects = () => {
               e.preventDefault();
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-semibold rounded-2xl shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-2xl shadow-md shadow-gold/20 hover:shadow-gold/30 transition-all"
           >
             <Sparkles className="w-5 h-5" />
             Hire Me for Your Project

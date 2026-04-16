@@ -45,32 +45,32 @@ const Contact = () => {
     { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
   ];
 
-  const inputCls = "w-full px-4 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-800 placeholder-slate-400 focus:border-indigo-400 focus:outline-none transition-all focus:bg-white shadow-sm hover:border-slate-300";
+  const inputCls = "w-full px-4 py-4 bg-slate-950 border border-slate-800 rounded-2xl text-slate-200 placeholder-slate-500 focus:border-gold focus:outline-none transition-all focus:bg-slate-900 shadow-sm hover:border-slate-700";
 
   return (
     <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-20 left-10 w-48 h-48 bg-gold/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-silver/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-gold/5 to-silver/5 rounded-full blur-3xl animate-pulse" />
         {/* Mouse follower */}
-        <div className="fixed w-2 h-2 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full z-50 blur-sm opacity-60 pointer-events-none transition-all duration-300"
+        <div className="fixed w-2 h-2 bg-gradient-to-r from-gold to-silver rounded-full z-50 blur-sm opacity-60 pointer-events-none transition-all duration-300"
           style={{ left: `${mousePos.x}px`, top: `${mousePos.y}px`, transform: 'translate(-50%, -50%)' }} />
       </div>
 
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-white rounded-3xl border border-slate-200 shadow-md shadow-slate-200/50 mx-auto max-w-max">
-            <MapPin className="w-7 h-7 text-indigo-500" />
-            <span className="text-xl font-bold text-slate-800">Let's Connect</span>
+          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5 mx-auto max-w-max">
+            <MapPin className="w-7 h-7 text-gold" />
+            <span className="text-xl font-bold text-slate-200">Let's Connect</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-slate-800 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight">
             Ready to Start Your<br />
-              <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">Next Project?</span>
+              <span className="bg-gradient-to-r from-gold to-silver bg-clip-text text-transparent">Next Project?</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Whether it's a landing page, travel platform, or full React web app — I'm here to bring your vision to life with pixel-perfect precision.
           </p>
         </div>
@@ -78,34 +78,34 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
           {/* Contact Form */}
           <div>
-            <div className="bg-white rounded-3xl p-8 lg:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 hover:shadow-indigo-100 transition-all duration-500">
+            <div className="bg-slate-900 rounded-3xl p-8 lg:p-10 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/10 transition-all duration-500">
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-slate-700 font-semibold mb-2 flex items-center gap-2"><span>👤</span> Full Name</label>
+                    <label className="block text-slate-300 font-semibold mb-2 flex items-center gap-2"><span>👤</span> Full Name</label>
                     <input type="text" name="name" value={formData.name} onChange={handleInputChange} className={inputCls} placeholder="Your name" required />
                   </div>
                   <div>
-                    <label className="block text-slate-700 font-semibold mb-2 flex items-center gap-2"><Mail className="w-5 h-5 text-slate-400" /> Email</label>
+                    <label className="block text-slate-300 font-semibold mb-2 flex items-center gap-2"><Mail className="w-5 h-5 text-gold/60" /> Email</label>
                     <input type="email" name="email" value={formData.email} onChange={handleInputChange} className={inputCls} placeholder="your@email.com" required />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-slate-700 font-semibold mb-2 flex items-center gap-2"><MessageCircle className="w-5 h-5 text-slate-400" /> Subject</label>
+                  <label className="block text-slate-300 font-semibold mb-2 flex items-center gap-2"><MessageCircle className="w-5 h-5 text-gold/60" /> Subject</label>
                   <input type="text" name="subject" value={formData.subject || subjectTyping} onFocus={() => setFormData(p => ({ ...p, subject: '' }))} onChange={handleInputChange} className={`${inputCls} text-lg font-semibold`} placeholder={subjectTyping} />
                 </div>
                 <div>
-                  <label className="block text-slate-700 font-semibold mb-2 flex items-center gap-2"><span>💬</span> Message</label>
+                  <label className="block text-slate-300 font-semibold mb-2 flex items-center gap-2"><span>💬</span> Message</label>
                   <textarea name="message" rows="5" value={formData.message} onChange={handleInputChange} className={`${inputCls} resize-vertical`} placeholder="Tell me about your project..." required />
                 </div>
                 <button type="submit" disabled={isSubmitting}
-                  className="w-full group relative px-8 py-6 bg-gradient-to-r from-indigo-600 via-violet-500 to-indigo-600 text-white font-bold text-xl rounded-3xl shadow-md shadow-indigo-200 hover:shadow-lg hover:shadow-indigo-300 transition-all duration-500 hover:scale-105 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3">
+                  className="w-full group relative px-8 py-6 bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-black font-bold text-xl rounded-3xl shadow-md shadow-gold/20 hover:shadow-lg hover:shadow-gold/30 transition-all duration-500 hover:scale-105 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3">
                   {isSubmitting ? (
                     <><div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending...</>
                   ) : (
                     <><Send className="w-6 h-6 group-hover:translate-x-1 transition-transform" /> Send Message</>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-violet-400 rounded-3xl opacity-0 group-hover:opacity-20 blur-sm -z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold to-silver rounded-3xl opacity-0 group-hover:opacity-20 blur-sm -z-10" />
                 </button>
               </form>
             </div>
@@ -113,30 +113,30 @@ const Contact = () => {
 
           {/* Contact Info & Socials */}
           <div className="space-y-5 lg:pt-2">
-              <div className="group relative bg-white rounded-3xl p-8 lg:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 hover:shadow-indigo-100 transition-all">
+              <div className="group relative bg-slate-900 rounded-3xl p-8 lg:p-10 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/10 transition-all">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 p-4 bg-indigo-50 rounded-2xl mb-6 shadow-sm border border-slate-100">
-                  <MapPin className="w-6 h-6 text-indigo-500" />
-                  <span className="font-bold text-slate-800">Kalindi Kunj, New Delhi</span>
+                <div className="inline-flex items-center gap-3 p-4 bg-gold/10 rounded-2xl mb-6 shadow-sm border border-slate-800">
+                  <MapPin className="w-6 h-6 text-gold" />
+                  <span className="font-bold text-slate-200">Kalindi Kunj, New Delhi</span>
                 </div>
-                <div className="text-3xl font-black text-slate-800 mb-2">Md. Saif Anwar</div>
-                <div className="text-slate-500 font-semibold">Frontend React.js Developer</div>
+                <div className="text-3xl font-black text-white mb-2">Md. Saif Anwar</div>
+                <div className="text-gold font-semibold">Frontend React.js Developer</div>
               </div>
               <div className="space-y-2 mb-5">
-                <div className="flex items-center justify-center gap-5 p-2 bg-slate-50 border border-slate-100 rounded-2xl">
-                  <div className="p-3 bg-indigo-50 rounded-xl"><Phone className="w-5 h-5 text-indigo-500" /></div>
-                  <span className="text-slate-600 font-medium">+91-9773577624</span>
+                <div className="flex items-center justify-center gap-5 p-2 bg-slate-950 border border-slate-800 rounded-2xl">
+                  <div className="p-3 bg-gold/10 rounded-xl"><Phone className="w-5 h-5 text-gold" /></div>
+                  <span className="text-slate-300 font-medium">+91-9773577624</span>
                 </div>
-                <div className="flex items-center justify-center gap-5 p-2 bg-slate-50 border border-slate-100 rounded-2xl">
-                  <div className="p-3 bg-indigo-50 rounded-xl"><Mail className="w-5 h-5 text-indigo-500" /></div>
-                  <span className="text-slate-600 font-medium break-all">saifanwar1062@gmail.com</span>
+                <div className="flex items-center justify-center gap-5 p-2 bg-slate-950 border border-slate-800 rounded-2xl">
+                  <div className="p-3 bg-gold/10 rounded-xl"><Mail className="w-5 h-5 text-gold" /></div>
+                  <span className="text-slate-300 font-medium break-all">saifanwar1062@gmail.com</span>
                 </div>
               </div>
-              <div className="grid grid-cols-1 gap-4 pt-8 border-t border-slate-100">
-                <a href="mailto:saifanwar1062@gmail.com" className="group flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-semibold rounded-2xl shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all hover:scale-105">
+              <div className="grid grid-cols-1 gap-4 pt-8 border-t border-slate-800">
+                <a href="mailto:saifanwar1062@gmail.com" className="group flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-2xl shadow-md shadow-gold/20 hover:shadow-gold/30 transition-all hover:scale-105">
                   <Mail className="w-5 h-5 group-hover:translate-x-1 transition-transform" /> Email Me
                 </a>
-                <a href="/resume.pdf" download className="flex items-center justify-center gap-3 p-4 border border-slate-200 text-slate-700 font-semibold rounded-2xl hover:bg-slate-50 transition-all hover:scale-105 shadow-sm hover:shadow-md">
+                <a href="/resume.pdf" download className="flex items-center justify-center gap-3 p-4 border border-slate-800 text-slate-300 font-semibold rounded-2xl hover:bg-slate-950 transition-all hover:scale-105 shadow-sm hover:shadow-md">
                   <Download className="w-5 h-5" /> Download Resume
                 </a>
               </div>
@@ -148,15 +148,15 @@ const Contact = () => {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-slate-200 pt-12 mt-24 text-center">
+        <div className="border-t border-slate-800 pt-12 mt-24 text-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
-            <div className="flex items-center gap-3 text-slate-500">
+            <div className="flex items-center gap-3 text-slate-400">
               <span>🌐</span>
               <span>Made with ❤️ in New Delhi</span>
             </div>
-            <span className="text-slate-600 font-semibold">© {new Date().getFullYear()} Md. Saif Anwar</span>
+            <span className="text-slate-300 font-semibold">© {new Date().getFullYear()} Md. Saif Anwar</span>
           </div>
-          <div className="text-sm text-slate-400">All rights reserved | Designed & Developed by me 🚀</div>
+          <div className="text-sm text-slate-500">All rights reserved | Designed & Developed by me 🚀</div>
         </div>
       </div>
 

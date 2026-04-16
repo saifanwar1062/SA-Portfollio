@@ -44,20 +44,21 @@ const Testimonials = () => {
     <section id="testimonials" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (
-          <div key={i} className="absolute w-2 h-2 bg-indigo-300 rounded-full animate-float opacity-30"
+          <div key={i} className="absolute w-2 h-2 bg-gold/30 rounded-full animate-float opacity-30"
             style={{ left: `${10 + i * 8}%`, top: `${10 + (i % 3) * 30}%`, animationDelay: `${i * 0.3}s`, animationDuration: `${4 + i * 0.2}s` }} />
         ))}
       </div>
 
       <div ref={containerRef} className="relative z-20">
         <div className="text-center mb-24 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-12 px-10 py-5 bg-white rounded-3xl border border-slate-200 shadow-sm mx-auto max-w-max">
-           
+          <div className="inline-flex items-center gap-3 mb-12 px-10 py-5 bg-slate-900 rounded-3xl border border-slate-800 shadow-md shadow-gold/5 mx-auto max-w-max">
+             <Users className="w-7 h-7 text-gold" />
+             <span className="text-xl font-bold text-slate-200">Social Proof</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black mb-8 text-slate-800 leading-tight">
+          <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black mb-8 text-white leading-tight">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl lg:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Don't just take my word for it. Here's what clients from HCL, startups, and agencies are saying.
           </p>
         </div>
@@ -65,31 +66,31 @@ const Testimonials = () => {
         {/* Main Featured Testimonial */}
         <div className="max-w-4xl mx-auto mb-24">
           <div
-            className={`group relative w-full h-80 lg:h-96 bg-white/90 backdrop-blur-2xl rounded-3xl p-10 border border-slate-200 shadow-xl shadow-slate-200/50 hover:shadow-indigo-100 transition-all duration-1000 cursor-pointer overflow-hidden ${hoveredCard === currentTestimonial ? 'ring-4 ring-indigo-100 z-20' : ''}`}
+            className={`group relative w-full h-80 lg:h-96 bg-slate-900/90 backdrop-blur-2xl rounded-3xl p-10 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/20 transition-all duration-1000 cursor-pointer overflow-hidden ${hoveredCard === currentTestimonial ? 'ring-4 ring-gold/10 z-20' : ''}`}
             onMouseEnter={() => setHoveredCard(currentTestimonial)}
             style={{ transform: `perspective(1000px) rotateX(${-mousePos.y * 0.5}deg) rotateY(${mousePos.x * 0.5}deg)` }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-violet-500/5 to-indigo-500/5 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all" />
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-indigo-50 rounded-3xl flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">
-              <Quote className="w-10 h-10 text-indigo-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-silver/5 to-gold/5 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all" />
+            <div className="absolute -top-8 -right-8 w-24 h-24 bg-slate-800 rounded-3xl flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">
+              <Quote className="w-10 h-10 text-gold" />
             </div>
             <div className="relative z-20 h-full flex flex-col justify-center">
-              <div className="text-slate-700 text-lg lg:text-xl leading-relaxed mb-8 h-32 lg:h-40 flex items-center">
+              <div className="text-slate-300 text-lg lg:text-xl leading-relaxed mb-8 h-32 lg:h-40 flex items-center">
                 {typedText}
-                {isTyping && <span className="inline-block w-2 h-6 bg-indigo-500 ml-1 animate-blink" />}
+                {isTyping && <span className="inline-block w-2 h-6 bg-gold ml-1 animate-blink" />}
               </div>
-              <div className="flex items-center gap-4 pt-8 border-t border-slate-200">
-                <div className="w-16 h-16 bg-indigo-50 rounded-3xl flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-all">
+              <div className="flex items-center gap-4 pt-8 border-t border-slate-800">
+                <div className="w-16 h-16 bg-slate-800 rounded-3xl flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-all">
                   {testimonials[currentTestimonial].avatar}
                 </div>
                 <div>
-                  <h4 className="text-xl lg:text-2xl font-black text-slate-800">{testimonials[currentTestimonial].author}</h4>
-                  <p className="text-slate-500">{testimonials[currentTestimonial].role}</p>
+                  <h4 className="text-xl lg:text-2xl font-black text-white">{testimonials[currentTestimonial].author}</h4>
+                  <p className="text-slate-400">{testimonials[currentTestimonial].role}</p>
                 </div>
               </div>
               <div className="flex items-center gap-1 mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-amber-400 fill-amber-400' : 'text-slate-200'}`} />
+                  <Star key={i} className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-gold fill-gold' : 'text-slate-200'}`} />
                 ))}
               </div>
             </div>
@@ -97,7 +98,7 @@ const Testimonials = () => {
           <div className="flex justify-center gap-3 mt-12">
             {testimonials.map((_, i) => (
               <button key={i} onClick={() => setCurrentTestimonial(i)}
-                className={`h-3 rounded-full transition-all duration-300 ${currentTestimonial === i ? 'w-8 bg-gradient-to-r from-indigo-600 to-violet-500' : 'w-3 bg-slate-200 hover:bg-slate-300'}`} />
+                className={`h-3 rounded-full transition-all duration-300 ${currentTestimonial === i ? 'w-8 bg-gradient-to-r from-gold-dark to-gold' : 'w-3 bg-slate-800 hover:bg-slate-700'}`} />
             ))}
           </div>
         </div>
@@ -106,27 +107,26 @@ const Testimonials = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.slice(0, 3).map((testimonial, index) => (
             <div key={`small-${index}`} onMouseEnter={() => setHoveredCard(index + 10)}
-              className="group relative h-64 bg-gradient-to-br from-blue-950/60 to-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-blue-700/50 shadow-xl shadow-blue-500/20 hover:shadow-blue-400/40 hover:scale-105 hover:-translate-y-3 transition-all duration-700 cursor-pointer overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/15 to-sky-500/15 rounded-3xl opacity-0 group-hover:opacity-100 blur-sm -z-10" />
-              <Quote className="w-12 h-12 text-blue-400/50 mb-6 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all mx-auto" />
-              <blockquote className="text-blue-100/90 text-lg leading-relaxed mb-6 h-24 overflow-hidden">"{testimonial.text.slice(0, 100)}..."</blockquote>
+              className="group relative h-64 bg-gradient-to-br from-slate-900 to-slate-950 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-xl shadow-gold/5 hover:shadow-gold/20 hover:scale-105 hover:-translate-y-3 transition-all duration-700 cursor-pointer overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-gold/5 to-silver/5 rounded-3xl opacity-0 group-hover:opacity-100 blur-sm -z-10" />
+              <Quote className="w-12 h-12 text-gold/30 mb-6 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all mx-auto" />
+              <blockquote className="text-slate-300 text-lg leading-relaxed mb-6 h-24 overflow-hidden">"{testimonial.text.slice(0, 100)}..."</blockquote>
               <div className="flex items-center gap-4 absolute bottom-6 left-6 right-6">
-                <div className="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-blue-500/30">{testimonial.avatar}</div>
+                <div className="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-gold/10">{testimonial.avatar}</div>
                 <div>
-                  <h5 className="font-bold text-blue-50 text-lg">{testimonial.author}</h5>
-                  <p className="text-blue-300/80 text-sm">{testimonial.role}</p>
+                  <h5 className="font-bold text-white text-lg">{testimonial.author}</h5>
+                  <p className="text-slate-400 text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Stats row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 pt-20 border-t border-blue-800/50">
-          {[['25+', 'blue', 'Happy Clients'], ['5.0', 'sky', 'Avg Rating'], ['100%', 'blue', 'On Time'], ['0%', 'blue', 'Churn Rate']].map(([v, c, l]) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 pt-20 border-t border-slate-800">
+          {[['25+', 'gold', 'Happy Clients'], ['5.0', 'silver', 'Avg Rating'], ['100%', 'gold', 'On Time'], ['0%', 'silver', 'Churn Rate']].map(([v, c, l]) => (
             <div key={l} className="text-center">
-              <div className={`text-4xl font-black text-${c}-400 mb-3`}>{v}</div>
-              <div className="text-blue-300/90 font-semibold">{l}</div>
+              <div className={`text-4xl font-black mb-3 ${c === 'gold' ? 'text-gold' : 'text-silver'}`}>{v}</div>
+              <div className="text-slate-400 font-semibold">{l}</div>
             </div>
           ))}
         </div>
