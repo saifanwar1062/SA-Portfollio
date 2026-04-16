@@ -11,7 +11,7 @@ import Contact from './Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#011627] text-white font-sans">
+    <div className="relative min-h-screen bg-slate-50 text-slate-800 font-sans">
       <Header />
       <Hero />
       <About />

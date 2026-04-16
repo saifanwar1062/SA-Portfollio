@@ -44,24 +44,20 @@ const Testimonials = () => {
     <section id="testimonials" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (
-          <div key={i} className="absolute w-2 h-2 bg-blue-400 rounded-full animate-float"
+          <div key={i} className="absolute w-2 h-2 bg-indigo-300 rounded-full animate-float opacity-30"
             style={{ left: `${10 + i * 8}%`, top: `${10 + (i % 3) * 30}%`, animationDelay: `${i * 0.3}s`, animationDuration: `${4 + i * 0.2}s` }} />
         ))}
       </div>
 
       <div ref={containerRef} className="relative z-20">
         <div className="text-center mb-24 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-12 px-10 py-5 bg-gradient-to-r from-blue-500/15 to-sky-500/15 rounded-3xl border border-blue-400/40 backdrop-blur-2xl shadow-2xl shadow-blue-500/40 mx-auto max-w-max">
-            <Users className="w-8 h-8 text-blue-400" />
-            <div>
-              <span className="text-2xl font-black text-blue-100 block">25+</span>
-              <span className="text-blue-300/90 text-sm font-medium">Happy Clients</span>
-            </div>
+          <div className="inline-flex items-center gap-3 mb-12 px-10 py-5 bg-white rounded-3xl border border-slate-200 shadow-sm mx-auto max-w-max">
+           
           </div>
-          <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black mb-8 bg-gradient-to-r from-blue-300 via-sky-200 to-blue-100 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black mb-8 text-slate-800 leading-tight">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl lg:text-2xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Don't just take my word for it. Here's what clients from HCL, startups, and agencies are saying.
           </p>
         </div>
@@ -69,31 +65,31 @@ const Testimonials = () => {
         {/* Main Featured Testimonial */}
         <div className="max-w-4xl mx-auto mb-24">
           <div
-            className={`group relative w-full h-80 lg:h-96 bg-gradient-to-br from-blue-950/80 to-slate-900/80 backdrop-blur-2xl rounded-3xl p-10 border border-blue-500/40 shadow-2xl shadow-blue-500/30 hover:shadow-blue-400/50 transition-all duration-1000 cursor-pointer overflow-hidden ${hoveredCard === currentTestimonial ? 'ring-4 ring-blue-500/50 z-20' : ''}`}
+            className={`group relative w-full h-80 lg:h-96 bg-white/90 backdrop-blur-2xl rounded-3xl p-10 border border-slate-200 shadow-xl shadow-slate-200/50 hover:shadow-indigo-100 transition-all duration-1000 cursor-pointer overflow-hidden ${hoveredCard === currentTestimonial ? 'ring-4 ring-indigo-100 z-20' : ''}`}
             onMouseEnter={() => setHoveredCard(currentTestimonial)}
             style={{ transform: `perspective(1000px) rotateX(${-mousePos.y * 0.5}deg) rotateY(${mousePos.x * 0.5}deg)` }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all" />
-            <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-500/20 rounded-3xl flex items-center justify-center opacity-20 group-hover:opacity-50 group-hover:scale-110 transition-all">
-              <Quote className="w-10 h-10 text-blue-400" />
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-violet-500/5 to-indigo-500/5 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all" />
+            <div className="absolute -top-8 -right-8 w-24 h-24 bg-indigo-50 rounded-3xl flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all">
+              <Quote className="w-10 h-10 text-indigo-500" />
             </div>
             <div className="relative z-20 h-full flex flex-col justify-center">
-              <div className="text-blue-100/90 text-lg lg:text-xl leading-relaxed mb-8 h-32 lg:h-40 flex items-center">
+              <div className="text-slate-700 text-lg lg:text-xl leading-relaxed mb-8 h-32 lg:h-40 flex items-center">
                 {typedText}
-                {isTyping && <span className="inline-block w-2 h-6 bg-blue-400 ml-1 animate-blink" />}
+                {isTyping && <span className="inline-block w-2 h-6 bg-indigo-500 ml-1 animate-blink" />}
               </div>
-              <div className="flex items-center gap-4 pt-8 border-t border-blue-800/50">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500/30 to-sky-500/30 rounded-3xl flex items-center justify-center text-2xl shadow-2xl shadow-blue-500/40 group-hover:scale-110 transition-all">
+              <div className="flex items-center gap-4 pt-8 border-t border-slate-200">
+                <div className="w-16 h-16 bg-indigo-50 rounded-3xl flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-all">
                   {testimonials[currentTestimonial].avatar}
                 </div>
                 <div>
-                  <h4 className="text-xl lg:text-2xl font-black text-blue-50">{testimonials[currentTestimonial].author}</h4>
-                  <p className="text-blue-300/90">{testimonials[currentTestimonial].role}</p>
+                  <h4 className="text-xl lg:text-2xl font-black text-slate-800">{testimonials[currentTestimonial].author}</h4>
+                  <p className="text-slate-500">{testimonials[currentTestimonial].role}</p>
                 </div>
               </div>
               <div className="flex items-center gap-1 mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-blue-400 fill-blue-400' : 'text-blue-700/50'}`} />
+                  <Star key={i} className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-amber-400 fill-amber-400' : 'text-slate-200'}`} />
                 ))}
               </div>
             </div>
@@ -101,7 +97,7 @@ const Testimonials = () => {
           <div className="flex justify-center gap-3 mt-12">
             {testimonials.map((_, i) => (
               <button key={i} onClick={() => setCurrentTestimonial(i)}
-                className={`h-3 rounded-full transition-all duration-300 ${currentTestimonial === i ? 'w-8 bg-gradient-to-r from-blue-400 to-sky-400' : 'w-3 bg-blue-700/50 hover:bg-blue-600/50'}`} />
+                className={`h-3 rounded-full transition-all duration-300 ${currentTestimonial === i ? 'w-8 bg-gradient-to-r from-indigo-600 to-violet-500' : 'w-3 bg-slate-200 hover:bg-slate-300'}`} />
             ))}
           </div>
         </div>
@@ -136,7 +132,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in-up { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(180deg); } }
         @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }

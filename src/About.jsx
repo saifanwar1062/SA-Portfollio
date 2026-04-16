@@ -67,7 +67,7 @@ const About = () => {
     if (isInView) {
       const duration = 2000;
       const steps = 60;
-      
+
       Object.entries({ projects: 30, clients: 25, experience: 3, hours: 8000 }).forEach(([key, target], index) => {
         let current = 0;
         const stepValue = target / steps;
@@ -95,36 +95,36 @@ const About = () => {
 
   // Stats with animated counters
   const stats = [
-    { 
-      label: "Years Experience", 
-      value: counterValues.experience, 
-      suffix: "+", 
-      icon: Calendar, 
-      color: "#0ea5e9",
+    {
+      label: "Years Experience",
+      value: counterValues.experience,
+      suffix: "+",
+      icon: Calendar,
+      color: "#FFD700",
       description: "React development"
     },
-    { 
-      label: "Projects Delivered", 
-      value: counterValues.projects, 
-      suffix: "+", 
-      icon: Target, 
-      color: "#3b82f6",
+    {
+      label: "Projects Delivered",
+      value: counterValues.projects,
+      suffix: "+",
+      icon: Target,
+      color: "#D4AF37",
       description: "Live web projects"
     },
-    { 
-      label: "Happy Clients", 
-      value: counterValues.clients, 
-      suffix: "+", 
-      icon: Users, 
-      color: "#06b6d4",
+    {
+      label: "Happy Clients",
+      value: counterValues.clients,
+      suffix: "+",
+      icon: Users,
+      color: "#C0C0C0",
       description: "Satisfied customers"
     },
-    { 
-      label: "Coding Hours", 
-      value: counterValues.hours, 
-      suffix: "+", 
-      icon: Clock, 
-      color: "#00B4D8",
+    {
+      label: "Coding Hours",
+      value: counterValues.hours,
+      suffix: "+",
+      icon: Clock,
+      color: "#A9A9A9",
       description: "Lines of React code"
     },
   ];
@@ -137,7 +137,7 @@ const About = () => {
       description: "Fell in love with React.js — mastered hooks, state management, and component architecture",
       icon: Code2,
       tags: ["React", "JavaScript", "CSS3"],
-      color: "#0ea5e9",
+      color: "#FFD700",
       achievements: ["First React App", "UI Component Library"]
     },
     {
@@ -146,7 +146,7 @@ const About = () => {
       description: "Built production React apps for clients — improved performance, responsiveness & UX",
       icon: Rocket,
       tags: ["React", "Tailwind CSS", "Next.js"],
-      color: "#3b82f6",
+      color: "#D4AF37",
       achievements: ["5+ Client Sites", "Mobile-First Design"]
     },
     {
@@ -154,17 +154,17 @@ const About = () => {
       title: "Travel Tech Platforms",
       description: "Developed 8+ live Hajj/Umrah & travel booking portals with React at production scale",
       icon: Globe,
-      tags: ["Next.js", "TypeScript", "Framer Motion"],
-      color: "#0077B6",
+      tags: ["Next.js", "JavaScript", "Framer Motion"],
+      color: "#C0C0C0",
       achievements: ["8 Live Sites", "Pixel‑Perfect UI"]
     },
     {
       year: "2024",
       title: "Enterprise React at HCL",
-      description: "Built GenAI-powered PV Intake frontend using Next.js + TypeScript for a U.S. life sciences client",
+      description: "Built GenAI-powered PV Intake frontend using Next.js + JavaScript for a U.S. life sciences client",
       icon: Code2,
-      tags: ["Next.js", "TypeScript", "Enterprise"],
-      color: "#0077B6",
+      tags: ["Next.js", "JavaScript", "Enterprise"],
+      color: "#A9A9A9",
       achievements: ["Enterprise App", "99.9% Uptime"]
     },
     {
@@ -173,7 +173,7 @@ const About = () => {
       description: "Levelled up with 3D interactions, Framer Motion, and cutting-edge React performance patterns",
       icon: Sparkles,
       tags: ["Framer Motion", "Three.js", "WebGL"],
-      color: "#f59e0b",
+      color: "#FFD700",
       achievements: ["3D Animations", "Performance Boost"]
     },
   ];
@@ -183,7 +183,7 @@ const About = () => {
     frontend: [
       { name: "React.js", level: 96, icon: Code2, description: "Hooks, Context, Patterns" },
       { name: "Next.js", level: 92, icon: Zap, description: "SSR, ISR, App Router" },
-      { name: "TypeScript", level: 88, icon: Terminal, description: "Type safety & interfaces" },
+      { name: "JavaScript", level: 88, icon: Terminal, description: "Type safety & interfaces" },
       { name: "Tailwind CSS", level: 98, icon: Palette, description: "Utility-first styling" },
     ],
     animations: [
@@ -200,16 +200,16 @@ const About = () => {
     ],
   };
 
-  // Hobbies with blue theme colors
+  // Hobbies with golden and silver theme colors
   const hobbies = [
-    { icon: BookOpen, label: "Tech Reading", color: "#0ea5e9", description: "Stay updated with trends" },
-    { icon: Camera, label: "Photography", color: "#3b82f6", description: "Creative compositions" },
-    { icon: Music, label: "Music Production", color: "#06b6d4", description: "Electronic & ambient" },
-    { icon: Gamepad2, label: "Strategy Games", color: "#0077B6", description: "Problem solving" },
-    { icon: Dumbbell, label: "Fitness", color: "#00B4D8", description: "Health & wellness" },
-    { icon: Plane, label: "Travel", color: "#0077B6", description: "Explore new places" },
-    { icon: Coffee, label: "Coffee Art", color: "#023E84", description: "Morning ritual" },
-    { icon: Wifi, label: "Tech Gadgets", color: "#0077B6", description: "Latest devices" },
+    { icon: BookOpen, label: "Tech Reading", color: "#FFD700", description: "Stay updated with trends" },
+    { icon: Camera, label: "Photography", color: "#D4AF37", description: "Creative compositions" },
+    { icon: Music, label: "Music Production", color: "#C0C0C0", description: "Electronic & ambient" },
+    { icon: Gamepad2, label: "Strategy Games", color: "#A9A9A9", description: "Problem solving" },
+    { icon: Dumbbell, label: "Fitness", color: "#b08d27", description: "Health & wellness" },
+    { icon: Plane, label: "Travel", color: "#808080", description: "Explore new places" },
+    { icon: Coffee, label: "Coffee Art", color: "#FFD700", description: "Morning ritual" },
+    { icon: Wifi, label: "Tech Gadgets", color: "#D4AF37", description: "Latest devices" },
   ];
 
   // Development philosophy
@@ -254,8 +254,8 @@ const About = () => {
       <div className="fixed inset-0 z-0 overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0">
           {/* Gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/90 to-[#011627]/95" />
-          
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
+
           {/* Animated gradient circles */}
           <motion.div
             animate={{
@@ -263,7 +263,7 @@ const About = () => {
               opacity: [0.1, 0.3, 0.1],
             }}
             transition={{ duration: 8, repeat: Infinity }}
-            className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-blue-500/10 to-sky-500/10 blur-3xl"
+            className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-indigo-500/10 to-violet-500/10 blur-3xl"
           />
           <motion.div
             animate={{
@@ -271,15 +271,15 @@ const About = () => {
               opacity: [0.1, 0.4, 0.1],
             }}
             transition={{ duration: 10, repeat: Infinity, delay: 1 }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-sky-500/10 to-blue-500/10 blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-violet-500/10 to-indigo-500/10 blur-3xl"
           />
         </motion.div>
 
         {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-              backgroundImage: `linear-gradient(90deg, rgba(14, 165, 233, 0.3) 1px, transparent 1px),
-                             linear-gradient(0deg, rgba(14, 165, 233, 0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+                             linear-gradient(0deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px)`,
             backgroundSize: '50px 50px',
           }} />
         </div>
@@ -302,7 +302,7 @@ const About = () => {
                 delay: i * 0.3,
                 ease: "easeInOut"
               }}
-              className="absolute w-1 h-1 rounded-full bg-gradient-to-r from-blue-400/40 to-sky-400/40"
+              className="absolute w-1 h-1 rounded-full bg-gradient-to-r from-indigo-400/40 to-violet-400/40"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -322,29 +322,29 @@ const About = () => {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-500/20 to-sky-500/20 backdrop-blur-xl rounded-2xl border border-blue-400/30 shadow-lg shadow-blue-500/20"
+            className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-indigo-50 backdrop-blur-xl rounded-2xl border border-indigo-100 shadow-sm"
           >
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
-              <Sparkles className="w-5 h-5 text-blue-300" />
+              <Sparkles className="w-5 h-5 text-indigo-500" />
             </motion.div>
-            <span className="text-lg font-semibold text-blue-100">
+            <span className="text-lg font-semibold text-indigo-700">
               About Md. Saif Anwar
             </span>
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
-            <span className="block text-blue-100">Frontend</span>
-            <span className="block bg-gradient-to-r from-blue-300 via-sky-200 to-blue-300 bg-clip-text text-transparent">
+            <span className="block text-slate-800">Frontend</span>
+            <span className="block bg-gradient-to-r from-indigo-600 via-violet-500 to-indigo-600 bg-clip-text text-transparent">
               React Developer
             </span>
           </h1>
 
-          <p className="text-xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
             Building pixel-perfect React experiences from{' '}
-            <span className="text-blue-300 font-semibold">New Delhi, India</span>.
+            <span className="text-indigo-600 font-semibold">New Delhi, India</span>.
             Turning complex designs into lightning-fast, responsive, and beautiful web applications.
           </p>
 
@@ -353,7 +353,7 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-[#023E84] to-[#0077B6] text-white font-semibold rounded-xl shadow-xl shadow-blue-500/30 hover:shadow-blue-400/50 transition-all flex items-center gap-3"
+              className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-semibold rounded-xl shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all flex items-center gap-3"
             >
               <Download className="w-5 h-5" />
               Download Resume
@@ -361,7 +361,7 @@ const About = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-blue-950/60 backdrop-blur-xl border border-blue-400/30 text-blue-100 font-semibold rounded-xl hover:bg-blue-900/70 hover:border-blue-300/50 transition-all flex items-center gap-3"
+              className="px-8 py-3 bg-white border border-slate-200 text-slate-700 font-semibold rounded-xl shadow-sm hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center gap-3"
             >
               <ExternalLink className="w-5 h-5" />
               View GitHub
@@ -385,23 +385,23 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -8, scale: 1.05 }}
-                className="group relative bg-gradient-to-br from-blue-900/40 to-sky-900/40 backdrop-blur-xl rounded-2xl p-6 border border-blue-400/20 hover:border-blue-300/40 transition-all duration-300"
+                className="group relative bg-white rounded-2xl p-6 border border-slate-200 shadow-md shadow-indigo-100/50 hover:border-indigo-300 transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-sky-500/20"
+                    className="p-3 rounded-xl bg-indigo-50"
                   >
-                    <Icon className="w-6 h-6 text-blue-300" />
+                    <Icon className="w-6 h-6 text-indigo-500" />
                   </motion.div>
                   <div>
-                    <div className="text-3xl font-black text-blue-100 mb-1">
+                    <div className="text-3xl font-black text-slate-800 mb-1">
                       {stat.value}
-                      <span className="text-blue-400">{stat.suffix}</span>
+                      <span className="text-indigo-500">{stat.suffix}</span>
                     </div>
-                    <div className="text-sm font-medium text-blue-200/80">{stat.label}</div>
-                    <div className="text-xs text-blue-300/60 mt-1">{stat.description}</div>
+                    <div className="text-sm font-medium text-slate-500">{stat.label}</div>
+                    <div className="text-xs text-slate-400 mt-1">{stat.description}</div>
                   </div>
                 </div>
               </motion.div>
@@ -418,11 +418,11 @@ const About = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="group relative bg-gradient-to-br from-blue-950/80 to-sky-950/80 backdrop-blur-xl rounded-3xl p-8 border border-blue-400/30 shadow-2xl shadow-blue-900/50 overflow-hidden"
+              className="group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden"
             >
               {/* Animated gradient border */}
-              <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-blue-500 via-sky-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="h-full w-full bg-blue-950 rounded-3xl" />
+              <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-indigo-500 via-violet-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="h-full w-full bg-white rounded-3xl" />
               </div>
 
               <div className="relative">
@@ -431,16 +431,16 @@ const About = () => {
                     <motion.div
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                      className="w-40 h-40 rounded-2xl bg-gradient-to-br from-blue-500/30 to-sky-500/30 p-1"
+                      className="w-40 h-40 rounded-2xl bg-gradient-to-br from-indigo-500/30 to-violet-500/30 p-1"
                     >
-                      <div className="w-full h-full rounded-2xl bg-blue-950 flex items-center justify-center">
-                        <Brain className="w-20 h-20 text-blue-400" />
+                      <div className="w-full h-full rounded-2xl bg-indigo-50 flex items-center justify-center">
+                        <Brain className="w-20 h-20 text-indigo-500" />
                       </div>
                     </motion.div>
                     <motion.div
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-blue-500 to-sky-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/50"
+                      className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/50"
                     >
                       <Code2 className="w-6 h-6 text-white" />
                     </motion.div>
@@ -448,17 +448,17 @@ const About = () => {
 
 
                   <div className="flex-1">
-                    <h2 className="text-3xl font-black text-blue-50 mb-3">
+                    <h2 className="text-3xl font-black text-slate-800 mb-3">
                       Md. Saif Anwar
                     </h2>
-                    <div className="flex items-center gap-2 text-blue-300 mb-2">
+                    <div className="flex items-center gap-2 text-indigo-500 mb-2">
                       <MapPin className="w-5 h-5" />
                       <span className="font-medium">New Delhi, India</span>
                     </div>
-                    <div className="text-sm font-semibold text-sky-400 mb-6">Frontend React Developer</div>
+                    <div className="text-sm font-semibold text-violet-500 mb-6">Frontend React.js Developer</div>
 
-                    <p className="text-lg text-blue-100/80 leading-relaxed mb-8">
-                      Dedicated Frontend React Developer with 3+ years of hands-on experience building
+                    <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                      Dedicated Frontend React.js Developer with 3+ years of hands-on experience building
                       pixel-perfect, high-performance web applications. Passionate about React, Next.js,
                       Tailwind CSS and bringing stunning UI/UX designs to life.
                     </p>
@@ -468,7 +468,7 @@ const About = () => {
                         <motion.span
                           key={i}
                           whileHover={{ scale: 1.1 }}
-                          className="px-4 py-2 bg-blue-900/50 backdrop-blur-sm rounded-full text-sm font-medium text-blue-300 border border-blue-700/50 hover:bg-blue-800/50 transition-all"
+                          className="px-4 py-2 bg-indigo-50 rounded-full text-sm font-medium text-indigo-600 border border-indigo-200 hover:bg-indigo-100 transition-all shadow-sm"
                         >
                           #{tag}
                         </motion.span>
@@ -479,23 +479,23 @@ const About = () => {
                 </div>
 
                 {/* Current Focus */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-blue-400/20">
-                  <div className="flex items-center gap-4 p-4 bg-blue-900/30 rounded-xl">
-                    <div className="p-3 bg-gradient-to-br from-blue-500/20 to-sky-500/20 rounded-lg">
-                      <Code2 className="w-6 h-6 text-blue-400" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-slate-200">
+                  <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl shadow-sm">
+                    <div className="p-3 bg-indigo-100 rounded-lg">
+                      <Code2 className="w-6 h-6 text-indigo-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-blue-100">React & Next.js</h4>
-                      <p className="text-sm text-blue-300/80">Production-ready frontends</p>
+                      <h4 className="font-bold text-slate-800">React & Next.js</h4>
+                      <p className="text-sm text-slate-500">Production-ready frontends</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 p-4 bg-blue-900/30 rounded-xl">
-                    <div className="p-3 bg-gradient-to-br from-sky-500/20 to-blue-500/20 rounded-lg">
-                      <Sparkles className="w-6 h-6 text-sky-400" />
+                  <div className="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-xl shadow-sm">
+                    <div className="p-3 bg-violet-100 rounded-lg">
+                      <Sparkles className="w-6 h-6 text-violet-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-blue-100">UI / Animations</h4>
-                      <p className="text-sm text-blue-300/80">Framer Motion & Tailwind</p>
+                      <h4 className="font-bold text-slate-800">UI / Animations</h4>
+                      <p className="text-sm text-slate-500">Framer Motion & Tailwind</p>
                     </div>
                   </div>
                 </div>
@@ -516,18 +516,17 @@ const About = () => {
               ].map((tab) => {
                 const Icon = tab.icon;
                 const isActive = activeTab === tab.id;
-                
+
                 return (
                   <motion.button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                      isActive
-                        ? 'bg-gradient-to-r from-[#023E84] to-[#0077B6] text-white shadow-lg shadow-blue-500/30'
-                        : 'bg-blue-900/30 text-blue-200 hover:bg-blue-800/30'
-                    }`}
+                    className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-sm ${isActive
+                        ? 'bg-gradient-to-r from-indigo-600 to-violet-500 text-white shadow-indigo-200'
+                        : 'bg-white border text-slate-600 border-slate-200 hover:bg-slate-50'
+                      }`}
                   >
                     <Icon className="w-5 h-5" />
                     {tab.label}
@@ -547,7 +546,7 @@ const About = () => {
                   className="relative"
                 >
                   {/* Timeline Line */}
-                  <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 via-sky-400 to-transparent" />
+                  <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-200 via-violet-200 to-transparent" />
 
                   {journey.map((item, i) => {
                     const Icon = item.icon;
@@ -565,9 +564,8 @@ const About = () => {
                         <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 z-10">
                           <motion.div
                             whileHover={{ scale: 1.1 }}
-                            className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl border-4 border-blue-950"
+                            className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg bg-white border-4 border-slate-50"
                             style={{
-                              background: `linear-gradient(135deg, ${item.color}40, ${item.color}20)`,
                               borderColor: item.color
                             }}
                           >
@@ -579,16 +577,16 @@ const About = () => {
                         <div className={`ml-24 md:ml-0 md:w-5/12 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                           <motion.div
                             whileHover={{ y: -5 }}
-                            className="bg-gradient-to-br from-blue-900/40 to-sky-900/40 backdrop-blur-xl rounded-2xl p-6 border border-blue-400/30 hover:border-blue-300/50 transition-all"
+                            className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 shadow-md shadow-slate-200/50 transition-all"
                           >
-                            <div className="text-2xl font-black text-blue-50 mb-2">{item.year}</div>
-                            <h4 className="text-xl font-bold text-blue-100 mb-3">{item.title}</h4>
-                            <p className="text-blue-200/80 mb-4">{item.description}</p>
+                            <div className="text-2xl font-black text-slate-800 mb-2">{item.year}</div>
+                            <h4 className="text-xl font-bold text-indigo-600 mb-3">{item.title}</h4>
+                            <p className="text-slate-600 mb-4">{item.description}</p>
                             <div className="flex flex-wrap gap-2">
                               {item.tags.map((tag, tagIndex) => (
                                 <span
                                   key={tagIndex}
-                                  className="px-3 py-1 text-xs font-medium rounded-full bg-blue-900/50 text-blue-300 border border-blue-700/50"
+                                  className="px-3 py-1 text-xs font-medium rounded-full bg-slate-50 text-slate-600 border border-slate-200"
                                 >
                                   {tag}
                                 </span>
@@ -614,9 +612,9 @@ const About = () => {
                     <motion.div
                       key={category}
                       whileHover={{ y: -5 }}
-                      className="bg-gradient-to-br from-blue-900/40 to-sky-900/40 backdrop-blur-xl rounded-3xl p-8 border border-blue-400/30 hover:border-blue-300/50 transition-all"
+                      className="bg-white rounded-3xl p-8 border border-slate-200 hover:border-indigo-300 shadow-md transition-all"
                     >
-                      <h3 className="text-2xl font-black text-blue-50 mb-8 capitalize">
+                      <h3 className="text-2xl font-black text-slate-800 mb-8 capitalize">
                         {category}
                       </h3>
 
@@ -633,27 +631,27 @@ const About = () => {
                             >
                               <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-3">
-                                  <div className="p-2 bg-blue-900/50 rounded-lg group-hover:scale-110 transition-transform">
-                                    <Icon className="w-5 h-5 text-blue-400" />
+                                  <div className="p-2 bg-indigo-50 rounded-lg group-hover:scale-110 transition-transform">
+                                    <Icon className="w-5 h-5 text-indigo-500" />
                                   </div>
-                                  <span className="font-semibold text-blue-100">
+                                  <span className="font-semibold text-slate-700">
                                     {skill.name}
                                   </span>
                                 </div>
-                                <span className="text-blue-300 font-mono">
+                                <span className="text-indigo-600 font-mono font-medium">
                                   {skill.level}%
                                 </span>
                               </div>
 
-                              <div className="h-2 bg-blue-900/50 rounded-full overflow-hidden">
+                              <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                                 <motion.div
                                   initial={{ width: 0 }}
                                   animate={{ width: `${skill.level}%` }}
                                   transition={{ duration: 1, delay: i * 0.1 }}
-                                  className="h-full bg-gradient-to-r from-blue-500 to-sky-500 rounded-full"
+                                  className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full"
                                 />
                               </div>
-                              <p className="text-xs text-blue-300/60 mt-1">{skill.description}</p>
+                              <p className="text-xs text-slate-500 mt-1">{skill.description}</p>
                             </motion.div>
                           );
                         })}
@@ -677,15 +675,15 @@ const About = () => {
                       <motion.div
                         key={i}
                         whileHover={{ y: -5 }}
-                        className="bg-gradient-to-br from-blue-900/40 to-sky-900/40 backdrop-blur-xl rounded-3xl p-8 border border-blue-400/30 hover:border-blue-300/50 transition-all group"
+                        className="bg-white rounded-3xl p-8 border border-slate-200 hover:border-indigo-300 shadow-md transition-all group"
                       >
                         <div className="flex items-start gap-4 mb-6">
-                          <div className="p-4 bg-gradient-to-br from-blue-500/20 to-sky-500/20 rounded-2xl group-hover:scale-110 transition-transform">
-                            <Icon className="w-8 h-8 text-blue-400" />
+                          <div className="p-4 bg-indigo-50 rounded-2xl group-hover:scale-110 transition-transform">
+                            <Icon className="w-8 h-8 text-indigo-500" />
                           </div>
                           <div>
-                            <h4 className="text-2xl font-black text-blue-50 mb-2">{item.title}</h4>
-                            <p className="text-blue-200/80">{item.description}</p>
+                            <h4 className="text-2xl font-black text-slate-800 mb-2">{item.title}</h4>
+                            <p className="text-slate-600">{item.description}</p>
                           </div>
                         </div>
 
@@ -694,7 +692,7 @@ const About = () => {
                             <motion.span
                               key={j}
                               whileHover={{ scale: 1.05 }}
-                              className="px-4 py-2 bg-blue-900/30 text-blue-300 rounded-full text-sm font-medium border border-blue-700/50 hover:bg-blue-800/30 transition-colors"
+                              className="px-4 py-2 bg-slate-50 text-slate-600 rounded-full text-sm font-medium border border-slate-200 hover:bg-slate-100 transition-colors"
                             >
                               {principle}
                             </motion.span>
@@ -714,10 +712,10 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-gradient-to-br from-blue-950/80 to-blue-900/80 backdrop-blur-xl rounded-3xl p-8 border border-blue-400/30 shadow-2xl shadow-blue-900/50"
+              className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50"
             >
-              <h3 className="text-2xl font-black text-blue-50 mb-8 flex items-center gap-3">
-                <Coffee className="w-6 h-6 text-blue-400" />
+              <h3 className="text-2xl font-black text-slate-800 mb-8 flex items-center gap-3">
+                <Coffee className="w-6 h-6 text-indigo-500" />
                 Beyond Code
               </h3>
 
@@ -729,21 +727,21 @@ const About = () => {
                       key={i}
                       whileHover={{ scale: 1.05, y: -3 }}
                       whileTap={{ scale: 0.95 }}
-                      className="group relative p-4 bg-blue-900/30 rounded-2xl border border-blue-700/30 hover:border-blue-500/50 transition-all duration-300 cursor-pointer"
+                      className="group relative p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-indigo-300 transition-all duration-300 cursor-pointer"
                     >
                       <div className="flex flex-col items-center text-center gap-3">
                         <motion.div
                           animate={{ rotate: [0, 360] }}
                           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                           className="p-3 rounded-xl group-hover:scale-110 transition-transform"
-                          style={{ backgroundColor: `${hobby.color}20` }}
+                          style={{ backgroundColor: `${hobby.color}15` }}
                         >
                           <Icon className="w-6 h-6" style={{ color: hobby.color }} />
                         </motion.div>
-                        <span className="text-sm font-medium text-blue-200">
+                        <span className="text-sm font-medium text-slate-700">
                           {hobby.label}
                         </span>
-                        <p className="text-xs text-blue-300/60">{hobby.description}</p>
+                        <p className="text-xs text-slate-500">{hobby.description}</p>
                       </div>
                     </motion.div>
                   );
@@ -756,16 +754,16 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="bg-gradient-to-br from-blue-950/80 to-blue-900/80 backdrop-blur-xl rounded-3xl p-8 border border-blue-400/30 shadow-2xl shadow-blue-900/50"
-              >
-              <h3 className="text-2xl font-black text-blue-50 mb-6 flex items-center gap-3">
-                <Star className="w-6 h-6 text-blue-400" />
+              className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50"
+            >
+              <h3 className="text-2xl font-black text-slate-800 mb-6 flex items-center gap-3">
+                <Star className="w-6 h-6 text-indigo-500" />
                 Quick Stats
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-blue-200">Code Quality</span>
+                  <span className="text-slate-600">Code Quality</span>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star key={star} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
@@ -773,16 +771,16 @@ const About = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-blue-200">Project Delivery</span>
-                  <span className="text-blue-300 font-semibold">98%</span>
+                  <span className="text-slate-600">Project Delivery</span>
+                  <span className="text-indigo-600 font-semibold">98%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-blue-200">Client Satisfaction</span>
-                  <span className="text-blue-300 font-semibold">100%</span>
+                  <span className="text-slate-600">Client Satisfaction</span>
+                  <span className="text-indigo-600 font-semibold">100%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-blue-200">Bug Free Code</span>
-                  <span className="text-blue-300 font-semibold">99.5%</span>
+                  <span className="text-slate-600">Bug Free Code</span>
+                  <span className="text-indigo-600 font-semibold">99.5%</span>
                 </div>
               </div>
             </motion.div>
@@ -792,19 +790,19 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
-              className="bg-gradient-to-br from-blue-950/80 to-blue-900/80 backdrop-blur-xl rounded-3xl p-8 border border-blue-400/30 shadow-2xl shadow-blue-900/50"
-              >
-              <h3 className="text-2xl font-black text-blue-50 mb-6 flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-blue-400" />
+              className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-200 shadow-xl shadow-slate-200/50"
+            >
+              <h3 className="text-2xl font-black text-slate-800 mb-6 flex items-center gap-3">
+                <ShieldCheck className="w-6 h-6 text-indigo-500" />
                 Tech Stack
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion", "Figma", "Vite", "Git"].map((tech, i) => (
+                {["React", "Next.js", "JavaScript", "Tailwind", "Framer Motion", "Figma", "Vite", "Git"].map((tech, i) => (
                   <motion.span
                     key={i}
                     whileHover={{ scale: 1.1 }}
-                    className="px-3 py-1.5 bg-blue-900/50 text-blue-300 rounded-lg text-sm font-medium border border-blue-700/50"
+                    className="px-3 py-1.5 bg-slate-50 text-indigo-600 rounded-lg text-sm font-medium border border-slate-200 shadow-sm"
                   >
                     {tech}
                   </motion.span>
@@ -821,12 +819,12 @@ const About = () => {
           transition={{ delay: 0.7 }}
           className="text-center"
         >
-          <div className="inline-flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-blue-950/80 to-blue-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-blue-400/30 shadow-2xl shadow-blue-900/50 max-w-4xl mx-auto">
+          <div className="inline-flex flex-col md:flex-row items-center gap-8 bg-white backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-slate-200 shadow-xl shadow-slate-200/50 max-w-4xl mx-auto">
             <div className="text-left">
-              <h3 className="text-3xl font-black text-blue-50 mb-4">
+              <h3 className="text-3xl font-black text-slate-800 mb-4">
                 Ready to Build Something Amazing?
               </h3>
-              <p className="text-blue-200/80 text-lg">
+              <p className="text-slate-600 text-lg">
                 Let's collaborate on your next project and create something extraordinary together.
               </p>
             </div>
@@ -836,7 +834,7 @@ const About = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative px-8 py-4 bg-gradient-to-r from-[#023E84] to-[#0077B6] text-white font-bold rounded-xl shadow-xl shadow-blue-500/30 hover:shadow-blue-400/50 transition-all flex items-center gap-3"
+                className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-bold rounded-xl shadow-md shadow-indigo-200 hover:shadow-indigo-300 transition-all flex items-center gap-3"
               >
                 <span>Start a Project</span>
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -846,7 +844,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-blue-900/50 backdrop-blur-sm border border-blue-400/30 text-blue-100 font-bold rounded-xl hover:bg-blue-800/50 transition-all"
+                className="px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition-all shadow-sm"
               >
                 View Projects
               </motion.button>

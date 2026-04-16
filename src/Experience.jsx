@@ -36,14 +36,7 @@ const Experience = () => {
       achievements: ["Production deployments", "API integrations", "React mastery"],
       icon: "🚀"
     },
-    {
-      title: "Graduate Engineer Trainee",
-      company: "HCL Technologies",
-      duration: "2024 - 2025",
-      description: "Developed frontend for GenAI-powered PV Intake Application using Next.js + TypeScript for U.S. life sciences client. Delivered enterprise-grade solution with 99.9% uptime.",
-      achievements: ["Enterprise Next.js app", "TypeScript migration", "99.9% uptime"],
-      icon: "🏢"
-    },
+   
   ];
 
   const projects = [
@@ -132,30 +125,26 @@ const Experience = () => {
     <section id="experience" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-sky-400/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/3 to-sky-500/3 rounded-full blur-3xl animate-pulse mx-auto left-1/2 -translate-x-1/2" />
+        <div className="absolute top-1/4 left-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-violet-500/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-1/2 w-96 h-96 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-full blur-3xl animate-pulse mx-auto left-1/2 -translate-x-1/2" />
       </div>
 
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center mb-24 animate-fade-in-up">
-          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-gradient-to-r 
-                          from-blue-500/15 to-sky-500/15 rounded-3xl border 
-                          border-blue-400/40 backdrop-blur-xl shadow-2xl shadow-blue-500/30 mx-auto max-w-max">
-            <Briefcase className="w-7 h-7 text-blue-400" />
-            <span className="text-xl font-bold text-blue-100">Professional Journey</span>
+          <div className="inline-flex items-center gap-3 mb-8 px-8 py-4 bg-white rounded-3xl border border-slate-200 shadow-sm mx-auto max-w-max">
+            <Briefcase className="w-7 h-7 text-indigo-500" />
+            <span className="text-xl font-bold text-slate-800">Professional Journey</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r 
-                         from-blue-300 via-sky-200 to-blue-100 bg-clip-text text-transparent 
-                         leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 text-slate-800 leading-tight">
             Experience &
             <br />
-            <span className="bg-gradient-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">
               Live React Projects
             </span>
           </h2>
-          <p className="text-xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             From internships to enterprise solutions - delivering results that matter.
           </p>
         </div>
@@ -163,8 +152,8 @@ const Experience = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-20">
           {/* Experience Timeline */}
           <div ref={timelineRef}>
-            <h3 className="text-3xl font-black text-blue-50 mb-12 flex items-center gap-4 justify-center">
-              <Calendar className="w-10 h-10 text-blue-400" />
+            <h3 className="text-3xl font-black text-slate-800 mb-12 flex items-center gap-4 justify-center">
+              <Calendar className="w-10 h-10 text-indigo-500" />
               Work Experience
             </h3>
 
@@ -175,47 +164,38 @@ const Experience = () => {
                 return (
                   <div
                     key={index}
-                    className={`group relative p-8 lg:p-10 bg-gradient-to-br from-blue-950/70 
-                               to-slate-900/70 backdrop-blur-xl rounded-3xl border 
-                               border-blue-700/50 shadow-2xl shadow-blue-500/30 
-                               hover:shadow-blue-400/50 hover:scale-105 hover:-translate-y-2 
-                               transition-all duration-700 cursor-pointer ${isActive ? 
-                               'border-blue-500/80 shadow-blue-400/60 ring-4 ring-blue-500/30' : ''}`}
+                    className={`group relative p-8 lg:p-10 bg-white rounded-3xl border border-slate-200 shadow-md shadow-slate-200/50 hover:shadow-indigo-100 hover:border-indigo-300 hover:scale-105 hover:-translate-y-2 transition-all duration-700 cursor-pointer ${isActive ? 
+                               'border-indigo-400 shadow-indigo-100 ring-4 ring-indigo-50' : ''}`}
                     onClick={() => setActiveTimeline(index)}
                   >
                     {/* Magnetic glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-r from-blue-500/20 
-                                   to-sky-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 
-                                   transition-opacity ${isActive ? 'opacity-100' : ''} -z-10`} />
+                    <div className={`absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity ${isActive ? 'opacity-100' : ''} -z-10`} />
                     
                     {/* Icon */}
-                    <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br 
-                                   from-blue-500/30 to-sky-500/30 rounded-2xl mb-6 mx-auto 
-                                   shadow-2xl shadow-blue-500/40 group-hover:scale-110 transition-all">
+                    <div className="flex items-center justify-center w-20 h-20 bg-indigo-50 rounded-2xl mb-6 mx-auto shadow-sm group-hover:scale-110 group-hover:bg-indigo-100 transition-all">
                       <span className="text-3xl">{exp.icon}</span>
                     </div>
 
                     {/* Content */}
                     <div className="text-center">
-                      <h4 className="text-2xl lg:text-3xl font-black text-blue-50 mb-3">
+                      <h4 className="text-2xl lg:text-3xl font-black text-slate-800 mb-3">
                         {exp.title}
                       </h4>
-                      <div className="flex items-center justify-center gap-2 mb-4 text-blue-400">
-                        <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" />
+                      <div className="flex items-center justify-center gap-2 mb-4 text-indigo-600">
+                        <div className="w-3 h-3 bg-indigo-500 rounded-full animate-pulse" />
                         <span className="font-bold">{exp.company}</span>
-                        <span className="text-blue-300/70">• {exp.duration}</span>
+                        <span className="text-slate-500">• {exp.duration}</span>
                       </div>
                       
-                      <p className="text-blue-100/90 leading-relaxed mb-6">{exp.description}</p>
+                      <p className="text-slate-600 leading-relaxed mb-6">{exp.description}</p>
 
                       {/* Achievements */}
                       {isActive && (
-                        <div className="grid grid-cols-3 gap-3 pt-6 border-t border-blue-800/50">
+                        <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-100">
                           {exp.achievements.map((ach, i) => (
-                            <div key={i} className="group flex items-center gap-2 p-3 bg-blue-900/50 
-                                                   rounded-xl hover:bg-blue-900/80 transition-all">
-                              <Star className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                              <span className="text-sm text-blue-200 font-medium">{ach}</span>
+                            <div key={i} className="group flex items-center gap-2 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all border border-slate-100">
+                              <Star className="w-4 h-4 text-indigo-400 flex-shrink-0" />
+                              <span className="text-sm text-slate-700 font-medium">{ach}</span>
                             </div>
                           ))}
                         </div>
@@ -224,9 +204,7 @@ const Experience = () => {
 
                     {/* Active indicator */}
                     {isActive && (
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 
-                                     bg-blue-500/90 backdrop-blur-sm px-6 py-2 rounded-2xl 
-                                     border border-blue-400/50 shadow-2xl shadow-blue-500/50">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-500 px-6 py-2 rounded-2xl shadow-md">
                         <Zap className="w-4 h-4 text-white" />
                         <span className="text-white font-bold text-sm uppercase tracking-wide">
                           Featured Experience
@@ -238,65 +216,36 @@ const Experience = () => {
               })}
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 pt-12 border-t border-blue-800/50">
-              <div className="text-center p-6">
-                <div className="text-3xl font-black text-blue-400 mb-2">
-                  {counters.totalProjects || 0}+
-                </div>
-                <div className="text-blue-300/90 font-medium">Projects</div>
-              </div>
-              <div className="text-center p-6">
-                <div className="text-3xl font-black text-sky-400 mb-2">
-                  {counters.totalCommits || 0}+
-                </div>
-                <div className="text-blue-300/90 font-medium">Commits</div>
-              </div>
-              <div className="text-center p-6">
-                <div className="text-3xl font-black text-blue-400 mb-2">3+</div>
-                <div className="text-blue-300/90 font-medium">Companies</div>
-              </div>
-              <div className="text-center p-6">
-                <div className="text-3xl font-black text-blue-400 mb-2">2+</div>
-                <div className="text-blue-300/90 font-medium">Years</div>
-              </div>
-            </div>
+          
           </div>
 
           {/* Projects Showcase */}
           <div>
-            <h3 className="text-3xl font-black text-blue-50 mb-12 flex items-center gap-4 justify-center">
-              <Rocket className="w-10 h-10 text-blue-400" />
+            <h3 className="text-3xl font-black text-slate-800 mb-12 flex items-center gap-4 justify-center">
+              <Rocket className="w-10 h-10 text-indigo-500" />
               Featured Projects
             </h3>
 
             {/* Project Cards */}
-            <div className="space-y-6 max-h-[800px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-transparent">
+            <div className="space-y-6 max-h-[800px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-indigo-200 scrollbar-track-transparent">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="group relative bg-gradient-to-br from-blue-950/70 to-slate-900/70 
-                            backdrop-blur-xl rounded-3xl p-6 border border-blue-700/50 
-                            shadow-2xl shadow-blue-500/30 hover:shadow-blue-400/50 
-                            hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 
-                            overflow-hidden cursor-pointer"
+                  className="group relative bg-white rounded-3xl p-6 border border-slate-200 shadow-md shadow-slate-200/50 hover:shadow-indigo-100 hover:border-indigo-300 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Glow overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 
-                                 to-sky-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 
-                                 transition-opacity -z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-violet-500/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
                   
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h4 className="text-xl font-black text-blue-50 mb-1 group-hover:text-blue-100">
+                      <h4 className="text-xl font-black text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
                         {project.title}
                       </h4>
                       <div className="flex flex-wrap gap-2 mb-3">
                         {project.tech.map((tech, i) => (
-                          <span key={i} className="px-2.5 py-0.5 bg-blue-900/60 backdrop-blur-sm 
-                                                  rounded-lg text-blue-300 text-xs font-medium">
+                          <span key={i} className="px-2.5 py-0.5 bg-indigo-50 rounded-lg text-indigo-600 border border-indigo-100 text-xs font-medium">
                             {tech}
                           </span>
                         ))}
@@ -304,25 +253,25 @@ const Experience = () => {
                     </div>
                     <div className="flex gap-2 ml-auto">
                       <a href={project.link} target="_blank" rel="noopener noreferrer"
-                         className="p-2 bg-blue-500/20 rounded-xl hover:bg-blue-500/40 transition-all">
-                        <ExternalLink className="w-4 h-4 text-blue-300" />
+                         className="p-2 bg-slate-50 border border-slate-100 rounded-xl hover:bg-slate-100 transition-all">
+                        <ExternalLink className="w-4 h-4 text-slate-500" />
                       </a>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-blue-100/80 leading-relaxed mb-4 text-sm">
+                  <p className="text-slate-600 leading-relaxed mb-4 text-sm">
                     {project.description}
                   </p>
 
                   {/* Stats + live badge */}
-                  <div className="flex items-center justify-between pt-4 border-t border-blue-800/50">
-                    <span className="text-blue-400/90 font-semibold text-xs uppercase tracking-wide">
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                    <span className="text-indigo-600 font-semibold text-xs uppercase tracking-wide">
                       {project.stats}
                     </span>
                     <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      <span className="text-xs text-green-300 font-medium">Live Site</span>
+                      <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)] animate-pulse" />
+                      <span className="text-xs text-emerald-600 font-medium">Live Site</span>
                     </div>
                   </div>
                 </div>
@@ -333,7 +282,7 @@ const Experience = () => {
       </div>
 
       {/* Custom animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in-up {
           from { opacity: 0; transform: translateY(50px); }
           to { opacity: 1; transform: translateY(0); }

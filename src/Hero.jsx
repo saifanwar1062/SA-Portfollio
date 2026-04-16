@@ -30,7 +30,7 @@ import {
 } from "framer-motion";
 
 // Import background assets
-import backgroundVideo from "./assets/Herovideo.mp4";
+// import backgroundVideo from "./assets/Herovideo.mp4";
 
 // Enhanced 3D tilt effect with better physics
 function useTilt3D({
@@ -139,11 +139,8 @@ const Hero = () => {
   const [typedName, setTypedName] = useState("");
   const [stats, setStats] = useState({ projects: 0, clients: 0, lines: 0 });
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [videoError, setVideoError] = useState(false);
-
   const containerRef = useRef(null);
   const contentRef = useRef(null);
-  const videoRef = useRef(null);
 
   const isInView = useInView(contentRef, { once: true, margin: "-50px" });
 
@@ -208,60 +205,60 @@ const Hero = () => {
 
   const colorClasses = {
     purple: {
-      border: "border-blue-400/30 hover:border-blue-300/60",
-      bg: "bg-blue-500/20",
-      text: "text-blue-300",
-      gradient: "from-blue-400",
-      glow: "shadow-blue-500/20",
+      border: "border-indigo-200 hover:border-indigo-300",
+      bg: "bg-indigo-50",
+      text: "text-indigo-600",
+      gradient: "from-indigo-400",
+      glow: "shadow-indigo-100",
     },
     violet: {
-      border: "border-sky-400/30 hover:border-sky-300/60",
-      bg: "bg-sky-500/20",
-      text: "text-sky-300",
-      gradient: "from-sky-400",
-      glow: "shadow-sky-500/20",
+      border: "border-violet-200 hover:border-violet-300",
+      bg: "bg-violet-50",
+      text: "text-violet-600",
+      gradient: "from-violet-400",
+      glow: "shadow-violet-100",
     },
     fuchsia: {
-      border: "border-cyan-400/30 hover:border-cyan-300/60",
-      bg: "bg-cyan-500/20",
-      text: "text-cyan-300",
-      gradient: "from-cyan-400",
-      glow: "shadow-cyan-500/20",
+      border: "border-fuchsia-200 hover:border-fuchsia-300",
+      bg: "bg-fuchsia-50",
+      text: "text-fuchsia-600",
+      gradient: "from-fuchsia-400",
+      glow: "shadow-fuchsia-100",
     },
     purple2: {
-      border: "border-blue-400/30 hover:border-blue-300/60",
-      bg: "bg-blue-500/20",
-      text: "text-blue-300",
-      gradient: "from-blue-400",
-      glow: "shadow-blue-500/20",
+      border: "border-indigo-200 hover:border-indigo-300",
+      bg: "bg-indigo-50",
+      text: "text-indigo-600",
+      gradient: "from-indigo-400",
+      glow: "shadow-indigo-100",
     },
     sky: {
-      border: "border-blue-400/30 hover:border-blue-300/60",
-      bg: "bg-blue-500/20",
-      text: "text-blue-300",
-      gradient: "from-blue-400",
-      glow: "shadow-blue-500/20",
+      border: "border-sky-200 hover:border-sky-300",
+      bg: "bg-sky-50",
+      text: "text-sky-600",
+      gradient: "from-sky-400",
+      glow: "shadow-sky-100",
     },
     blue: {
-      border: "border-sky-400/30 hover:border-sky-300/60",
-      bg: "bg-sky-500/20",
-      text: "text-sky-300",
-      gradient: "from-sky-400",
-      glow: "shadow-sky-500/20",
+      border: "border-blue-200 hover:border-blue-300",
+      bg: "bg-blue-50",
+      text: "text-blue-600",
+      gradient: "from-blue-400",
+      glow: "shadow-blue-100",
     },
     cyan: {
-      border: "border-blue-400/30 hover:border-blue-300/60",
-      bg: "bg-blue-500/20",
-      text: "text-blue-300",
-      gradient: "from-blue-400",
-      glow: "shadow-blue-500/20",
+      border: "border-cyan-200 hover:border-cyan-300",
+      bg: "bg-cyan-50",
+      text: "text-cyan-600",
+      gradient: "from-cyan-400",
+      glow: "shadow-cyan-100",
     },
     indigo: {
-      border: "border-cyan-400/30 hover:border-cyan-300/60",
-      bg: "bg-cyan-500/20",
-      text: "text-cyan-300",
-      gradient: "from-cyan-400",
-      glow: "shadow-cyan-500/20",
+      border: "border-indigo-200 hover:border-indigo-300",
+      bg: "bg-indigo-50",
+      text: "text-indigo-600",
+      gradient: "from-indigo-400",
+      glow: "shadow-indigo-100",
     },
   };
 
@@ -282,16 +279,12 @@ const Hero = () => {
           delay: index * 0.2,
           ease: "easeInOut",
         }}
-        className={`absolute rounded-full bg-gradient-to-r from-blue-400/40 to-sky-400/40 ${type === "large" ? "w-2 h-2" : "w-1 h-1"}`}
+        className={`absolute rounded-full bg-gradient-to-r from-indigo-400/40 to-violet-400/40 ${type === "large" ? "w-2 h-2" : "w-1 h-1"}`}
       />
     );
   };
 
-  // Handle video error
-  const handleVideoError = () => {
-    setVideoError(true);
-    console.error("Video failed to load, falling back to image");
-  };
+
 
   return (
     <section
@@ -302,65 +295,14 @@ const Hero = () => {
       {/* Background with imported assets */}
       <div className="fixed inset-0 z-0 overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0">
-          {/* Video background with fallback to imported image */}
-          {!videoError ? (
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              onError={handleVideoError}
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src={backgroundVideo} type="video/mp4" />
-            </video>
-          ) : (
-            <div className="absolute inset-0 bg-blue-950" />
-          )}
+          <div className="absolute inset-0 bg-slate-50" />
         </motion.div>
 
-       
 
-        <div className="absolute inset-0 bg-slate-950/10" />
 
-        {/* Grid pattern */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{ x: [0, 40, 0] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `linear-gradient(90deg, transparent 98%, rgba(56, 189, 248, 0.4) 100%), linear-gradient(0deg, transparent 98%, rgba(14, 165, 233, 0.4) 100%)`,
-              backgroundSize: "clamp(40px, 5vw, 60px) clamp(40px, 5vw, 60px)",
-            }}
-          />
+        <div className="absolute inset-0 bg-white/70" />
 
-          {/* Binary rain effect */}
-          <div className="absolute inset-0 opacity-[0.08]">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: ["-100%", "100%"], opacity: [0, 0.6, 0] }}
-                transition={{
-                  duration: Math.random() * 8 + 8,
-                  delay: Math.random() * 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="absolute text-xs font-mono text-blue-300/60"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  fontSize: "clamp(10px, 1.5vw, 12px)",
-                }}
-              >
-                {Math.random() > 0.5 ? "1" : "0"}
-              </motion.div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Floating tech icons */}
         <div className="absolute inset-0 pointer-events-none">
@@ -383,11 +325,11 @@ const Hero = () => {
                 className={`opacity-10 ${size === "sm" ? "w-16 h-16 md:w-20 md:h-20" : size === "md" ? "w-12 h-12 md:w-16 md:h-16" : "w-20 h-20 md:w-24 md:h-24"}`}
               >
                 {size === "sm" ? (
-                  <Code2 className="w-full h-full text-blue-300" />
+                  <Code2 className="w-full h-full text-indigo-300" />
                 ) : size === "md" ? (
-                  <Server className="w-full h-full text-sky-300" />
+                  <Server className="w-full h-full text-violet-300" />
                 ) : (
-                  <Database className="w-full h-full text-cyan-300" />
+                  <Database className="w-full h-full text-fuchsia-300" />
                 )}
               </motion.div>
             </div>
@@ -429,14 +371,14 @@ const Hero = () => {
           {/* Left column - Content (Shows first on all screens) */}
           <div className="order-1">
             <motion.div variants={fadeInUp} className="mb-6 md:mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-sky-500/20 backdrop-blur-sm border border-blue-400/30">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                 >
-                  <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-300" />
+                  <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-indigo-500" />
                 </motion.div>
-                <span className="text-sm md:text-base font-medium text-blue-100">
+                <span className="text-sm md:text-base font-medium text-indigo-700">
                   Available for Opportunities
                 </span>
               </div>
@@ -444,11 +386,11 @@ const Hero = () => {
 
             <motion.div variants={slideInLeft}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-                <span className="block text-blue-100">Hi, I'm</span>
-                <span className="block bg-gradient-to-r from-[#0077B6] via-[#00B4D8] to-[#023E84] bg-clip-text text-transparent">
+                <span className="block text-slate-800">Hi, I'm</span>
+                <span className="block bg-gradient-to-r from-indigo-600 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
                   {typedName}
                   <motion.span
-                    className="inline-block w-0.5 h-8 md:h-12 ml-1 bg-blue-400"
+                    className="inline-block w-0.5 h-8 md:h-12 ml-1 bg-indigo-500"
                     animate={{ opacity: [1, 0.3, 1] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                   />
@@ -457,14 +399,14 @@ const Hero = () => {
 
               <div className="mb-6 md:mb-8">
                 <motion.h2
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-blue-200/90 mb-3 md:mb-4 leading-relaxed"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-slate-800 mb-3 md:mb-4 leading-relaxed"
                   variants={fadeInUp}
                 >
-                  Frontend React Developer &<br className="hidden sm:block" /> UI Craftsman
+                  Frontend React.js Developer &<br className="hidden sm:block" /> UI Craftsman
                 </motion.h2>
 
                 <motion.p
-                  className="text-base sm:text-lg text-blue-100/80 leading-relaxed"
+                  className="text-base sm:text-lg text-slate-500 leading-relaxed"
                   variants={fadeInUp}
                 >
                   I craft pixel-perfect, high-performance React applications with stunning UI/UX.
@@ -489,22 +431,22 @@ const Hero = () => {
                   whileHover={{ y: -4, scale: 1.03 }}
                   onHoverStart={() => setHoveredCard(`stat-${i}`)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className="p-3 sm:p-4 rounded-xl bg-gradient-to-br from-blue-900/40 to-sky-900/40 backdrop-blur-sm border border-blue-400/20 hover:border-blue-300/40 transition-all duration-300"
+                  className="p-3 sm:p-4 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 shadow-md shadow-indigo-100/50 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <stat.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-300" />
+                    <stat.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-indigo-500" />
                     <motion.div
                       animate={{
                         scale: hoveredCard === `stat-${i}` ? [1, 1.1, 1] : 1,
                       }}
                       transition={{ duration: 0.4 }}
-                      className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-300"
+                      className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800"
                     >
                       {stat.value}
-                      <span className="text-blue-400">{stat.suffix}</span>
+                      <span className="text-indigo-500">{stat.suffix}</span>
                     </motion.div>
                   </div>
-                  <div className="text-xs sm:text-sm text-blue-200/70 font-medium">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-slate-500 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -518,7 +460,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("projects")}
-                className="group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-[#023E84] to-[#0077B6] text-white font-semibold rounded-xl overflow-hidden transition-all duration-300"
+                className="group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-indigo-600 to-violet-500 text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 shadow-md shadow-indigo-200"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 text-sm sm:text-base">
                   View My Work
@@ -527,7 +469,7 @@ const Hero = () => {
                   </motion.div>
                 </span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#0077B6] to-[#00B4D8]"
+                  className="absolute inset-0 bg-gradient-to-r from-violet-500 to-indigo-600"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.4 }}
@@ -538,7 +480,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => scrollToSection("contact")}
-                className="px-6 sm:px-8 py-3 bg-blue-950/60 backdrop-blur-sm border border-blue-400/30 text-blue-100 font-semibold rounded-xl hover:bg-blue-900/70 hover:border-blue-300/50 transition-all duration-300 text-sm sm:text-base"
+                className="px-6 sm:px-8 py-3 bg-white border border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-300 shadow-sm transition-all duration-300 text-sm sm:text-base"
               >
                 Get In Touch
               </motion.button>
@@ -566,7 +508,7 @@ const Hero = () => {
                     transition={{ duration: 3.5, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
                     onHoverStart={() => setHoveredCard(`tech-${i}`)}
                     onHoverEnd={() => setHoveredCard(null)}
-                    className={`absolute ${tech.position} w-40 sm:w-44 md:w-48 lg:w-52 xl:w-56 p-4 sm:p-5 md:p-6 rounded-2xl bg-gradient-to-br from-blue-900/40 to-sky-900/40 backdrop-blur-xl ${colorClass.border} transition-all duration-300 cursor-pointer shadow-lg ${colorClass.glow}`}
+                    className={`absolute ${tech.position} w-40 sm:w-44 md:w-48 lg:w-52 xl:w-56 p-4 sm:p-5 md:p-6 rounded-2xl bg-white backdrop-blur-xl ${colorClass.border} transition-all duration-300 cursor-pointer shadow-xl border ${colorClass.glow}`}
                   >
                     <div className="flex items-start gap-3 sm:gap-4">
                       <motion.div
@@ -583,7 +525,7 @@ const Hero = () => {
                         <h3 className={`text-base sm:text-lg font-bold ${colorClass.text} mb-1 truncate`}>
                           {tech.label}
                         </h3>
-                        <p className="text-xs sm:text-sm text-blue-100/70 leading-tight">{tech.content}</p>
+                        <p className="text-xs sm:text-sm text-slate-500 leading-tight">{tech.content}</p>
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: hoveredCard === `tech-${i}` ? "100%" : "0%" }}
@@ -605,10 +547,10 @@ const Hero = () => {
               {[
                 { icon: Layers, label: "React", color: "sky" },
                 { icon: GitBranch, label: "Next.js", color: "blue" },
-                { icon: Zap, label: "TypeScript", color: "cyan" },
+                { icon: Zap, label: "JavaScript", color: "cyan" },
                 { icon: Terminal, label: "Tailwind", color: "indigo" },
                 { icon: Brain, label: "Framer Motion", color: "sky" },
-                { icon: Shield, label: "Figma", color: "blue" },
+
               ].map((tech, i) => {
                 const colorClass = colorClasses[tech.color] || colorClasses.sky;
                 return (
@@ -617,10 +559,10 @@ const Hero = () => {
                     variants={fadeInUp}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg backdrop-blur-sm ${colorClass.border} bg-blue-900/20 transition-all duration-200`}
+                    className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-white border ${colorClass.border} shadow-sm transition-all duration-200`}
                   >
                     <tech.icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${colorClass.text}`} />
-                    <span className="text-xs sm:text-sm font-medium text-blue-100 whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-medium text-slate-700 whitespace-nowrap">
                       {tech.label}
                     </span>
                   </motion.div>

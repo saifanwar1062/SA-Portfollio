@@ -2,11 +2,107 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary:       #023E84;
-  --color-secondary:     #0077B6;
-  --color-accent:        #00B4D8;
-  --color-primary-light: #0077B6;
-  --color-primary-dark:  #023E84;
+  --color-primary: #FFD700;
+  /* Gold */
+  --color-secondary: #C0C0C0;
+  /* Silver */
+  --color-accent: #FFD700;
+  --color-primary-light: #FFDF5C;
+  --color-primary-dark: #D4AF37;
+
+  /* Overriding default Slate (Neutral) for dark black theme */
+  --color-slate-50: #0a0a0a;
+  /* Dark black background */
+  --color-slate-100: #121212;
+  /* Slightly lighter black */
+  --color-slate-200: #262626;
+  /* Borders */
+  --color-slate-300: #404040;
+  --color-slate-400: #a3a3a3;
+  --color-slate-500: #d4d4d4;
+  --color-slate-600: #e5e5e5;
+  --color-slate-700: #f5f5f5;
+  --color-slate-800: #ffffff;
+  /* Text */
+  --color-slate-900: #ffffff;
+  /* Headings / Dark Text -> White text */
+
+  /* Overriding Indigo -> Gold */
+  --color-indigo-50: #141208;
+  --color-indigo-100: #1f1c0d;
+  --color-indigo-200: #4d4013;
+  --color-indigo-300: #b08d27;
+  --color-indigo-400: #D4AF37;
+  --color-indigo-500: #FFD700;
+  --color-indigo-600: #D4AF37;
+  --color-indigo-700: #b08d27;
+  --color-indigo-800: #856a1b;
+  --color-indigo-900: #5c4912;
+
+  /* Overriding Violet -> Silver */
+  --color-violet-50: #141414;
+  --color-violet-100: #1f1f1f;
+  --color-violet-200: #333333;
+  --color-violet-300: #808080;
+  --color-violet-400: #A9A9A9;
+  --color-violet-500: #C0C0C0;
+  --color-violet-600: #A9A9A9;
+  --color-violet-700: #808080;
+  --color-violet-800: #595959;
+  --color-violet-900: #404040;
+
+  /* Overriding Fuchsia -> Gold */
+  --color-fuchsia-50: #141208;
+  --color-fuchsia-100: #1f1c0d;
+  --color-fuchsia-200: #4d4013;
+  --color-fuchsia-300: #b08d27;
+  --color-fuchsia-400: #D4AF37;
+  --color-fuchsia-500: #FFD700;
+  --color-fuchsia-600: #D4AF37;
+  --color-fuchsia-700: #b08d27;
+  --color-fuchsia-800: #856a1b;
+  --color-fuchsia-900: #5c4912;
+
+  /* Overriding Blue -> Gold */
+  --color-blue-50: #141208;
+  --color-blue-100: #1f1c0d;
+  --color-blue-200: #4d4013;
+  --color-blue-300: #b08d27;
+  --color-blue-400: #D4AF37;
+  --color-blue-500: #FFD700;
+  --color-blue-600: #D4AF37;
+  --color-blue-700: #b08d27;
+  --color-blue-800: #856a1b;
+  --color-blue-900: #5c4912;
+
+  /* Overriding Sky -> Silver */
+  --color-sky-50: #141414;
+  --color-sky-100: #1f1f1f;
+  --color-sky-200: #333333;
+  --color-sky-300: #808080;
+  --color-sky-400: #A9A9A9;
+  --color-sky-500: #C0C0C0;
+  --color-sky-600: #A9A9A9;
+  --color-sky-700: #808080;
+  --color-sky-800: #595959;
+  --color-sky-900: #404040;
+
+  /* Overriding Cyan -> Silver */
+  --color-cyan-50: #141414;
+  --color-cyan-100: #1f1f1f;
+  --color-cyan-200: #333333;
+  --color-cyan-300: #808080;
+  --color-cyan-400: #A9A9A9;
+  --color-cyan-500: #C0C0C0;
+  --color-cyan-600: #A9A9A9;
+  --color-cyan-700: #808080;
+  --color-cyan-800: #595959;
+  --color-cyan-900: #404040;
+
+  --color-white: #0a0a0a;
+  /* bg-white becomes black */
+  --color-black: #ffffff;
+  /* text-black becomes white */
 }
 
 :root {
@@ -15,8 +111,8 @@
   font-weight: 400;
 
   color-scheme: dark;
-  color: rgba(255, 255, 255, 0.92);
-  background-color: #011627;
+  color: #ffffff;
+  background-color: #0a0a0a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,33 +123,42 @@
 /* ── Smooth scrolling ─────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  background-color: #0a0a0a;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
 }
 
 /* ── Custom scrollbar ─────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #011627;
+  background: #121212;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #0077B6;
+  background: #D4AF37;
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #00B4D8;
+  background: #FFD700;
 }
 
 /* ── Selection colour ────────────────────────────────── */
 ::selection {
-  background: #0077B6;
-  color: #fff;
+  background: #D4AF37;
+  color: #000;
 }
 
 /* ── Thin scrollbar utility (used inside project list) ── */
 .scrollbar-thin {
   scrollbar-width: thin;
-  scrollbar-color: #1d4ed8 transparent;
+  scrollbar-color: #D4AF37 #121212;
 }
 
 /* ── Global link reset ───────────────────────────────── */
