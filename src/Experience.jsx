@@ -22,16 +22,16 @@ const Experience = () => {
   const experiences = [
     {
       title: "Web Developer",
-      company: "Brain Mentors",
-      duration: "2022",
+      company: "Saumata Service India Pvt. Ltd.",
+      duration: "June 2025 - Present",
       description: "Collaborated with elite team to build high-performance web applications. Integrated AI features that boosted user engagement by 10% and optimized core web vitals.",
       achievements: ["10% engagement increase", "AI feature integration", "Performance optimization"],
       icon: "🧠"
     },
     {
       title: "Web Developer Intern",
-      company: "Mobisoft Technologies", 
-      duration: "2022 - 2023",
+      company: "Saumata Service India Pvt. Ltd.", 
+      duration: "March 2025 - May 2025",
       description: "Hands-on experience across full development lifecycle. Mastered React ecosystem, API integrations, and production deployment workflows.",
       achievements: ["Production deployments", "API integrations", "React mastery"],
       icon: "🚀"

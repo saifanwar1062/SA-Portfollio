@@ -1,5 +1,5 @@
 // components/Projects.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ExternalLink,
   Globe,
@@ -9,8 +9,31 @@ import {
   ArrowUpRight,
   Star,
   Eye,
+  Image as ImageIcon,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// Import project images
+import klyrosysImg from "./assets/klyrosys.png";
+import galaxyHajjImg from "./assets/Galaxy.png";
+import alZiyarahImg from './assets/Alziyarah.png';
+import umraChaloImg from './assets/Umrachalo.png';
+import blueWaveImg from './assets/Bluewave.png';
+import inshaUmrahImg from './assets/Inshaumrah.png';
+import safarMuqaddasImg from './assets/Safar.png';
+import arUmrahImg from './assets/AR Umrah.png';
+
+// Fallback images in case imports fail
+const fallbackImages = {
+  klyrosys: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+  galaxyHajj: 'https://images.unsplash.com/photo-1582653291997-079a1b04e6a1?w=600&h=400&fit=crop',
+  alZiyarah: 'https://images.unsplash.com/photo-1584555614927-5f8dbf4b7c71?w=600&h=400&fit=crop',
+  umraChalo: 'https://images.unsplash.com/photo-1582653291997-079a1b04e6a1?w=600&h=400&fit=crop',
+  blueWave: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop',
+  inshaUmrah: 'https://images.unsplash.com/photo-1584555614927-5f8dbf4b7c71?w=600&h=400&fit=crop',
+  safarMuqaddas: 'https://images.unsplash.com/photo-1584555614927-5f8dbf4b7c71?w=600&h=400&fit=crop',
+  arUmrah: 'https://images.unsplash.com/photo-1582653291997-079a1b04e6a1?w=600&h=400&fit=crop',
+};
 
 const projects = [
   {
@@ -24,6 +47,8 @@ const projects = [
     color: '#FFD700', // Gold
     accentColor: '#C0C0C0', // Silver
     featured: true,
+    image: klyrosysImg,
+    fallbackImage: fallbackImages.klyrosys,
   },
   {
     id: 2,
@@ -36,6 +61,8 @@ const projects = [
     color: '#C0C0C0', // Silver
     accentColor: '#FFD700', // Gold
     featured: true,
+    image: galaxyHajjImg,
+    fallbackImage: fallbackImages.galaxyHajj,
   },
   {
     id: 3,
@@ -48,6 +75,8 @@ const projects = [
     color: '#D4AF37', // Dark Gold
     accentColor: '#FFD700', // Gold
     featured: false,
+    image: alZiyarahImg,
+    fallbackImage: fallbackImages.alZiyarah,
   },
   {
     id: 4,
@@ -60,6 +89,8 @@ const projects = [
     color: '#A9A9A9', // Light Silver
     accentColor: '#C0C0C0', // Silver
     featured: false,
+    image: umraChaloImg,
+    fallbackImage: fallbackImages.umraChalo,
   },
   {
     id: 5,
@@ -72,6 +103,8 @@ const projects = [
     color: '#b08d27', // Medium Dark Gold
     accentColor: '#D4AF37', // Dark Gold
     featured: true,
+    image: blueWaveImg,
+    fallbackImage: fallbackImages.blueWave,
   },
   {
     id: 6,
@@ -84,6 +117,8 @@ const projects = [
     color: '#808080', // Medium Silver
     accentColor: '#A9A9A9', // Light Silver
     featured: false,
+    image: inshaUmrahImg,
+    fallbackImage: fallbackImages.inshaUmrah,
   },
   {
     id: 7,
@@ -96,10 +131,12 @@ const projects = [
     color: '#856a1b', // Dark Gold
     accentColor: '#b08d27', // Medium Dark Gold
     featured: false,
+    image: safarMuqaddasImg,
+    fallbackImage: fallbackImages.safarMuqaddas,
   },
   {
     id: 8,
-    title: 'A Rumah Services',
+    title: 'A.R Umrah Services',
     url: 'https://arumrahservices.com',
     description:
       'Professional Umrah services portal with a modern corporate feel. Includes detailed service pages, package inquiry forms, WhatsApp CTA integration, and optimised load performance.',
@@ -108,6 +145,8 @@ const projects = [
     color: '#595959', // Dark Silver
     accentColor: '#808080', // Medium Silver
     featured: false,
+    image: arUmrahImg,
+    fallbackImage: fallbackImages.arUmrah,
   },
 ];
 
@@ -130,6 +169,8 @@ const cardVariants = {
 
 const ProjectCard = ({ project, index }) => {
   const [hovered, setHovered] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <motion.div
@@ -153,6 +194,53 @@ const ProjectCard = ({ project, index }) => {
         className="h-1 w-full rounded-t-3xl"
         style={{ background: `linear-gradient(90deg, ${project.color}, ${project.accentColor})` }}
       />
+
+      {/* Website Thumbnail Image */}
+      <div className="relative w-full h-40 sm:h-48 bg-slate-950 overflow-hidden rounded-t-2xl">
+        {!imageError ? (
+          <>
+            <img
+              src={project.image}
+              alt={`${project.title} website thumbnail`}
+              onLoad={() => setImageLoaded(true)}
+              onError={(e) => {
+                setImageError(true);
+                if (project.fallbackImage) {
+                  e.target.src = project.fallbackImage;
+                }
+              }}
+              className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-110 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+            {!imageLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center bg-slate-950">
+                <div className="animate-pulse flex flex-col items-center gap-2">
+                  <ImageIcon className="w-8 h-8 text-slate-700" />
+                  <span className="text-xs text-slate-500">Loading...</span>
+                </div>
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-950">
+            <div
+              className="flex flex-col items-center gap-2 p-4"
+              style={{ color: project.color }}
+            >
+              <Globe className="w-8 h-8" />
+              <span className="text-[10px] text-center text-slate-400">Website Preview</span>
+            </div>
+          </div>
+        )}
+
+        {/* Overlay on hover */}
+        <motion.div
+          animate={{ opacity: hovered && imageLoaded ? 0.3 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="absolute inset-0 bg-black pointer-events-none"
+        />
+      </div>
 
       {/* Card Content */}
       <div className="flex flex-col flex-1 p-4 sm:p-5 gap-3">

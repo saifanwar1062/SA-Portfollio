@@ -9,16 +9,10 @@ import {
   Sparkles,
   Layers,
   Palette,
-  Server,
-  Cloud,
   Globe,
   Terminal,
   GitBranch,
-  Cpu,
-  Database,
-  Shield,
   Code2,
-  TrendingUp,
   ChevronRight,
   Download,
   ExternalLink,
@@ -35,16 +29,17 @@ import {
   Clock,
   Star,
   Wifi,
-  CpuIcon,
   Infinity as InfinityIcon,
   Sparkle,
   Zap as Lightning,
   ShieldCheck
 } from 'lucide-react';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
+import resumePdf from './assets/Saif Anwar Updated Resume 29 Apl.pdf';
+
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('journey');
+  const [activeTab, setActiveTab] = useState('skills');
   const [hoveredSkill, setHoveredSkill] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const [counterValues, setCounterValues] = useState({ projects: 0, clients: 0, experience: 0, hours: 0 });
@@ -128,54 +123,7 @@ const About = () => {
     },
   ];
 
-  // Journey timeline
-  const journey = [
-    {
-      year: "2021",
-      title: "React Developer Journey Begins",
-      description: "Fell in love with React.js — mastered hooks, state management, and component architecture",
-      icon: Code2,
-      tags: ["React", "JavaScript", "CSS3"],
-      color: "#FFD700",
-      achievements: ["First React App", "UI Component Library"]
-    },
-    {
-      year: "2022",
-      title: "Frontend Freelancing",
-      description: "Built production React apps for clients — improved performance, responsiveness & UX",
-      icon: Rocket,
-      tags: ["React", "Tailwind CSS", "Next.js"],
-      color: "#D4AF37",
-      achievements: ["5+ Client Sites", "Mobile-First Design"]
-    },
-    {
-      year: "2023",
-      title: "Travel Tech Platforms",
-      description: "Developed 8+ live Hajj/Umrah & travel booking portals with React at production scale",
-      icon: Globe,
-      tags: ["Next.js", "JavaScript", "Framer Motion"],
-      color: "#C0C0C0",
-      achievements: ["8 Live Sites", "Pixel‑Perfect UI"]
-    },
-    {
-      year: "2024",
-      title: "Enterprise React at HCL",
-      description: "Built GenAI-powered PV Intake frontend using Next.js + JavaScript for a U.S. life sciences client",
-      icon: Code2,
-      tags: ["Next.js", "JavaScript", "Enterprise"],
-      color: "#A9A9A9",
-      achievements: ["Enterprise App", "99.9% Uptime"]
-    },
-    {
-      year: "2025",
-      title: "Advanced UI / Animations",
-      description: "Levelled up with 3D interactions, Framer Motion, and cutting-edge React performance patterns",
-      icon: Sparkles,
-      tags: ["Framer Motion", "Three.js", "WebGL"],
-      color: "#FFD700",
-      achievements: ["3D Animations", "Performance Boost"]
-    },
-  ];
+
 
   // Skills data — frontend focused
   const skills = {
@@ -188,11 +136,11 @@ const About = () => {
     animations: [
       { name: "Framer Motion", level: 90, icon: Sparkles, description: "Gestures & transitions" },
       { name: "CSS Animations", level: 95, icon: Palette, description: "Keyframes & transitions" },
-      { name: "GSAP", level: 80, icon: Zap, description: "Advanced timelines" },
+   
     ],
     tooling: [
       { name: "Git / GitHub", level: 95, icon: GitBranch, description: "Version control" },
-      { name: "Vite / Webpack", level: 88, icon: Zap, description: "Build tools" },
+      { name: "Vite", level: 88, icon: Zap, description: "Build tools" },
       { name: "Figma", level: 85, icon: Palette, description: "Design handoff" },
       { name: "Vercel / Netlify", level: 90, icon: Rocket, description: "Deployment" },
     ],
@@ -334,9 +282,8 @@ const About = () => {
           </motion.div>
 
           <h1 className="text-2.5xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight">
-            <span className="block text-white">Frontend</span>
             <span className="block bg-gradient-to-r from-gold via-silver to-gold bg-clip-text text-transparent">
-              React Developer
+              Frontend Developer
             </span>
           </h1>
 
@@ -348,22 +295,27 @@ const About = () => {
 
 
           <div className="flex flex-wrap justify-center gap-2.5">
-            <motion.button
+            <motion.a
+              href={resumePdf}
+              download
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-lg shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-2 text-sm"
+              className="px-6 py-2 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-lg shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-2 text-sm cursor-pointer"
             >
               <Download className="w-4 h-4" />
               Download Resume
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="https://github.com/saifanwar1062"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-slate-900 border border-slate-800 text-slate-100 font-semibold rounded-lg shadow-lg hover:bg-slate-800 hover:border-gold/30 transition-all flex items-center gap-2 text-sm"
+              className="px-6 py-2 bg-slate-900 border border-slate-800 text-slate-100 font-semibold rounded-lg shadow-lg hover:bg-slate-800 hover:border-gold/30 transition-all flex items-center gap-2 text-sm cursor-pointer"
             >
               <ExternalLink className="w-4 h-4" />
               View GitHub
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 
@@ -453,12 +405,11 @@ const About = () => {
                       <MapPin className="w-5 h-5" />
                       <span className="font-medium text-slate-300">New Delhi, India</span>
                     </div>
-                    <div className="text-sm font-semibold text-silver mb-6">Frontend React.js Developer</div>
+                    <div className="text-sm font-semibold text-silver mb-6">Frontend Developer</div>
 
                     <p className="text-lg text-slate-400 leading-relaxed mb-8">
-                      Dedicated Frontend React.js Developer with 3+ years of hands-on experience building
-                      pixel-perfect, high-performance web applications. Passionate about React, Next.js,
-                      Tailwind CSS and bringing stunning UI/UX designs to life.
+                      Dedicated Frontend Developer specialised in React.js, responsive UI development, and REST API integration. 
+                      Expertise in React.js, JavaScript, HTML, CSS, Tailwind CSS, and API Integration — delivering high-performance web applications.
                     </p>
 
                     <div className="flex flex-wrap gap-3">
@@ -508,7 +459,6 @@ const About = () => {
               className="flex flex-wrap gap-3 mb-8"
             >
               {[
-                { id: 'journey', label: 'My Journey', icon: Layers },
                 { id: 'skills', label: 'React Skills', icon: Code2 },
                 { id: 'philosophy', label: 'Philosophy', icon: Brain },
               ].map((tab) => {
@@ -535,69 +485,6 @@ const About = () => {
 
             {/* Tab Content */}
             <AnimatePresence mode="wait">
-              {activeTab === 'journey' && (
-                <motion.div
-                  key="journey"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  className="relative"
-                >
-                  {/* Timeline Line */}
-                  <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gold/20 via-silver/20 to-transparent" />
-
-                  {journey.map((item, i) => {
-                    const Icon = item.icon;
-                    const isEven = i % 2 === 0;
-
-                    return (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: isEven ? -20 : 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        className={`relative mb-12 md:flex md:items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                      >
-                        {/* Timeline Dot */}
-                        <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 z-10">
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl bg-slate-900 border-4 border-slate-800"
-                            style={{
-                              borderColor: item.color
-                            }}
-                          >
-                            <Icon className="w-8 h-8" style={{ color: item.color }} />
-                          </motion.div>
-                        </div>
-
-                        {/* Content */}
-                        <div className={`ml-24 md:ml-0 md:w-5/12 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                          <motion.div
-                            whileHover={{ y: -5 }}
-                            className="bg-slate-900 rounded-2xl p-6 border border-slate-800 hover:border-gold/30 shadow-2xl shadow-black/50 transition-all"
-                          >
-                            <div className="text-2xl font-black text-white mb-2">{item.year}</div>
-                            <h4 className="text-xl font-bold text-gold mb-3">{item.title}</h4>
-                            <p className="text-slate-400 mb-4">{item.description}</p>
-                            <div className="flex flex-wrap gap-2">
-                              {item.tags.map((tag, tagIndex) => (
-                                <span
-                                  key={tagIndex}
-                                  className="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-slate-300 border border-slate-700"
-                                >
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
-                          </motion.div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-              )}
-
               {activeTab === 'skills' && (
                 <motion.div
                   key="skills"
@@ -796,7 +683,7 @@ const About = () => {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {["React", "Next.js", "JavaScript", "Tailwind", "Framer Motion", "Figma", "Vite", "Git"].map((tech, i) => (
+                {["React", "Next.js", "JavaScript", "Tailwind", "Framer Motion", "Figma", "Vite", "Git/GitHub"].map((tech, i) => (
                   <motion.span
                     key={i}
                     whileHover={{ scale: 1.1 }}
@@ -819,7 +706,7 @@ const About = () => {
         >
           <div className="inline-flex flex-col md:flex-row items-center gap-8 bg-slate-900 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-slate-800 shadow-2xl shadow-black/50 max-w-4xl mx-auto">
             <div className="text-left">
-              <h3 className="text-3xl font-black text-white mb-4">
+              <h3 className="text-2xl font-black text-white mb-4">
                 Ready to Build Something Amazing?
               </h3>
               <p className="text-slate-400 text-lg">
@@ -827,12 +714,12 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-5">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group relative px-8 py-4 bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-black font-bold rounded-xl shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-3"
+                className="group relative px-7 py-5 bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-black font-bold rounded-xl shadow-lg shadow-gold/10 hover:shadow-gold/20 transition-all flex items-center gap-3"
               >
                 <span>Start a Project</span>
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -842,7 +729,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-slate-800 border border-slate-700 text-slate-100 font-bold rounded-xl hover:bg-slate-700 hover:border-gold/30 transition-all shadow-lg"
+                className="px-7 py-5 bg-slate-800 border border-slate-700 text-slate-100 font-bold rounded-xl hover:bg-slate-700 hover:border-gold/30 transition-all shadow-lg"
               >
                 View Projects
               </motion.button>

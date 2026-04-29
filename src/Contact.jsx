@@ -1,6 +1,7 @@
 // components/Contact.js
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Download, Github, Linkedin, Instagram, Youtube, MapPin, Phone, MessageCircle, Send } from 'lucide-react';
+import resumePdf from './assets/Saif Anwar Updated Resume 29 Apl.pdf';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -117,10 +118,10 @@ const Contact = () => {
               <div className="text-center mb-8">
                 <div className="inline-flex items-center gap-3 p-4 bg-gold/10 rounded-2xl mb-6 shadow-sm border border-slate-800">
                   <MapPin className="w-6 h-6 text-gold" />
-                  <span className="font-bold text-slate-200">Kalindi Kunj, New Delhi</span>
+                  <span className="font-bold text-slate-200">New Delhi, India</span>
                 </div>
                 <div className="text-3xl font-black text-white mb-2">Md. Saif Anwar</div>
-                <div className="text-gold font-semibold">Frontend React.js Developer</div>
+                <div className="text-gold font-semibold">Frontend Developer</div>
               </div>
               <div className="space-y-2 mb-5">
                 <div className="flex items-center justify-center gap-5 p-2 bg-slate-950 border border-slate-800 rounded-2xl">
@@ -136,8 +137,11 @@ const Contact = () => {
                 <a href="mailto:saifanwar1062@gmail.com" className="group flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-gold-dark to-gold text-black font-semibold rounded-2xl shadow-md shadow-gold/20 hover:shadow-gold/30 transition-all hover:scale-105">
                   <Mail className="w-5 h-5 group-hover:translate-x-1 transition-transform" /> Email Me
                 </a>
-                <a href="/resume.pdf" download className="flex items-center justify-center gap-3 p-4 border border-slate-800 text-slate-300 font-semibold rounded-2xl hover:bg-slate-950 transition-all hover:scale-105 shadow-sm hover:shadow-md">
+                <a href={resumePdf} download className="flex items-center justify-center gap-3 p-4 border border-slate-800 text-slate-300 font-semibold rounded-2xl hover:bg-slate-950 transition-all hover:scale-105 shadow-sm hover:shadow-md">
                   <Download className="w-5 h-5" /> Download Resume
+                </a>
+                <a href="https://github.com/saifanwar1062" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 p-4 bg-slate-800 border border-slate-700 text-slate-300 font-semibold rounded-2xl hover:bg-slate-700 hover:border-gold/30 transition-all hover:scale-105 shadow-sm hover:shadow-md">
+                  <Github className="w-5 h-5 group-hover:translate-x-1 transition-transform" /> GitHub Profile
                 </a>
               </div>
             </div>

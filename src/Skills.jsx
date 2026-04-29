@@ -3,13 +3,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   Code2,
   Palette,
-  Server,
   Cloud,
   Zap,
-  Brain,
-  Mountain,
-  Award,
-  Leaf
+  
 } from 'lucide-react';
 
 const Skills = () => {
@@ -33,8 +29,8 @@ const Skills = () => {
       icon: Palette,
       skills: [
         { name: 'Tailwind CSS', level: 98, icon: '🎨' },
-        { name: 'CSS3 / SCSS', level: 95, icon: '💎' },
-        { name: 'Styled Comp.', level: 85, icon: '💅' },
+        { name: 'CSS', level: 95, icon: '💎' },
+        { name: 'Canva', level: 85, icon: '🎨' },
         { name: 'Figma', level: 83, icon: '🖌️' },
       ]
     },
@@ -43,9 +39,7 @@ const Skills = () => {
       icon: Zap,
       skills: [
         { name: 'Framer Motion', level: 90, icon: '🎬' },
-        { name: 'GSAP', level: 78, icon: '🌀' },
         { name: 'CSS Animate', level: 95, icon: '✨' },
-        { name: 'Three.js', level: 70, icon: '🌐' },
       ]
     },
     {
@@ -53,9 +47,9 @@ const Skills = () => {
       icon: Cloud,
       skills: [
         { name: 'Git / GitHub', level: 95, icon: '🌿' },
-        { name: 'Vite / Webpack', level: 88, icon: '⚡' },
+        { name: 'VS-Code', level: 88, icon: '⚡' },
         { name: 'Vercel', level: 92, icon: '🚀' },
-        { name: 'React Query', level: 85, icon: '🔄' },
+        { name: 'Big Rock', level: 85, icon: '🔄' },
       ]
     },
   ];
@@ -154,15 +148,15 @@ const Skills = () => {
             <span className="text-sm font-bold text-slate-200">Technical Mastery</span>
           </div>
           <h2 className="text-2.5xl sm:text-3.5xl lg:text-4.5xl font-black mb-3 text-white leading-tight">
-            React Frontend
+            Frontend
             <br />
             <span className="bg-gradient-to-r from-gold to-silver bg-clip-text text-transparent">
               Skills Showcase
             </span>
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Specialised in React ecosystem — from pixel-perfect Tailwind styling to
-            silky-smooth Framer Motion animations. Pure frontend excellence.
+            Specialised in React.js, responsive UI development, and REST API integration. 
+            Proficient in React.js, JavaScript, HTML, CSS, Tailwind CSS, and API Integration — delivering pure frontend excellence.
           </p>
         </div>
 

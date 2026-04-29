@@ -6,8 +6,6 @@ import {
   X,
   Github,
   Linkedin,
-  Instagram,
-  Youtube,
   Mail,
   Cpu,
   Satellite,
@@ -106,7 +104,7 @@ const Header = () => {
 
   const socialLinks = useMemo(
     () => [
-      { icon: Github, href: "https://github.com", label: "GitHub" },
+      { icon: Github, href: "https://github.com/saifanwar1062", label: "GitHub" },
       { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
     ],
     []
@@ -166,7 +164,7 @@ const Header = () => {
                     MD. Saif Anwar
                   </span>
                   <span className="text-[9px] sm:text-xs text-slate-400 hidden sm:block">
-                    Frontend React.js Developer
+                    Frontend Developer
                   </span>
                 </div>
               </motion.button>
@@ -263,7 +261,7 @@ const Header = () => {
                 </div>
                 <div>
                   <p className="font-bold text-white text-sm">MD. Saif Anwar</p>
-                  <p className="text-[11px] text-slate-500">Frontend React.js Developer</p>
+                  <p className="text-[11px] text-slate-500">Frontend Developer</p>
                 </div>
               </div>
 

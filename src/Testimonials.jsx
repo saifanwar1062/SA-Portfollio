@@ -12,9 +12,9 @@ const Testimonials = () => {
 
   const testimonials = [
     { text: "Saif is a visionary developer whose attention to detail and creativity transformed our project into a massive success. His work ethic is unmatched!", author: "Yash Sahu", role: "Software Engineer, HCL Technologies", avatar: "🧑‍💻", rating: 5 },
-    { text: "Working with Saif was pure magic! He blends design thinking with flawless code execution. Our platform now converts 3x better thanks to his expertise.", author: "Heather Forster", role: "Lead UI/UX Designer, PixelWorks", avatar: "🎨", rating: 5 },
-    { text: "From concept to production, Saif delivered enterprise-grade quality ahead of schedule. His full-stack mastery saved us $50K in development costs.", author: "Amy Jacobson", role: "Tech Manager, CodeEmpire", avatar: "👩‍💼", rating: 5 },
-    { text: "Saif completely modernized our legacy platform. The new system handles 10x traffic with 99.9% uptime. True rockstar developer!", author: "Carry Smith", role: "CTO, Innovate Labs", avatar: "🔬", rating: 5 },
+    { text: "Working with Saif was pure magic! He blends design thinking with flawless code execution. Our platform now converts 3x better thanks to his expertise.", author: "Rohit Kumar", role: "Lead UI/UX Designer, PixelWorks", avatar: "🎨", rating: 5 },
+    { text: "From concept to production, Saif delivered enterprise-grade quality ahead of schedule. His full-stack mastery saved us $50K in development costs.", author: "Ananay Tripathi", role: "Tech Manager, CodeEmpire", avatar: "👩‍💼", rating: 5 },
+    { text: "Saif completely modernized our legacy platform. The new system handles 10x traffic with 99.9% uptime. True rockstar developer!", author: "Shoaib Khan", role: "CTO, Innovate Labs", avatar: "🔬", rating: 5 },
     { text: "Saif's travel platform for Hajj & Umrah bookings is now serving 5K+ pilgrims monthly. His attention to cultural details made it perfect.", author: "Ahmed Khan", role: "Travel Tech Entrepreneur", avatar: "🕌", rating: 5 },
   ];
 
