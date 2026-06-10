@@ -35,7 +35,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
-import resumePdf from './assets/Saif Anwar Updated Resume 29 Apl.pdf';
+import resumePdf from './assets/Md. Saif Anwar React.js Developer Resume.pdf';
 
 
 const About = () => {
