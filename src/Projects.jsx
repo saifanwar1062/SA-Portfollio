@@ -46,7 +46,7 @@ const projects = [
     category: 'Web Platform',
     color: '#FFD700', // Gold
     accentColor: '#C0C0C0', // Silver
-    featured: true,
+    
     image: klyrosysImg,
     fallbackImage: fallbackImages.klyrosys,
   },
@@ -60,7 +60,7 @@ const projects = [
     category: 'Travel & Booking',
     color: '#C0C0C0', // Silver
     accentColor: '#FFD700', // Gold
-    featured: true,
+
     image: galaxyHajjImg,
     fallbackImage: fallbackImages.galaxyHajj,
   },
@@ -102,7 +102,7 @@ const projects = [
     category: 'Cruise & Hospitality',
     color: '#b08d27', // Medium Dark Gold
     accentColor: '#D4AF37', // Dark Gold
-    featured: true,
+    
     image: blueWaveImg,
     fallbackImage: fallbackImages.blueWave,
   },

@@ -1,12 +1,12 @@
 // components/Experience.js
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Calendar, 
-  Briefcase, 
-  Code2, 
-  Zap, 
-  Award, 
-  Star, 
+import {
+  Calendar,
+  Briefcase,
+  Code2,
+  Zap,
+  Award,
+  Star,
   Rocket,
   Github,
   ExternalLink
@@ -30,13 +30,13 @@ const Experience = () => {
     },
     {
       title: "Web Developer Intern",
-      company: "Saumata Service India Pvt. Ltd.", 
+      company: "Saumata Service India Pvt. Ltd.",
       duration: "March 2025 - May 2025",
       description: "Hands-on experience across full development lifecycle. Mastered React ecosystem, API integrations, and production deployment workflows.",
       achievements: ["Production deployments", "API integrations", "React mastery"],
       icon: "🚀"
     },
-   
+
   ];
 
   const projects = [
@@ -164,13 +164,13 @@ const Experience = () => {
                 return (
                   <div
                     key={index}
-                    className={`group relative p-8 lg:p-10 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl shadow-black/50 hover:shadow-gold/10 hover:border-gold/30 hover:scale-105 hover:-translate-y-2 transition-all duration-700 cursor-pointer ${isActive ? 
-                               'border-gold-dark/50 shadow-gold/5 ring-4 ring-gold/5' : ''}`}
+                    className={`group relative p-8 lg:p-10 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl shadow-black/50 hover:shadow-gold/10 hover:border-gold/30 hover:scale-105 hover:-translate-y-2 transition-all duration-700 cursor-pointer ${isActive ?
+                      'border-gold-dark/50 shadow-gold/5 ring-4 ring-gold/5' : ''}`}
                     onClick={() => setActiveTimeline(index)}
                   >
                     {/* Magnetic glow */}
                     <div className={`absolute inset-0 bg-gradient-to-r from-gold/5 to-silver/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity ${isActive ? 'opacity-100' : ''} -z-10`} />
-                    
+
                     {/* Icon */}
                     <div className="flex items-center justify-center w-20 h-20 bg-slate-800 rounded-2xl mb-6 mx-auto shadow-sm group-hover:scale-110 group-hover:bg-slate-700 transition-all border border-slate-700/50">
                       <span className="text-3xl">{exp.icon}</span>
@@ -186,7 +186,7 @@ const Experience = () => {
                         <span className="font-bold">{exp.company}</span>
                         <span className="text-slate-500">• {exp.duration}</span>
                       </div>
-                      
+
                       <p className="text-slate-400 leading-relaxed mb-6">{exp.description}</p>
 
                       {/* Achievements */}
@@ -216,15 +216,18 @@ const Experience = () => {
               })}
             </div>
 
-          
+
           </div>
+
 
           {/* Projects Showcase */}
           <div>
-            <h3 className="text-3xl font-black text-white mb-12 flex items-center gap-4 justify-center">
-              <Rocket className="w-10 h-10 text-gold" />
-              Featured Projects
-            </h3>
+            <div className="flex flex-col items-center justify-center text-center">
+              <h3 className="text-3xl font-black text-white mb-12 flex items-center gap-4">
+                <Rocket className="w-10 h-10 text-gold" />
+                Featured Projects
+              </h3>
+            </div>
 
             {/* Project Cards */}
             <div className="space-y-6 max-h-[800px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gold/20 scrollbar-track-transparent">
@@ -236,31 +239,23 @@ const Experience = () => {
                 >
                   {/* Glow overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-gold/5 to-silver/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
-                  
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h4 className="text-xl font-black text-white mb-1 group-hover:text-gold transition-colors">
-                        {project.title}
-                      </h4>
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {project.tech.map((tech, i) => (
-                          <span key={i} className="px-2.5 py-0.5 bg-gold/10 rounded-lg text-gold border border-gold/20 text-xs font-medium">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex gap-2 ml-auto">
-                      <a href={project.link} target="_blank" rel="noopener noreferrer"
-                         className="p-2 bg-slate-800 border border-slate-700 rounded-xl hover:bg-slate-700 transition-all">
-                        <ExternalLink className="w-4 h-4 text-slate-400" />
-                      </a>
+
+                  {/* Header - Title centered */}
+                  <div className="text-center mb-4">
+                    <h4 className="text-xl font-black text-white mb-1 group-hover:text-gold transition-colors">
+                      {project.title}
+                    </h4>
+                    <div className="flex flex-wrap gap-2 justify-center mb-3">
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="px-2.5 py-0.5 bg-gold/10 rounded-lg text-gold border border-gold/20 text-xs font-medium">
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-400 leading-relaxed mb-4 text-sm">
+                  <p className="text-slate-400 leading-relaxed mb-4 text-sm text-center">
                     {project.description}
                   </p>
 

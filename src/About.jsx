@@ -401,7 +401,7 @@ const About = () => {
                     <h2 className="text-3xl font-black text-white mb-3">
                       Md. Saif Anwar
                     </h2>
-                    <div className="flex items-center gap-2 text-gold mb-2">
+                    <div className="flex justify-center gap-2 text-gold mb-2">
                       <MapPin className="w-5 h-5" />
                       <span className="font-medium text-slate-300">New Delhi, India</span>
                     </div>
@@ -412,7 +412,7 @@ const About = () => {
                       Expertise in React.js, JavaScript, HTML, CSS, Tailwind CSS, and API Integration — delivering high-performance web applications.
                     </p>
 
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex justify-center flex-wrap gap-3">
                       {["React Expert", "Next.js", "Tailwind CSS", "Framer Motion", "Figma"].map((tag, i) => (
                         <motion.span
                           key={i}
@@ -429,7 +429,7 @@ const About = () => {
 
                 {/* Current Focus */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <div className="flex-1 flex items-center gap-4 p-4 bg-slate-800/50 border border-slate-700/50 rounded-xl shadow-lg">
+                  <div className="flex-1 flex justify-center gap-4 p-4 bg-slate-800/50 border border-slate-700/50 rounded-xl shadow-lg">
                     <div className="p-3 bg-gold/10 rounded-lg">
                       <Code2 className="w-6 h-6 text-gold" />
                     </div>
@@ -438,7 +438,7 @@ const About = () => {
                       <p className="text-sm text-slate-400">Production-ready frontends</p>
                     </div>
                   </div>
-                  <div className="flex-1 flex items-center gap-4 p-4 bg-slate-800/50 border border-slate-700/50 rounded-xl shadow-lg">
+                  <div className="flex-1 flex justify-center gap-4 p-4 bg-slate-800/50 border border-slate-700/50 rounded-xl shadow-lg">
                     <div className="p-3 bg-silver/10 rounded-lg">
                       <Sparkles className="w-6 h-6 text-silver" />
                     </div>
@@ -456,7 +456,7 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-3 mb-8"
+              className="flex justify-center flex-wrap gap-3 mb-8"
             >
               {[
                 { id: 'skills', label: 'React Skills', icon: Code2 },
@@ -572,7 +572,7 @@ const About = () => {
                           </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex justify-center flex-wrap gap-2">
                           {item.principles.map((principle, j) => (
                             <motion.span
                               key={j}
@@ -599,7 +599,7 @@ const About = () => {
               transition={{ delay: 0.4 }}
               className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-2xl shadow-black/50"
             >
-              <h3 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+              <h3 className="text-2xl font-black text-white mb-8 flex justify-center items-center gap-3">
                 <Coffee className="w-6 h-6 text-gold" />
                 Beyond Code
               </h3>
@@ -641,7 +641,7 @@ const About = () => {
               transition={{ delay: 0.5 }}
               className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-2xl shadow-black/50"
             >
-              <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+              <h3 className="text-2xl font-black text-white mb-6 flex justify-center items-center gap-3">
                 <Star className="w-6 h-6 text-gold" />
                 Quick Stats
               </h3>
@@ -677,12 +677,12 @@ const About = () => {
               transition={{ delay: 0.6 }}
               className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-8 border border-slate-800 shadow-2xl shadow-black/50"
             >
-              <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+              <h3 className="text-2xl font-black text-white mb-6 flex justify-center items-center gap-3">
                 <ShieldCheck className="w-6 h-6 text-gold" />
                 Tech Stack
               </h3>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex justify-center flex-wrap gap-3">
                 {["React", "Next.js", "JavaScript", "Tailwind", "Framer Motion", "Figma", "Vite", "Git/GitHub"].map((tech, i) => (
                   <motion.span
                     key={i}
